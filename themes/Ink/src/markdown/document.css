@@ -216,8 +216,8 @@ body.theme-dark.readable-spacing
   height: var(--ink-task-marker-checkbox-size, 0.9em) !important;
   margin: 0 !important;
   border: 1px solid var(--ink-terminal-muted-bright) !important;
-  border-radius: 4px;
-  background: var(--ink-terminal-black) !important;
+  border-radius: 3px;
+  background: var(--ink-terminal-surface-2) !important;
   box-shadow: none !important;
   opacity: 1 !important;
   align-self: center;
@@ -236,18 +236,15 @@ body.theme-dark.readable-spacing
 }
 
 .theme-dark .markdown-rendered .task-list-item-checkbox:checked::before {
-  content: "✓" !important;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 100% !important;
-  height: 100% !important;
+  content: "" !important;
+  display: block;
+  width: 0.28em !important;
+  height: 0.5em !important;
+  border: solid var(--ink-terminal-text);
+  border-width: 0 1.5px 1.5px 0;
   background: transparent !important;
-  color: var(--ink-terminal-text);
-  font-size: 0.72em;
-  font-weight: 700;
-  line-height: 1;
   opacity: 1;
+  transform: rotate(45deg) translate(-0.03em, -0.06em);
 }
 
 .theme-dark .markdown-rendered .task-list-item-checkbox::after {
