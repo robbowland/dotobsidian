@@ -1,0 +1,89 @@
+items:
+  SPC:
+    command: switcher:open
+    description: Find Files (Root Dir)
+
+  .:
+    command: spacekeys:repeat-last
+    description: Repeat last command
+
+  f:
+    description: Files
+    items:
+      e:
+        command: switcher:open
+        description: Find Files (Root Dir)
+      f:
+        command: switcher:open
+        description: Find Files (Root Dir)
+      r:
+        command: switcher:open
+        description: Recent Files
+      x:
+        command: file-explorer:reveal-active-file
+        description: Reveal active note
+
+  s:
+    description: Search
+    items:
+      /:
+        command: omnisearch:show-modal
+        description: Vault search
+      g:
+        command: omnisearch:show-modal
+        description: Vault search
+      f:
+        command: omnisearch:show-modal-infile
+        description: In-file search
+      c:
+        command: command-palette:open
+        description: Commands
+
+  w:
+    description: Windows
+    items:
+      h:
+        command: workspace:split-horizontal
+        description: Split below
+      v:
+        command: workspace:split-vertical
+        description: Split right
+      x:
+        command: workspace:close
+        description: Close pane
+      n:
+        command: workspace:next-tab
+        description: Next tab
+      p:
+        command: workspace:previous-tab
+        description: Previous tab
+
+  c:
+    description: Commands
+    items:
+      c:
+        command: command-palette:open
+        description: Command palette
+
+  n:
+    description: Notes
+    items:
+      d:
+        command: daily-notes
+        description: Daily note
+
+  e:
+    description: Extract
+    items:
+      c:
+        command: text-extractor:extract-to-clipboard
+        description: Extract text to clipboard
+      n:
+        command: text-extractor:extract-to-new-note
+        description: Extract text into new note
+      a:
+        command: ai-image-analyzer:analyze-image
+        description: Analyze image
+      y:
+        command: ai-image-analyzer:analyze-image-to-clipboard
+        description: Analyze image to clipboard

@@ -12,4 +12,3 @@ page-preview.json
 plugins/**/.cache/
 plugins/**/cache/
 plugins/**/node_modules/
-plugins/tasknotes/data.json

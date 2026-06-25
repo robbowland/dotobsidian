@@ -25,13 +25,17 @@ git submodule add git@github.com:robbowland/dotobsidian.git .obsidian
 ## Contents
 
 - Core app and keymap config: `app.json`, `appearance.json`, `community-plugins.json`, `core-plugins.json`, `hotkeys.json`, `obsidian.vimrc`.
+- Enabled community plugins under the standard `plugins/<id>/` layout.
+- Profile-local config assets: `.config/spacekeys/keymap.yaml`.
 - Local workflow plugins: `plugins/project-capture-markers`, `plugins/ink-markdown-source`, `plugins/ink-bionic-reading`.
-- Stable plugin config: `plugins/slash-commander/data.json`, `plugins/spacekeys/data.json`, `plugins/obsidian-vimrc-support/data.json`, `plugins/omnisearch/data.json`.
 - Standalone theme: `themes/Ink`.
-- Curated plugin profile manifests: `profile/tasknotes.json`.
 
 ## Notes
 
 Workspace layout, graph/backlink state, plugin caches, and raw TaskNotes runtime
-data are ignored. Commit the stable profile surface; leave vault content and
+history are ignored. Commit the stable profile surface; leave vault content and
 local runtime state in the vault repository.
+
+TaskNotes uses its standard `plugins/tasknotes/data.json` path, but that file is
+kept intentionally lean so it carries preferences rather than tokens, queues,
+release bookkeeping, or pomodoro history.
