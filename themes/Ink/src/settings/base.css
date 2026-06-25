@@ -1,0 +1,252 @@
+/* Settings: Noice-inspired terminal panes. */
+.theme-dark {
+  --ink-settings-border: var(--ink-cmdline-border, var(--ink-palette-white));
+  --ink-settings-border-muted: #30363d;
+  --ink-settings-row: var(--ink-palette-surface-0);
+  --ink-settings-row-hover: var(--ink-palette-surface-1);
+  --ink-settings-selected: var(--ink-cmdline-selection, var(--fg-default));
+  --ink-settings-radius: var(--ink-cmdline-radius, 4px);
+  --ink-settings-matte: var(--ink-cmdline-matte, 12px);
+  --ink-settings-sidebar-width: clamp(240px, 23vw, 330px);
+  --ink-settings-content-gutter: clamp(42px, 5vw, 86px);
+}
+
+.theme-dark .modal.mod-settings {
+  box-sizing: border-box !important;
+  width: min(96vw, 1440px) !important;
+  height: min(92vh, 980px) !important;
+  border: 1px solid var(--ink-settings-border) !important;
+  border-radius: var(--ink-settings-radius) !important;
+  background: var(--ink-terminal-black) !important;
+  box-shadow: 0 0 0 var(--ink-settings-matte) var(--ink-terminal-black) !important;
+  color: var(--ink-terminal-text) !important;
+  overflow: hidden !important;
+}
+
+.theme-dark .modal.mod-settings .modal-content {
+  background: var(--ink-terminal-black) !important;
+  padding: 0 !important;
+}
+
+.theme-dark .modal.mod-settings .modal-close-button {
+  top: 16px !important;
+  right: 16px !important;
+  color: var(--ink-terminal-muted-bright) !important;
+}
+
+.theme-dark .modal.mod-settings .modal-close-button:hover {
+  background: transparent !important;
+  color: var(--ink-terminal-text) !important;
+}
+
+.theme-dark .modal.mod-settings .vertical-tab-container {
+  display: grid !important;
+  grid-template-columns: var(--ink-settings-sidebar-width) minmax(0, 1fr) !important;
+  height: 100% !important;
+  background: var(--ink-terminal-black) !important;
+}
+
+.theme-dark .modal.mod-settings .vertical-tab-header {
+  box-sizing: border-box !important;
+  width: var(--ink-settings-sidebar-width) !important;
+  border-right: 1px solid var(--ink-settings-border) !important;
+  background: var(--ink-terminal-black) !important;
+  padding: 20px 14px 28px !important;
+}
+
+.theme-dark .modal.mod-settings .vertical-tab-header-group-title {
+  margin: 20px 10px 8px !important;
+  color: var(--ink-terminal-muted) !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  line-height: 18px !important;
+  text-transform: none !important;
+}
+
+.theme-dark .modal.mod-settings .vertical-tab-nav-item {
+  min-height: 32px !important;
+  margin: 2px 0 !important;
+  border: 0 !important;
+  border-radius: var(--ink-settings-radius) !important;
+  background: transparent !important;
+  padding: 5px 10px !important;
+  color: var(--ink-terminal-text) !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  line-height: 22px !important;
+}
+
+.theme-dark .modal.mod-settings .vertical-tab-nav-item:hover {
+  background: var(--ink-settings-row-hover) !important;
+  color: var(--ink-terminal-text) !important;
+}
+
+.theme-dark .modal.mod-settings .vertical-tab-nav-item.is-active {
+  background: var(--ink-settings-selected) !important;
+  color: var(--ink-terminal-black) !important;
+}
+
+.theme-dark .modal.mod-settings .vertical-tab-nav-item.is-active * {
+  color: var(--ink-terminal-black) !important;
+}
+
+.theme-dark .modal.mod-settings .vertical-tab-nav-item :is(.svg-icon, svg) {
+  color: currentColor !important;
+  stroke-width: 2px !important;
+}
+
+.theme-dark .modal.mod-settings .vertical-tab-content-container,
+.theme-dark .modal.mod-settings .vertical-tab-content {
+  background: var(--ink-terminal-black) !important;
+}
+
+.theme-dark .modal.mod-settings .vertical-tab-content {
+  box-sizing: border-box !important;
+  max-width: none !important;
+  padding: 28px var(--ink-settings-content-gutter) 56px !important;
+}
+
+.theme-dark
+  .modal.mod-settings
+  :is(h1, h2, h3, h4, .setting-item-heading, .setting-item-name) {
+  color: var(--ink-terminal-text) !important;
+  font-family: var(--ink-terminal-font) !important;
+  letter-spacing: 0 !important;
+}
+
+.theme-dark .modal.mod-settings .setting-item {
+  border: 0 !important;
+  background: transparent !important;
+  padding: 15px 0 !important;
+}
+
+.theme-dark .modal.mod-settings .setting-item-heading {
+  position: relative !important;
+  margin: 32px 0 6px !important;
+  border-top: 1px solid var(--ink-settings-border-muted) !important;
+  padding-top: 16px !important;
+}
+
+.theme-dark .modal.mod-settings .setting-item-heading .setting-item-name {
+  display: inline-block !important;
+  position: relative !important;
+  top: -28px !important;
+  margin-bottom: -22px !important;
+  background: var(--ink-terminal-black) !important;
+  padding-right: 12px !important;
+  color: var(--ink-terminal-muted-bright) !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  line-height: 18px !important;
+}
+
+.theme-dark .modal.mod-settings .setting-item-name {
+  color: var(--ink-terminal-text) !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  line-height: 24px !important;
+}
+
+.theme-dark .modal.mod-settings .setting-item-description {
+  color: var(--ink-terminal-muted) !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  line-height: 22px !important;
+}
+
+.theme-dark .modal.mod-settings a,
+.theme-dark .modal.mod-settings .setting-item-description a {
+  color: var(--ink-accent) !important;
+  text-decoration: none !important;
+}
+
+.theme-dark .modal.mod-settings a:hover,
+.theme-dark .modal.mod-settings .setting-item-description a:hover {
+  color: var(--ink-accent-hover) !important;
+  text-decoration: underline !important;
+}
+
+.theme-dark
+  .modal.mod-settings
+  :is(
+    input:not([type="range"]),
+    textarea,
+    select,
+    .dropdown,
+    .search-input-container
+  ) {
+  min-height: 34px !important;
+  border: 1px solid var(--ink-settings-border-muted) !important;
+  border-radius: var(--ink-settings-radius) !important;
+  background: var(--ink-terminal-black) !important;
+  color: var(--ink-terminal-text) !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  line-height: 22px !important;
+}
+
+.theme-dark
+  .modal.mod-settings
+  :is(
+    input:not([type="range"]),
+    textarea,
+    select,
+    .dropdown,
+    .search-input-container
+  ):focus-within,
+.theme-dark .modal.mod-settings :is(input, textarea, select):focus {
+  border-color: var(--ink-settings-border) !important;
+  box-shadow: none !important;
+}
+
+.theme-dark .modal.mod-settings button {
+  min-height: 34px !important;
+  border: 1px solid var(--ink-settings-border-muted) !important;
+  border-radius: var(--ink-settings-radius) !important;
+  background: var(--ink-terminal-surface-1) !important;
+  color: var(--ink-terminal-text) !important;
+  padding: 4px 14px !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  line-height: 22px !important;
+  box-shadow: none !important;
+}
+
+.theme-dark .modal.mod-settings button:hover {
+  border-color: var(--ink-settings-border) !important;
+  background: var(--ink-settings-selected) !important;
+  color: var(--ink-terminal-black) !important;
+}
+
+.theme-dark .modal.mod-settings button.mod-cta {
+  border-color: var(--ink-settings-selected) !important;
+  background: var(--ink-settings-selected) !important;
+  color: var(--ink-terminal-black) !important;
+}
+
+.theme-dark .modal.mod-settings .checkbox-container {
+  border: 1px solid var(--ink-settings-border-muted) !important;
+  border-radius: 999px !important;
+  background: var(--ink-terminal-surface-1) !important;
+  box-shadow: none !important;
+}
+
+.theme-dark .modal.mod-settings .checkbox-container.is-enabled {
+  border-color: var(--ink-terminal-green) !important;
+  background: var(--ink-terminal-green) !important;
+}
+
+.theme-dark .modal.mod-settings .checkbox-container::after {
+  background: var(--ink-terminal-text) !important;
+  box-shadow: none !important;
+}
+
+.theme-dark .modal.mod-settings .slider {
+  background: var(--ink-settings-border-muted) !important;
+}
+
+.theme-dark .modal.mod-settings .slider::-webkit-slider-thumb {
+  border: 1px solid var(--ink-settings-border) !important;
+  background: var(--ink-terminal-text) !important;
+  box-shadow: none !important;
+}

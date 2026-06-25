@@ -1,0 +1,15 @@
+{
+  "showLineNumber": true,
+  "vimMode": true,
+  "showInlineTitle": false,
+  "readableLineLength": false,
+  "tabSize": 2,
+  "defaultViewMode": "preview",
+  "livePreview": true,
+  "alwaysUpdateLinks": true,
+  "newFileLocation": "folder",
+  "newFileFolderPath": "notes",
+  "attachmentFolderPath": "_/attachments",
+  "propertiesInDocument": "hidden",
+  "useTab": false
+}

@@ -1,0 +1,197 @@
+/* Omnisearch: reuse the NeoVim cmdline treatment. */
+.theme-dark .omnisearch-modal.prompt {
+  position: fixed !important;
+  top: var(--ink-cmdline-top) !important;
+  left: 50% !important;
+  width: min(var(--ink-cmdline-width), calc(100vw - 48px)) !important;
+  max-width: min(var(--ink-cmdline-width), calc(100vw - 48px)) !important;
+  margin: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  padding: 18px 0 0 !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+  transform: translateX(-50%) !important;
+}
+
+.theme-dark .omnisearch-modal.prompt .omnisearch-input-container {
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  min-height: 42px !important;
+  border: 1px solid var(--ink-cmdline-border) !important;
+  border-radius: var(--ink-cmdline-radius) !important;
+  background: var(--ink-terminal-black) !important;
+  padding: 0 16px !important;
+  isolation: isolate !important;
+  z-index: 2 !important;
+  box-shadow: 0 0 0 var(--ink-cmdline-matte) var(--ink-terminal-black) !important;
+}
+
+.theme-dark .omnisearch-modal.prompt .omnisearch-input-container::before {
+  content: "Search";
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  background: var(--ink-terminal-black);
+  padding: 2px 12px;
+  transform: translateX(-50%);
+  color: var(--ink-terminal-text);
+  font-family: var(--ink-terminal-font);
+  font-size: var(--ink-cmdline-font-size);
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1;
+}
+
+.theme-dark .omnisearch-modal.prompt .omnisearch-input-container::after {
+  content: "\f002";
+  position: absolute;
+  left: var(--ink-cmdline-prompt-left);
+  top: 50%;
+  transform: translateY(-52%);
+  color: var(--ink-cmdline-accent);
+  font-family: var(--ink-terminal-font);
+  font-size: var(--ink-cmdline-font-size);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.theme-dark .omnisearch-modal.prompt .omnisearch-input-field {
+  flex: 1 1 auto !important;
+  width: 100% !important;
+}
+
+.theme-dark .omnisearch-modal.prompt .omnisearch-input-field .prompt-input {
+  height: var(--ink-cmdline-line-height) !important;
+  margin: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  padding: 0 0 0 var(--ink-cmdline-input-left) !important;
+  color: var(--ink-terminal-text) !important;
+  caret-color: var(--ink-cmdline-cursor) !important;
+  font-family: var(--ink-terminal-font) !important;
+  font-size: var(--ink-cmdline-font-size) !important;
+  font-weight: 400 !important;
+  line-height: var(--ink-cmdline-line-height) !important;
+}
+
+.theme-dark
+  .omnisearch-modal.prompt
+  .omnisearch-input-field
+  .prompt-input::placeholder {
+  color: transparent !important;
+  opacity: 0 !important;
+}
+
+.theme-dark .omnisearch-modal.prompt .omnisearch-input-container__buttons {
+  display: none !important;
+}
+
+.theme-dark .omnisearch-modal.prompt .prompt-results {
+  max-height: var(--ink-cmdline-results-height) !important;
+}
+
+.theme-dark
+  .omnisearch-modal.prompt:has(.prompt-input:placeholder-shown)
+  .prompt-results:not(:has(.suggestion-item)) {
+  display: none !important;
+}
+
+.theme-dark
+  .omnisearch-modal.prompt:has(.prompt-results:not(:has(.suggestion-item))):not(
+    :has(.prompt-input:placeholder-shown)
+  )
+  .prompt-input {
+  color: var(--ink-cmdline-error) !important;
+}
+
+.theme-dark .omnisearch-modal.prompt .suggestion-item {
+  min-height: 0 !important;
+  padding: 0 !important;
+}
+
+.theme-dark .omnisearch-modal.prompt .omnisearch-result {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  padding: 8px 16px !important;
+  color: var(--ink-terminal-muted-bright) !important;
+  font-family: var(--ink-terminal-font) !important;
+  font-size: var(--ink-cmdline-font-size) !important;
+  font-weight: 500 !important;
+  line-height: var(--ink-cmdline-line-height) !important;
+}
+
+.theme-dark .omnisearch-modal.prompt .omnisearch-result__title {
+  color: var(--ink-terminal-text) !important;
+  font-size: var(--ink-cmdline-font-size) !important;
+  font-weight: 500 !important;
+  line-height: var(--ink-cmdline-line-height) !important;
+}
+
+.theme-dark
+  .omnisearch-modal.prompt
+  :is(
+    .omnisearch-result__folder-path,
+    .omnisearch-result__extension,
+    .omnisearch-result__counter,
+    .omnisearch-result__body
+  ) {
+  color: var(--ink-terminal-muted-bright) !important;
+  font-size: var(--ink-cmdline-font-size) !important;
+  line-height: var(--ink-cmdline-line-height) !important;
+}
+
+.theme-dark
+  .omnisearch-modal.prompt
+  :is(.omnisearch-highlight, .omnisearch-default-highlight) {
+  color: var(--ink-cmdline-accent) !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+}
+
+.theme-dark
+  .omnisearch-modal.prompt
+  .suggestion-item.is-selected
+  .omnisearch-result,
+.theme-dark
+  .omnisearch-modal.prompt
+  .suggestion-item.is-highlighted
+  .omnisearch-result {
+  color: var(--ink-terminal-black) !important;
+}
+
+.theme-dark
+  .omnisearch-modal.prompt
+  .suggestion-item.is-selected
+  .omnisearch-result
+  *,
+.theme-dark
+  .omnisearch-modal.prompt
+  .suggestion-item.is-highlighted
+  .omnisearch-result
+  * {
+  color: var(--ink-terminal-black) !important;
+}
+
+.theme-dark
+  .omnisearch-modal.prompt
+  .suggestion-item.is-selected
+  :is(.omnisearch-highlight, .omnisearch-default-highlight),
+.theme-dark
+  .omnisearch-modal.prompt
+  .suggestion-item.is-highlighted
+  :is(.omnisearch-highlight, .omnisearch-default-highlight) {
+  color: var(--ink-cmdline-accent-selected) !important;
+  font-weight: 700 !important;
+  text-decoration: underline !important;
+  text-decoration-color: var(--ink-cmdline-accent-selected-rule) !important;
+  text-decoration-thickness: 2px !important;
+  text-underline-offset: 0.12em !important;
+}
+
+.theme-dark .omnisearch-modal.prompt .prompt-instructions {
+  display: none !important;
+}

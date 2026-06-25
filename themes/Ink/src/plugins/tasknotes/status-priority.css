@@ -1,0 +1,1029 @@
+/* TaskNotes statuses/priorities: ported from Logseq Awesome Content task markers. */
+.theme-dark
+  :is(
+    .tasknotes-plugin,
+    .modal.mod-tasknotes,
+    .tasknotes-plugin.minimalist-task-modal
+  ) {
+  --awCo-red: #d3455b;
+  --awCo-orange: #f09000;
+  --awCo-yellow-dark: #e6af19;
+  --awCo-yellow: #f9d86c;
+  --awCo-green: #27ae9e;
+  --awCo-blue: #2c89d9;
+  --awCo-purple: #9c739c;
+  --awCo-cherry: #c8896a;
+  --awCo-marker-waiting: var(--awCo-marker-waiting-user, var(--awCo-cherry));
+  --awCo-marker-later: var(--awCo-marker-later-user, var(--awCo-orange));
+  --awCo-marker-todo: var(--awCo-marker-todo-user, var(--awCo-red));
+  --awCo-marker-now-doing: var(--awCo-marker-now-doing-user, var(--awCo-blue));
+  --awCo-marker-done: var(--awCo-marker-done-user, var(--awCo-green));
+  --awCo-priority-a: var(--awCo-priority-a-user, var(--awCo-red));
+  --awCo-priority-b: var(--awCo-priority-b-user, var(--awCo-orange));
+  --awCo-priority-c: var(--awCo-priority-c-user, var(--awCo-yellow-dark));
+  --ink-task-status-inbox: var(
+    --status-inbox-color,
+    var(--ink-terminal-muted-bright)
+  );
+  --ink-task-status-backlog: var(
+    --status-backlog-color,
+    var(--ink-task-status-inbox)
+  );
+  --ink-task-status-waiting: var(--awCo-marker-waiting);
+  --ink-task-status-later: var(--awCo-marker-later);
+  --ink-task-status-todo: var(--status-todo-color, var(--awCo-marker-todo));
+  --ink-task-status-doing: var(
+    --status-doing-color,
+    var(--awCo-marker-now-doing)
+  );
+  --ink-task-status-done: var(--status-done-color, var(--awCo-marker-done));
+  --ink-task-priority-a: var(--awCo-priority-a);
+  --ink-task-priority-b: var(--awCo-priority-b);
+  --ink-task-priority-c: var(--awCo-priority-c);
+  --ink-task-priority-up-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24'%3e%3cpath stroke='none' d='M0 0h24v24H0z'/%3e%3cpath d='M3 12a9 9 0 1 0 18 0 9 9 0 1 0-18 0M12 8l-4 4M12 8v8M16 12l-4-4'/%3e%3c/svg%3e");
+  --ink-task-priority-normal-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24'%3e%3cpath stroke='none' d='M0 0h24v24H0z'/%3e%3cpath d='M11 12a1 1 0 1 0 2 0 1 1 0 1 0-2 0'/%3e%3cpath d='M3 12a9 9 0 1 0 18 0 9 9 0 1 0-18 0'/%3e%3c/svg%3e");
+  --ink-task-priority-down-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24'%3e%3cpath stroke='none' d='M0 0h24v24H0z'/%3e%3cpath d='M3 12a9 9 0 1 0 18 0 9 9 0 1 0-18 0M8 12l4 4M12 8v8M16 12l-4 4'/%3e%3c/svg%3e");
+  --ink-task-priority-icon: var(--ink-task-priority-normal-icon);
+  --ink-task-doing-glyph-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3e%3cpath d='M4 13c2.2-5 5.8-5 8 0s5.8 5 8 0' stroke='%23000000' stroke-width='4.4' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e");
+  --ink-task-marker-checkbox-size: 0.82em;
+  --ink-task-marker-priority-size: 1.05em;
+  --ink-task-done-glyph-size: 0.82;
+  --ink-task-marker-y: 0;
+  --ink-task-priority-y: 0;
+  --priority-none-color: var(--ink-terminal-muted);
+  --priority-a-color: var(--ink-task-priority-a);
+  --priority-high-color: var(--ink-task-priority-a);
+  --priority-b-color: var(--ink-task-priority-b);
+  --priority-medium-color: var(--ink-task-priority-b);
+  --priority-normal-color: var(--ink-task-priority-b);
+  --priority-c-color: var(--ink-task-priority-c);
+  --priority-low-color: var(--ink-task-priority-c);
+  --tn-status-none-color: var(--status-none-color, var(--ink-task-status-inbox));
+  --tn-status-inbox-color: var(--ink-task-status-inbox);
+  --tn-status-backlog-color: var(
+    --status-backlog-color,
+    var(--ink-task-status-inbox)
+  );
+  --tn-status-waiting-color: var(
+    --status-waiting-color,
+    var(--ink-task-status-waiting)
+  );
+  --tn-status-later-color: var(
+    --status-later-color,
+    var(--ink-task-status-later)
+  );
+  --tn-status-todo-color: var(--status-todo-color, var(--ink-task-status-todo));
+  --tn-status-open-color: var(--status-open-color, var(--ink-task-status-todo));
+  --tn-status-now-color: var(--status-now-color, var(--ink-task-status-doing));
+  --tn-status-doing-color: var(
+    --status-doing-color,
+    var(--ink-task-status-doing)
+  );
+  --tn-status-in-progress-color: var(
+    --status-in-progress-color,
+    var(--ink-task-status-doing)
+  );
+  --tn-status-done-color: var(--status-done-color, var(--ink-task-status-done));
+  --tn-priority-a-color: var(--priority-a-color);
+  --tn-priority-high-color: var(--priority-high-color);
+  --tn-priority-b-color: var(--priority-b-color);
+  --tn-priority-medium-color: var(--priority-medium-color);
+  --tn-priority-normal-color: var(--priority-normal-color);
+  --tn-priority-c-color: var(--priority-c-color);
+  --tn-priority-low-color: var(--priority-low-color);
+  --tn-color-status-fallback: var(--ink-task-status-inbox);
+  --tn-color-priority-fallback: var(--ink-task-priority-b);
+}
+
+.theme-dark
+  :is(
+    .tasknotes-plugin[data-status="none"],
+    .tasknotes-plugin[data-status="inbox"],
+    .tasknotes-plugin[data-status="backlog"],
+    .tasknotes-plugin .task-card[data-status="none"],
+    .tasknotes-plugin .task-card[data-status="inbox"],
+    .tasknotes-plugin .task-card[data-status="backlog"],
+    .tasknotes-plugin .task-inline-preview[data-status="none"],
+    .tasknotes-plugin .task-inline-preview[data-status="inbox"],
+    .tasknotes-plugin .task-inline-preview[data-status="backlog"],
+    .tasknotes-plugin .fc-list-task-card[data-status="none"],
+    .tasknotes-plugin .fc-list-task-card[data-status="inbox"],
+    .tasknotes-plugin .fc-list-task-card[data-status="backlog"]
+  ) {
+  --status-color: var(--status-inbox-color, var(--ink-task-status-inbox));
+}
+
+.theme-dark
+  :is(
+    .tasknotes-plugin[data-status="waiting"],
+    .tasknotes-plugin .task-card[data-status="waiting"],
+    .tasknotes-plugin .task-inline-preview[data-status="waiting"],
+    .tasknotes-plugin .fc-list-task-card[data-status="waiting"]
+  ) {
+  --status-color: var(--status-waiting-color, var(--ink-task-status-waiting));
+}
+
+.theme-dark
+  :is(
+    .tasknotes-plugin[data-status="later"],
+    .tasknotes-plugin .task-card[data-status="later"],
+    .tasknotes-plugin .task-inline-preview[data-status="later"],
+    .tasknotes-plugin .fc-list-task-card[data-status="later"]
+  ) {
+  --status-color: var(--status-later-color, var(--ink-task-status-later));
+}
+
+.theme-dark
+  :is(
+    .tasknotes-plugin[data-status="todo"],
+    .tasknotes-plugin[data-status="open"],
+    .tasknotes-plugin .task-card[data-status="todo"],
+    .tasknotes-plugin .task-card[data-status="open"],
+    .tasknotes-plugin .task-inline-preview[data-status="todo"],
+    .tasknotes-plugin .task-inline-preview[data-status="open"],
+    .tasknotes-plugin .fc-list-task-card[data-status="todo"],
+    .tasknotes-plugin .fc-list-task-card[data-status="open"]
+  ) {
+  --status-color: var(--status-todo-color, var(--ink-task-status-todo));
+}
+
+.theme-dark
+  :is(
+    .tasknotes-plugin[data-status="now"],
+    .tasknotes-plugin[data-status="doing"],
+    .tasknotes-plugin[data-status="in-progress"],
+    .tasknotes-plugin .task-card[data-status="now"],
+    .tasknotes-plugin .task-card[data-status="doing"],
+    .tasknotes-plugin .task-card[data-status="in-progress"],
+    .tasknotes-plugin .task-inline-preview[data-status="now"],
+    .tasknotes-plugin .task-inline-preview[data-status="doing"],
+    .tasknotes-plugin .task-inline-preview[data-status="in-progress"],
+    .tasknotes-plugin .fc-list-task-card[data-status="now"],
+    .tasknotes-plugin .fc-list-task-card[data-status="doing"],
+    .tasknotes-plugin .fc-list-task-card[data-status="in-progress"]
+  ) {
+  --status-color: var(--status-doing-color, var(--ink-task-status-doing));
+}
+
+.theme-dark
+  :is(
+    .tasknotes-plugin[data-status="done"],
+    .tasknotes-plugin[data-status="completed"],
+    .tasknotes-plugin .task-card[data-status="done"],
+    .tasknotes-plugin .task-card[data-status="completed"],
+    .tasknotes-plugin .task-card--completed,
+    .tasknotes-plugin .task-inline-preview[data-status="done"],
+    .tasknotes-plugin .task-inline-preview[data-status="completed"],
+    .tasknotes-plugin .task-inline-preview--completed,
+    .tasknotes-plugin .fc-list-task-card[data-status="done"],
+    .tasknotes-plugin .fc-list-task-card[data-status="completed"]
+  ) {
+  --status-color: var(--status-done-color, var(--ink-task-status-done));
+}
+
+.theme-dark
+  :is(
+    .tasknotes-plugin[data-priority="none"],
+    .tasknotes-plugin .task-card[data-priority="none"],
+    .tasknotes-plugin .task-inline-preview[data-priority="none"],
+    .tasknotes-plugin .fc-list-task-card[data-priority="none"]
+  ) {
+  --current-priority-color: var(--ink-terminal-muted) !important;
+  --priority-color: var(--ink-terminal-muted) !important;
+}
+
+.theme-dark
+  :is(
+    .tasknotes-plugin[data-priority="a"],
+    .tasknotes-plugin[data-priority="A"],
+    .tasknotes-plugin[data-priority="high"],
+    .tasknotes-plugin .task-card[data-priority="a"],
+    .tasknotes-plugin .task-card[data-priority="A"],
+    .tasknotes-plugin .task-card[data-priority="high"],
+    .tasknotes-plugin .task-card--priority-high,
+    .tasknotes-plugin .task-inline-preview[data-priority="a"],
+    .tasknotes-plugin .task-inline-preview[data-priority="A"],
+    .tasknotes-plugin .task-inline-preview[data-priority="high"],
+    .tasknotes-plugin .task-inline-preview--priority-high,
+    .tasknotes-plugin .task-list-view__task-item--priority-high,
+    .tasknotes-plugin .fc-list-task-card[data-priority="a"],
+    .tasknotes-plugin .fc-list-task-card[data-priority="A"],
+    .tasknotes-plugin .fc-list-task-card[data-priority="high"]
+  ) {
+  --current-priority-color: var(--ink-task-priority-a) !important;
+  --priority-color: var(--ink-task-priority-a) !important;
+  --ink-task-priority-icon: var(--ink-task-priority-up-icon);
+}
+
+.theme-dark
+  :is(
+    .tasknotes-plugin[data-priority="b"],
+    .tasknotes-plugin[data-priority="B"],
+    .tasknotes-plugin[data-priority="medium"],
+    .tasknotes-plugin[data-priority="normal"],
+    .tasknotes-plugin .task-card[data-priority="b"],
+    .tasknotes-plugin .task-card[data-priority="B"],
+    .tasknotes-plugin .task-card[data-priority="medium"],
+    .tasknotes-plugin .task-card[data-priority="normal"],
+    .tasknotes-plugin .task-card--priority-medium,
+    .tasknotes-plugin .task-card--priority-normal,
+    .tasknotes-plugin .task-inline-preview[data-priority="b"],
+    .tasknotes-plugin .task-inline-preview[data-priority="B"],
+    .tasknotes-plugin .task-inline-preview[data-priority="medium"],
+    .tasknotes-plugin .task-inline-preview[data-priority="normal"],
+    .tasknotes-plugin .task-inline-preview--priority-medium,
+    .tasknotes-plugin .task-inline-preview--priority-normal,
+    .tasknotes-plugin .task-list-view__task-item--priority-normal,
+    .tasknotes-plugin .fc-list-task-card[data-priority="b"],
+    .tasknotes-plugin .fc-list-task-card[data-priority="B"],
+    .tasknotes-plugin .fc-list-task-card[data-priority="medium"],
+    .tasknotes-plugin .fc-list-task-card[data-priority="normal"]
+  ) {
+  --current-priority-color: var(--ink-task-priority-b) !important;
+  --priority-color: var(--ink-task-priority-b) !important;
+  --ink-task-priority-icon: var(--ink-task-priority-normal-icon);
+}
+
+.theme-dark
+  :is(
+    .tasknotes-plugin[data-priority="c"],
+    .tasknotes-plugin[data-priority="C"],
+    .tasknotes-plugin[data-priority="low"],
+    .tasknotes-plugin .task-card[data-priority="c"],
+    .tasknotes-plugin .task-card[data-priority="C"],
+    .tasknotes-plugin .task-card[data-priority="low"],
+    .tasknotes-plugin .task-card--priority-low,
+    .tasknotes-plugin .task-inline-preview[data-priority="c"],
+    .tasknotes-plugin .task-inline-preview[data-priority="C"],
+    .tasknotes-plugin .task-inline-preview[data-priority="low"],
+    .tasknotes-plugin .task-inline-preview--priority-low,
+    .tasknotes-plugin .task-list-view__task-item--priority-low,
+    .tasknotes-plugin .fc-list-task-card[data-priority="c"],
+    .tasknotes-plugin .fc-list-task-card[data-priority="C"],
+    .tasknotes-plugin .fc-list-task-card[data-priority="low"]
+  ) {
+  --current-priority-color: var(--ink-task-priority-c) !important;
+  --priority-color: var(--ink-task-priority-c) !important;
+  --ink-task-priority-icon: var(--ink-task-priority-down-icon);
+}
+
+.theme-dark
+  .tasknotes-plugin
+  :is(.task-inline-preview, .task-card, .fc-list-task-card) {
+  --ink-task-status-label: "INBOX";
+}
+
+.theme-dark
+  .tasknotes-plugin
+  :is(.task-inline-preview, .task-card, .fc-list-task-card)
+  :is(a, .internal-link, .external-link) {
+  color: var(--ink-accent) !important;
+  text-decoration: none !important;
+  border-bottom: 1px solid var(--ink-link-border);
+}
+
+.theme-dark
+  .tasknotes-plugin
+  :is(.task-inline-preview, .task-card, .fc-list-task-card)
+  :is(a, .internal-link, .external-link):hover {
+  color: var(--ink-accent-hover) !important;
+  border-bottom-color: var(--ink-link-border-hover);
+}
+
+.theme-dark
+  .tasknotes-plugin
+  :is(
+    .task-inline-preview[data-status="none"],
+    .task-inline-preview[data-status="inbox"],
+    .task-inline-preview[data-status="backlog"],
+    .task-card[data-status="none"],
+    .task-card[data-status="inbox"],
+    .task-card[data-status="backlog"],
+    .fc-list-task-card[data-status="none"],
+    .fc-list-task-card[data-status="inbox"],
+    .fc-list-task-card[data-status="backlog"]
+  ) {
+  --ink-task-status-label: "INBOX";
+}
+
+.theme-dark
+  .tasknotes-plugin
+  :is(
+    .task-inline-preview[data-status="waiting"],
+    .task-card[data-status="waiting"],
+    .fc-list-task-card[data-status="waiting"]
+  ) {
+  --ink-task-status-label: "WAITING";
+}
+
+.theme-dark
+  .tasknotes-plugin
+  :is(
+    .task-inline-preview[data-status="later"],
+    .task-card[data-status="later"],
+    .fc-list-task-card[data-status="later"]
+  ) {
+  --ink-task-status-label: "LATER";
+}
+
+.theme-dark
+  .tasknotes-plugin
+  :is(
+    .task-inline-preview[data-status="todo"],
+    .task-inline-preview[data-status="open"],
+    .task-card[data-status="todo"],
+    .task-card[data-status="open"],
+    .fc-list-task-card[data-status="todo"],
+    .fc-list-task-card[data-status="open"]
+  ) {
+  --ink-task-status-label: "TODO";
+}
+
+.theme-dark
+  .tasknotes-plugin
+  :is(
+    .task-inline-preview[data-status="now"],
+    .task-inline-preview[data-status="doing"],
+    .task-inline-preview[data-status="in-progress"],
+    .task-card[data-status="now"],
+    .task-card[data-status="doing"],
+    .task-card[data-status="in-progress"],
+    .fc-list-task-card[data-status="now"],
+    .fc-list-task-card[data-status="doing"],
+    .fc-list-task-card[data-status="in-progress"]
+  ) {
+  --ink-task-status-label: "DOING";
+}
+
+.theme-dark
+  .tasknotes-plugin
+  :is(
+    .task-inline-preview[data-status="done"],
+    .task-inline-preview[data-status="completed"],
+    .task-inline-preview--completed,
+    .task-card[data-status="done"],
+    .task-card[data-status="completed"],
+    .task-card--completed,
+    .fc-list-task-card[data-status="done"],
+    .fc-list-task-card[data-status="completed"]
+  ) {
+  --ink-task-status-label: "DONE";
+}
+
+.theme-dark
+  .tasknotes-plugin
+  :is(
+    .task-card[data-status] > .task-card__main-row .task-card__status-dot,
+    .task-inline-preview__status-dot,
+    .fc-list-task-status-dot
+  ) {
+  --ink-task-current-status: var(
+    --current-status-color,
+    var(--status-color, var(--ink-task-status-todo))
+  );
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 0 !important;
+  width: auto !important;
+  min-width: 0 !important;
+  height: auto !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  opacity: 1 !important;
+  transform: none !important;
+  vertical-align: middle !important;
+  line-height: 1 !important;
+}
+
+.theme-dark
+  .tasknotes-plugin
+  :is(
+    .task-card[data-status] > .task-card__main-row .task-card__status-dot,
+    .task-inline-preview__status-dot,
+    .fc-list-task-status-dot
+  )::before {
+  content: "";
+  position: static;
+  display: inline-block;
+  width: var(--ink-task-marker-checkbox-size) !important;
+  height: var(--ink-task-marker-checkbox-size) !important;
+  margin-right: 0.2em !important;
+  border: 2px solid var(--ink-terminal-black) !important;
+  border-radius: 5px;
+  background-color: var(--ink-task-current-status) !important;
+  opacity: 0.4;
+}
+
+.theme-dark
+  .tasknotes-plugin
+  :is(
+    .task-card[data-status] > .task-card__main-row .task-card__status-dot,
+    .task-inline-preview__status-dot,
+    .fc-list-task-status-dot
+  )::after {
+  content: var(--ink-task-status-label);
+  position: static;
+  display: inline-block;
+  margin: 0 0.6em 0 0 !important;
+  padding: 2px 3px 1px 3px;
+  border: 1px solid currentColor;
+  border-radius: 4px;
+  background: var(--ink-terminal-black);
+  color: var(--ink-task-current-status);
+  font-family: var(--ink-terminal-font);
+  font-size: 70% !important;
+  font-weight: 600;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.theme-dark
+  .tasknotes-plugin
+  :is(
+    .task-card__status-dot,
+    .task-inline-preview__status-dot,
+    .fc-list-task-status-dot
+  )
+  > :is(svg, .svg-icon) {
+  display: none !important;
+}
+
+.theme-dark
+  .tasknotes-plugin
+  :is(
+    .task-card[data-status="done"] > .task-card__main-row .task-card__status-dot,
+    .task-card[data-status="completed"]
+      > .task-card__main-row
+      .task-card__status-dot,
+    .task-card--completed > .task-card__main-row .task-card__status-dot,
+    .task-inline-preview[data-status="done"] .task-inline-preview__status-dot,
+    .task-inline-preview[data-status="completed"]
+      .task-inline-preview__status-dot,
+    .task-inline-preview--completed .task-inline-preview__status-dot,
+    .fc-list-task-card[data-status="done"] .fc-list-task-status-dot,
+    .fc-list-task-card[data-status="completed"] .fc-list-task-status-dot
+  ) {
+  background: transparent !important;
+  border: 0 !important;
+  color: var(--ink-terminal-black) !important;
+  box-shadow: none !important;
+}
+
+.theme-dark
+  .tasknotes-plugin
+  :is(
+    .task-card[data-status="done"] > .task-card__main-row .task-card__status-dot,
+    .task-card[data-status="completed"]
+      > .task-card__main-row
+      .task-card__status-dot,
+    .task-card--completed > .task-card__main-row .task-card__status-dot,
+    .task-inline-preview[data-status="done"] .task-inline-preview__status-dot,
+    .task-inline-preview[data-status="completed"]
+      .task-inline-preview__status-dot,
+    .task-inline-preview--completed .task-inline-preview__status-dot,
+    .fc-list-task-card[data-status="done"] .fc-list-task-status-dot,
+    .fc-list-task-card[data-status="completed"] .fc-list-task-status-dot
+  )::before {
+  content: "✓";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(
+    var(--ink-task-marker-checkbox-size) / var(--ink-task-done-glyph-size)
+  ) !important;
+  height: calc(
+    var(--ink-task-marker-checkbox-size) / var(--ink-task-done-glyph-size)
+  ) !important;
+  color: var(--ink-terminal-black);
+  background-color: var(
+    --current-status-color,
+    var(--status-color, var(--ink-task-status-done))
+  ) !important;
+  opacity: 0.72;
+  font-size: calc(var(--ink-task-done-glyph-size) * 1em);
+  font-weight: 900;
+  line-height: 1;
+}
+
+.theme-dark
+  .tasknotes-plugin
+  :is(
+    .task-card[data-status="now"] > .task-card__main-row .task-card__status-dot,
+    .task-card[data-status="doing"]
+      > .task-card__main-row
+      .task-card__status-dot,
+    .task-card[data-status="in-progress"]
+      > .task-card__main-row
+      .task-card__status-dot,
+    .task-inline-preview[data-status="now"] .task-inline-preview__status-dot,
+    .task-inline-preview[data-status="doing"] .task-inline-preview__status-dot,
+    .task-inline-preview[data-status="in-progress"]
+      .task-inline-preview__status-dot,
+    .fc-list-task-card[data-status="now"] .fc-list-task-status-dot,
+    .fc-list-task-card[data-status="doing"] .fc-list-task-status-dot,
+    .fc-list-task-card[data-status="in-progress"] .fc-list-task-status-dot
+  )::before {
+  content: "";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--ink-task-marker-checkbox-size) !important;
+  height: var(--ink-task-marker-checkbox-size) !important;
+  color: var(--ink-terminal-black);
+  background-color: var(
+    --current-status-color,
+    var(--status-color, var(--ink-task-status-doing))
+  ) !important;
+  background-image: var(--ink-task-doing-glyph-icon);
+  background-position: 50% 52%;
+  background-repeat: no-repeat;
+  background-size: 72% 72%;
+  opacity: 0.72;
+  line-height: 1;
+}
+
+.theme-dark
+  .tasknotes-plugin
+  :is(
+    .task-card[data-status="done"] > .task-card__main-row .task-card__status-dot,
+    .task-card[data-status="completed"]
+      > .task-card__main-row
+      .task-card__status-dot,
+    .task-card--completed > .task-card__main-row .task-card__status-dot,
+    .task-inline-preview[data-status="done"] .task-inline-preview__status-dot,
+    .task-inline-preview[data-status="completed"]
+      .task-inline-preview__status-dot,
+    .task-inline-preview--completed .task-inline-preview__status-dot,
+    .fc-list-task-card[data-status="done"] .fc-list-task-status-dot,
+    .fc-list-task-card[data-status="completed"] .fc-list-task-status-dot
+  )::after {
+  text-decoration: line-through;
+}
+
+.theme-dark
+  .tasknotes-plugin
+  :is(
+    .task-card__status-dot--icon svg,
+    .task-card--completed
+      > .task-card__main-row
+      .task-card__status-dot--icon
+      svg
+  ) {
+  color: var(
+    --current-status-color,
+    var(--status-color, var(--ink-task-status-todo))
+  ) !important;
+  stroke: currentColor !important;
+}
+
+.theme-dark
+  .tasknotes-plugin
+  :is(
+    .task-card[data-priority] > .task-card__main-row .task-card__priority-dot,
+    .task-inline-preview__priority-dot,
+    .fc-list-task-priority-dot
+  ) {
+  --ink-task-current-priority: var(
+    --current-priority-color,
+    var(--priority-color, var(--ink-task-priority-b))
+  );
+  position: static !important;
+  display: inline-block !important;
+  width: var(--ink-task-marker-priority-size) !important;
+  height: var(--ink-task-marker-priority-size) !important;
+  min-width: var(--ink-task-marker-priority-size) !important;
+  min-height: var(--ink-task-marker-priority-size) !important;
+  margin: 0 0.34em 0 -0.1em !important;
+  border: 0 !important;
+  border-radius: 100% !important;
+  background-color: var(--ink-task-current-priority) !important;
+  box-shadow: none !important;
+  font-size: 1em !important;
+  transform: translateY(-0.04em) !important;
+  vertical-align: middle !important;
+  -webkit-mask: var(--ink-task-priority-icon) no-repeat 50% 50%;
+  mask: var(--ink-task-priority-icon) no-repeat 50% 50%;
+}
+
+.theme-dark
+  .tasknotes-plugin
+  :is(
+    .task-card__priority-dot,
+    .task-inline-preview__priority-dot,
+    .fc-list-task-priority-dot
+  )
+  > :is(svg, .svg-icon) {
+  display: none !important;
+}
+
+.theme-dark
+  .tasknotes-plugin
+  :is(
+    .task-inline-preview[data-priority="none"] .task-inline-preview__priority-dot,
+    .task-card[data-priority="none"]
+      > .task-card__main-row
+      .task-card__priority-dot,
+    .fc-list-task-card[data-priority="none"] .fc-list-task-priority-dot
+  ) {
+  display: none !important;
+}
+
+.theme-dark .tasknotes-plugin :is(.task-card__priority-dot--icon svg) {
+  color: var(
+    --current-priority-color,
+    var(--priority-color, var(--ink-task-priority-b))
+  ) !important;
+  stroke: currentColor !important;
+}
+
+.theme-dark
+  .tasknotes-plugin
+  :is(.task-card__metadata-pill, .task-selector-create-footer__chip) {
+  border: 1px solid var(--ink-terminal-border) !important;
+  border-radius: var(--ink-cmdline-radius) !important;
+  background: var(--ink-terminal-black) !important;
+  color: var(--ink-terminal-muted-bright) !important;
+  font-family: var(--ink-terminal-font) !important;
+}
+
+.theme-dark .tasknotes-plugin .task-selector-create-footer__chip--status {
+  --ink-task-footer-status-color: var(
+    --current-status-color,
+    var(--status-color, var(--ink-task-status-inbox))
+  );
+  border-color: color-mix(
+    in srgb,
+    var(--ink-task-footer-status-color) 55%,
+    var(--ink-terminal-border)
+  ) !important;
+  background: color-mix(
+    in srgb,
+    var(--ink-task-footer-status-color) 14%,
+    var(--ink-terminal-black)
+  ) !important;
+  color: var(--ink-task-footer-status-color) !important;
+}
+
+.theme-dark .tasknotes-plugin .task-selector-create-footer__chip--priority {
+  border-color: color-mix(
+    in srgb,
+    var(--ink-task-priority-b) 55%,
+    var(--ink-terminal-border)
+  ) !important;
+  background: color-mix(
+    in srgb,
+    var(--ink-task-priority-b) 14%,
+    var(--ink-terminal-black)
+  ) !important;
+  color: var(--ink-task-priority-b) !important;
+}
+
+.theme-dark
+  .tasknotes-plugin
+  :is(
+    .task-list-view__task-item--priority-high,
+    .task-list-view__task-item--priority-normal,
+    .task-list-view__task-item--priority-low
+  ) {
+  border-left-color: var(
+    --current-priority-color,
+    var(--priority-color, var(--ink-task-priority-b))
+  ) !important;
+}
+
+.theme-dark .tasknotes-plugin .task-inline-preview {
+  gap: 0 !important;
+  margin-left: 1ch !important;
+  padding: 0 !important;
+  background: transparent !important;
+  color: var(--ink-terminal-text) !important;
+}
+
+.theme-dark .tasknotes-plugin .task-inline-preview:hover {
+  background: transparent !important;
+}
+
+.theme-dark
+  .tasknotes-plugin
+  :is(
+    .task-inline-preview .task-inline-preview__date,
+    .task-inline-preview .task-inline-preview__date-icon,
+    .task-card--layout-inline .task-card__metadata,
+    .task-card--layout-compact .task-card__metadata
+  ) {
+  display: none !important;
+}
+
+.theme-dark
+  .tasknotes-plugin
+  :is(
+    .task-inline-preview__title,
+    .task-card--layout-inline .task-card__title,
+    .task-card--layout-inline .task-card__title-text
+  ) {
+  color: var(--ink-terminal-text) !important;
+  font-weight: 400 !important;
+}
+
+.theme-dark
+  .tasknotes-plugin
+  .task-inline-preview--completed
+  .task-inline-preview__title {
+  text-decoration: line-through !important;
+  color: var(--ink-terminal-muted-bright) !important;
+  opacity: 0.82 !important;
+}
+
+.theme-dark
+  .menu:has(
+    .menu-item-icon:is(
+      [style*="#ff0000"],
+      [style*="rgb(255, 0, 0)"],
+      [style*="#ffaa00"],
+      [style*="rgb(255, 170, 0)"],
+      [style*="#00aa00"],
+      [style*="rgb(0, 170, 0)"]
+    )
+  ) {
+  --ink-task-menu-priority-none: var(--ink-terminal-muted-bright);
+  --ink-task-menu-priority-a: #d3455b;
+  --ink-task-menu-priority-b: #f09000;
+  --ink-task-menu-priority-c: #e6af19;
+  --ink-task-menu-priority-up-icon: var(
+    --ink-task-priority-up-icon,
+    url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24'%3e%3cpath stroke='none' d='M0 0h24v24H0z'/%3e%3cpath d='M3 12a9 9 0 1 0 18 0 9 9 0 1 0-18 0M12 8l-4 4M12 8v8M16 12l-4-4'/%3e%3c/svg%3e")
+  );
+  --ink-task-menu-priority-normal-icon: var(
+    --ink-task-priority-normal-icon,
+    url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24'%3e%3cpath stroke='none' d='M0 0h24v24H0z'/%3e%3cpath d='M11 12a1 1 0 1 0 2 0 1 1 0 1 0-2 0'/%3e%3cpath d='M3 12a9 9 0 1 0 18 0 9 9 0 1 0-18 0'/%3e%3c/svg%3e")
+  );
+  --ink-task-menu-priority-down-icon: var(
+    --ink-task-priority-down-icon,
+    url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24'%3e%3cpath stroke='none' d='M0 0h24v24H0z'/%3e%3cpath d='M3 12a9 9 0 1 0 18 0 9 9 0 1 0-18 0M8 12l4 4M12 8v8M16 12l-4 4'/%3e%3c/svg%3e")
+  );
+  border: 1px solid var(--ink-cmdline-border) !important;
+  border-radius: var(--ink-cmdline-radius) !important;
+  background: var(--ink-terminal-black) !important;
+  padding: 4px !important;
+  box-shadow: 0 0 0 6px var(--ink-terminal-black) !important;
+  color: var(--ink-terminal-text) !important;
+  font-family: var(--ink-terminal-font) !important;
+}
+
+.theme-dark
+  .menu:has(
+    .menu-item-icon:is(
+      [style*="#ff0000"],
+      [style*="rgb(255, 0, 0)"],
+      [style*="#ffaa00"],
+      [style*="rgb(255, 170, 0)"],
+      [style*="#00aa00"],
+      [style*="rgb(0, 170, 0)"]
+    )
+  )
+  .menu-item {
+  min-height: 28px !important;
+  border-radius: calc(var(--ink-cmdline-radius) - 1px) !important;
+  color: var(--ink-terminal-text) !important;
+  font-size: var(--ink-cmdline-font-size) !important;
+  line-height: var(--ink-cmdline-line-height) !important;
+}
+
+.theme-dark
+  .menu:has(
+    .menu-item-icon:is(
+      [style*="#ff0000"],
+      [style*="rgb(255, 0, 0)"],
+      [style*="#ffaa00"],
+      [style*="rgb(255, 170, 0)"],
+      [style*="#00aa00"],
+      [style*="rgb(0, 170, 0)"]
+    )
+  )
+  .menu-item:is(:hover, .is-selected, .selected) {
+  background: var(--ink-cmdline-selection) !important;
+  color: var(--ink-terminal-black) !important;
+}
+
+.theme-dark
+  .menu:has(
+    .menu-item-icon:is(
+      [style*="#ff0000"],
+      [style*="rgb(255, 0, 0)"],
+      [style*="#ffaa00"],
+      [style*="rgb(255, 170, 0)"],
+      [style*="#00aa00"],
+      [style*="rgb(0, 170, 0)"]
+    )
+  )
+  .menu-item-title {
+  color: inherit !important;
+  font-family: var(--ink-terminal-font) !important;
+  font-weight: 600 !important;
+}
+
+.theme-dark
+  .menu:has(
+    .menu-item-icon:is(
+      [style*="#ff0000"],
+      [style*="rgb(255, 0, 0)"],
+      [style*="#ffaa00"],
+      [style*="rgb(255, 170, 0)"],
+      [style*="#00aa00"],
+      [style*="rgb(0, 170, 0)"]
+    )
+  )
+  .menu-item-icon {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 1.35em !important;
+  min-width: 1.35em !important;
+  height: 1.35em !important;
+  margin-right: 0.45em !important;
+}
+
+.theme-dark
+  .menu:has(
+    .menu-item-icon:is(
+      [style*="#ff0000"],
+      [style*="rgb(255, 0, 0)"],
+      [style*="#ffaa00"],
+      [style*="rgb(255, 170, 0)"],
+      [style*="#00aa00"],
+      [style*="rgb(0, 170, 0)"],
+      [style*="#cccccc"],
+      [style*="rgb(204, 204, 204)"]
+    )
+  )
+  .menu-item-icon:is(
+    [style*="#ff0000"],
+    [style*="rgb(255, 0, 0)"],
+    [style*="#ffaa00"],
+    [style*="rgb(255, 170, 0)"],
+    [style*="#00aa00"],
+    [style*="rgb(0, 170, 0)"],
+    [style*="#cccccc"],
+    [style*="rgb(204, 204, 204)"]
+  ) {
+  --ink-task-menu-priority-icon: var(--ink-task-menu-priority-normal-icon);
+  position: relative !important;
+  color: var(--ink-task-menu-priority-none) !important;
+}
+
+.theme-dark
+  .menu:has(
+    .menu-item-icon:is(
+      [style*="#ff0000"],
+      [style*="rgb(255, 0, 0)"],
+      [style*="#ffaa00"],
+      [style*="rgb(255, 170, 0)"],
+      [style*="#00aa00"],
+      [style*="rgb(0, 170, 0)"]
+    )
+  )
+  .menu-item-icon:is([style*="#ff0000"], [style*="rgb(255, 0, 0)"]) {
+  --ink-task-menu-priority-icon: var(--ink-task-menu-priority-up-icon);
+  color: var(--ink-task-menu-priority-a) !important;
+}
+
+.theme-dark
+  .menu:has(
+    .menu-item-icon:is(
+      [style*="#ff0000"],
+      [style*="rgb(255, 0, 0)"],
+      [style*="#ffaa00"],
+      [style*="rgb(255, 170, 0)"],
+      [style*="#00aa00"],
+      [style*="rgb(0, 170, 0)"]
+    )
+  )
+  .menu-item-icon:is([style*="#ffaa00"], [style*="rgb(255, 170, 0)"]) {
+  --ink-task-menu-priority-icon: var(--ink-task-menu-priority-normal-icon);
+  color: var(--ink-task-menu-priority-b) !important;
+}
+
+.theme-dark
+  .menu:has(
+    .menu-item-icon:is(
+      [style*="#ff0000"],
+      [style*="rgb(255, 0, 0)"],
+      [style*="#ffaa00"],
+      [style*="rgb(255, 170, 0)"],
+      [style*="#00aa00"],
+      [style*="rgb(0, 170, 0)"]
+    )
+  )
+  .menu-item-icon:is([style*="#00aa00"], [style*="rgb(0, 170, 0)"]) {
+  --ink-task-menu-priority-icon: var(--ink-task-menu-priority-down-icon);
+  color: var(--ink-task-menu-priority-c) !important;
+}
+
+.theme-dark
+  .menu:has(
+    .menu-item-icon:is(
+      [style*="#ff0000"],
+      [style*="rgb(255, 0, 0)"],
+      [style*="#ffaa00"],
+      [style*="rgb(255, 170, 0)"],
+      [style*="#00aa00"],
+      [style*="rgb(0, 170, 0)"]
+    )
+  )
+  .menu-item-icon:is([style*="#cccccc"], [style*="rgb(204, 204, 204)"]) {
+  --ink-task-menu-priority-icon: var(--ink-task-menu-priority-normal-icon);
+  color: var(--ink-task-menu-priority-none) !important;
+}
+
+.theme-dark
+  .menu:has(
+    .menu-item-icon:is(
+      [style*="#ff0000"],
+      [style*="rgb(255, 0, 0)"],
+      [style*="#ffaa00"],
+      [style*="rgb(255, 170, 0)"],
+      [style*="#00aa00"],
+      [style*="rgb(0, 170, 0)"]
+    )
+  )
+  .menu-item-icon:is(
+    [style*="#ff0000"],
+    [style*="rgb(255, 0, 0)"],
+    [style*="#ffaa00"],
+    [style*="rgb(255, 170, 0)"],
+    [style*="#00aa00"],
+    [style*="rgb(0, 170, 0)"],
+    [style*="#cccccc"],
+    [style*="rgb(204, 204, 204)"]
+  )
+  > svg {
+  display: none !important;
+}
+
+.theme-dark
+  .menu:has(
+    .menu-item-icon:is(
+      [style*="#ff0000"],
+      [style*="rgb(255, 0, 0)"],
+      [style*="#ffaa00"],
+      [style*="rgb(255, 170, 0)"],
+      [style*="#00aa00"],
+      [style*="rgb(0, 170, 0)"]
+    )
+  )
+  .menu-item-icon:is(
+    [style*="#ff0000"],
+    [style*="rgb(255, 0, 0)"],
+    [style*="#ffaa00"],
+    [style*="rgb(255, 170, 0)"],
+    [style*="#00aa00"],
+    [style*="rgb(0, 170, 0)"],
+    [style*="#cccccc"],
+    [style*="rgb(204, 204, 204)"]
+  )::before {
+  content: "";
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 1.05em;
+  height: 1.05em;
+  background: currentColor;
+  transform: translateY(-0.03em);
+  -webkit-mask: var(--ink-task-menu-priority-icon) no-repeat 50% 50% / contain;
+  mask: var(--ink-task-menu-priority-icon) no-repeat 50% 50% / contain;
+}
+
+.theme-dark
+  .menu:has(
+    .menu-item-icon:is(
+      [style*="#ff0000"],
+      [style*="rgb(255, 0, 0)"],
+      [style*="#ffaa00"],
+      [style*="rgb(255, 170, 0)"],
+      [style*="#00aa00"],
+      [style*="rgb(0, 170, 0)"]
+    )
+  )
+  .menu-item:is(:hover, .is-selected, .selected)
+  .menu-item-icon:is(
+    [style*="#ff0000"],
+    [style*="rgb(255, 0, 0)"],
+    [style*="#ffaa00"],
+    [style*="rgb(255, 170, 0)"],
+    [style*="#00aa00"],
+    [style*="rgb(0, 170, 0)"],
+    [style*="#cccccc"],
+    [style*="rgb(204, 204, 204)"]
+  )::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: -0.1em;
+  border-radius: 999px;
+  background: var(--ink-terminal-black);
+}

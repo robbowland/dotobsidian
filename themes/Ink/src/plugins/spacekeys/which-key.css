@@ -1,0 +1,272 @@
+.spacekeys-modal-container {
+	--spacekeys-whichkey-bg: var(--ink-palette-black);
+	--spacekeys-whichkey-border: var(--ink-palette-white);
+	--spacekeys-whichkey-key: var(--ink-palette-white);
+	--spacekeys-whichkey-arrow: var(--ink-palette-gray-bright);
+	--spacekeys-whichkey-command: var(--ink-palette-red);
+	--spacekeys-whichkey-group: var(--ink-palette-magenta-bright);
+	--spacekeys-whichkey-muted: var(--ink-palette-gray-bright);
+	--spacekeys-whichkey-hover: rgba(255, 255, 255, 0.08);
+	--spacekeys-whichkey-blue: var(--ink-palette-blue);
+	--spacekeys-whichkey-cyan: var(--ink-palette-cyan);
+	--spacekeys-whichkey-green: var(--ink-palette-green);
+	--spacekeys-whichkey-orange: var(--ink-palette-orange);
+	--spacekeys-whichkey-purple: var(--ink-palette-magenta);
+	--spacekeys-whichkey-red: var(--ink-palette-red);
+}
+
+.spacekeys-modal-container .modal-bg {
+	background: rgba(0, 0, 0, 0.42) !important;
+}
+
+.spacekeys-modal-container .spacekeys-modal {
+	position: fixed !important;
+	inset: auto clamp(18px, 2.6vw, 44px) clamp(18px, 3vh, 44px) auto !important;
+	right: clamp(18px, 2.6vw, 44px) !important;
+	bottom: clamp(18px, 3vh, 44px) !important;
+	left: auto !important;
+	top: auto !important;
+	transform: none !important;
+	width: max-content !important;
+	min-width: 34ch !important;
+	max-width: min(54ch, calc(100vw - 48px)) !important;
+	height: auto !important;
+	min-height: 0 !important;
+	max-height: min(80vh, 900px) !important;
+	padding: 1.1em 2ch 1em !important;
+	gap: 0.75em !important;
+	overflow: hidden !important;
+	background: var(--spacekeys-whichkey-bg) !important;
+	border: 1px solid var(--spacekeys-whichkey-border) !important;
+	border-radius: 8px !important;
+	box-shadow: 0 24px 72px rgba(0, 0, 0, 0.72) !important;
+	color: var(--spacekeys-whichkey-key) !important;
+	font-family: "JetBrainsMono Nerd Font Mono", "JetBrains Mono", monospace !important;
+}
+
+.spacekeys-modal-container .spacekeys-modal .spacekeys-suggestions {
+	display: flex !important;
+	flex: 0 1 auto !important;
+	flex-direction: column !important;
+	grid-template-columns: none !important;
+	gap: 0 !important;
+	padding: 0 !important;
+	overflow-y: auto !important;
+}
+
+.spacekeys-modal-container .spacekeys-modal .spacekeys-suggestion {
+	display: grid !important;
+	grid-template-columns: 2ch 2ch 2ch minmax(0, 1fr) !important;
+	align-items: center !important;
+	gap: 0 0.5ch !important;
+	min-height: 1.35em !important;
+	padding: 0 0.25ch !important;
+	border-radius: 4px !important;
+	font-family: inherit !important;
+	font-size: 16px !important;
+	font-weight: 400 !important;
+	line-height: 1.25 !important;
+	letter-spacing: 0 !important;
+}
+
+.spacekeys-modal-container .spacekeys-modal .spacekeys-suggestion:hover {
+	background: var(--spacekeys-whichkey-hover) !important;
+}
+
+.spacekeys-modal-container .spacekeys-modal .spacekeys-suggestion::before {
+	content: "→";
+	grid-column: 2;
+	grid-row: 1;
+	color: var(--spacekeys-whichkey-arrow);
+	font-size: 0.9em;
+	line-height: 1;
+	text-align: center;
+}
+
+.spacekeys-modal-container .spacekeys-modal .spacekeys-suggestion::after {
+	content: "󰍜";
+	grid-column: 3;
+	grid-row: 1;
+	color: var(--spacekeys-whichkey-purple);
+	font-size: 0.78em;
+	line-height: 1;
+	text-align: center;
+}
+
+.spacekeys-modal-container .spacekeys-modal .spacekeys-suggestion-key {
+	grid-column: 1;
+	grid-row: 1;
+	min-width: 0 !important;
+	text-align: left;
+}
+
+.spacekeys-modal-container .spacekeys-modal .spacekeys-suggestion-key kbd {
+	display: inline !important;
+	min-width: 0 !important;
+	padding: 0 !important;
+	background: transparent !important;
+	border: 0 !important;
+	border-radius: 0 !important;
+	box-shadow: none !important;
+	color: var(--spacekeys-whichkey-key) !important;
+	font: inherit !important;
+}
+
+.spacekeys-modal-container .spacekeys-modal .spacekeys-suggestion-label {
+	grid-column: 4;
+	grid-row: 1;
+	min-width: 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.spacekeys-modal-container .spacekeys-modal .spacekeys-command .spacekeys-suggestion-label,
+.spacekeys-modal-container .spacekeys-modal .spacekeys-file .spacekeys-suggestion-label {
+	color: var(--spacekeys-whichkey-command) !important;
+}
+
+.spacekeys-modal-container .spacekeys-modal .spacekeys-group .spacekeys-suggestion-label {
+	color: var(--spacekeys-whichkey-group) !important;
+}
+
+.spacekeys-modal-container .spacekeys-modal .spacekeys-group .spacekeys-suggestion-label::before {
+	content: "+";
+}
+
+.spacekeys-modal-container .spacekeys-modal .spacekeys-command::after,
+.spacekeys-modal-container .spacekeys-modal .spacekeys-file::after {
+	content: "󰍜";
+	color: var(--spacekeys-whichkey-purple);
+}
+
+.spacekeys-modal-container .spacekeys-modal .spacekeys-command[title="Find Files (Root Dir)"]::after,
+.spacekeys-modal-container .spacekeys-modal .spacekeys-command[title="Recent Files"]::after,
+.spacekeys-modal-container .spacekeys-modal .spacekeys-command[title="Reveal active note"]::after {
+	content: "󰈞";
+	color: var(--spacekeys-whichkey-cyan);
+}
+
+.spacekeys-modal-container .spacekeys-modal .spacekeys-command[title="Vault search"]::after,
+.spacekeys-modal-container .spacekeys-modal .spacekeys-command[title="In-file search"]::after {
+	content: "󰍉";
+	color: var(--spacekeys-whichkey-green);
+}
+
+.spacekeys-modal-container .spacekeys-modal .spacekeys-command[title="Command palette"]::after,
+.spacekeys-modal-container .spacekeys-modal .spacekeys-command[title="Commands"]::after {
+	content: "λ";
+	color: var(--spacekeys-whichkey-orange);
+}
+
+.spacekeys-modal-container .spacekeys-modal .spacekeys-group[title="Commands"]::after {
+	content: "λ";
+	color: var(--spacekeys-whichkey-orange);
+}
+
+.spacekeys-modal-container .spacekeys-modal .spacekeys-group[title="Extract"]::after {
+	content: "󰈙";
+	color: var(--spacekeys-whichkey-cyan);
+}
+
+.spacekeys-modal-container .spacekeys-modal .spacekeys-group[title="Files"]::after {
+	content: "󰈞";
+	color: var(--spacekeys-whichkey-cyan);
+}
+
+.spacekeys-modal-container .spacekeys-modal .spacekeys-group[title="Notes"]::after {
+	content: "󰈙";
+	color: var(--spacekeys-whichkey-cyan);
+}
+
+.spacekeys-modal-container .spacekeys-modal .spacekeys-group[title="Search"]::after {
+	content: "󰍉";
+	color: var(--spacekeys-whichkey-green);
+}
+
+.spacekeys-modal-container .spacekeys-modal .spacekeys-group[title="Windows"]::after {
+	content: "󱡴";
+	color: var(--spacekeys-whichkey-blue);
+}
+
+.spacekeys-modal-container .spacekeys-modal .spacekeys-invalid .spacekeys-suggestion-label {
+	color: var(--spacekeys-whichkey-command) !important;
+	text-decoration: underline wavy currentColor;
+	text-underline-offset: 0.16em;
+}
+
+.spacekeys-modal-container .spacekeys-modal .spacekeys-modal-status {
+	display: grid !important;
+	grid-template-columns: minmax(2ch, 1fr) auto minmax(2ch, 1fr);
+	align-items: baseline;
+	gap: 1ch;
+	margin-top: 1.35em;
+	padding-top: 0.65em;
+	color: var(--spacekeys-whichkey-muted) !important;
+	font-family: inherit !important;
+	font-size: 0 !important;
+	font-weight: 400;
+	line-height: 1;
+	letter-spacing: 0;
+	min-height: 20px;
+	white-space: nowrap;
+}
+
+.spacekeys-modal-container .spacekeys-modal .spacekeys-modal-status::before {
+	content: "␣";
+	grid-column: 1;
+	color: var(--spacekeys-whichkey-purple);
+	font-size: 16px;
+	line-height: 20px;
+	text-align: left;
+}
+
+.spacekeys-modal-container .spacekeys-modal .spacekeys-modal-status::after {
+	content: "esc  close    ⌫  back";
+	grid-column: 2;
+	color: var(--spacekeys-whichkey-muted);
+	font-size: 16px;
+	line-height: 20px;
+	text-align: center;
+	white-space: pre;
+}
+
+.spacekeys-modal-container .spacekeys-modal .spacekeys-modal-status-empty {
+	color: var(--spacekeys-whichkey-muted) !important;
+}
+
+.spacekeys-modal-container.spacekeys-modal-collapsed .spacekeys-modal {
+	width: max-content !important;
+	min-width: 24ch !important;
+	max-width: min(42ch, calc(100vw - 48px)) !important;
+	padding: 1em 2ch !important;
+}
+
+@media (max-width: 640px) {
+	.spacekeys-modal-container .spacekeys-modal {
+		inset: auto 12px 12px auto !important;
+		right: 12px !important;
+		bottom: 12px !important;
+		left: auto !important;
+		top: auto !important;
+		width: calc(100vw - 24px) !important;
+		max-width: calc(100vw - 24px) !important;
+		padding: 24px 24px 20px !important;
+	}
+
+	.spacekeys-modal-container .spacekeys-modal .spacekeys-suggestion {
+		font-size: 16px !important;
+		min-height: 1.3em !important;
+	}
+
+	.spacekeys-modal-container .spacekeys-modal .spacekeys-modal-status {
+		grid-template-columns: 1fr;
+		gap: 10px;
+		font-size: 16px !important;
+	}
+}
+
+/* Spacekeys marks file switching commands so Ink can retitle the generic prompt. */
+.theme-dark.spacekeys-switcher-prompt .prompt-input-container::before {
+	content: "Files" !important;
+}

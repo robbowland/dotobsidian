@@ -1,0 +1,100 @@
+/* Ink-owned Obsidian foundation. Keep this small and theme-wide. */
+body.theme-dark {
+  font-size: var(--font-text-size);
+  line-height: var(--line-height-normal);
+  -webkit-font-smoothing: antialiased;
+}
+
+.theme-dark .workspace,
+.theme-dark .workspace-split,
+.theme-dark .workspace-tabs,
+.theme-dark .workspace-leaf,
+.theme-dark .workspace-leaf-content,
+.theme-dark .markdown-preview-view,
+.theme-dark .markdown-source-view {
+  background-color: var(--canvas-default);
+}
+
+.theme-dark .titlebar,
+.theme-dark .workspace-ribbon,
+.theme-dark .mod-sidedock,
+.theme-dark .workspace-tab-header-container,
+.theme-dark .status-bar {
+  background-color: var(--canvas-default);
+  border-color: var(--border-default);
+}
+
+.theme-dark .menu,
+.theme-dark .modal,
+.theme-dark .popover,
+.theme-dark .prompt,
+.theme-dark .suggestion-container,
+.theme-dark .tooltip,
+.theme-dark .notice {
+  background-color: var(--canvas-overlay);
+  border-color: var(--border-default);
+  box-shadow: none;
+}
+
+.theme-dark .tree-item-self.is-active,
+.theme-dark .nav-file-title.is-active,
+.theme-dark .nav-folder-title.is-active,
+.theme-dark .menu-item:hover,
+.theme-dark .suggestion-item.is-selected {
+  background-color: var(--selection-muted);
+  color: var(--fg-default);
+}
+
+.theme-dark .tree-item-self.is-active *,
+.theme-dark .nav-file-title.is-active *,
+.theme-dark .nav-folder-title.is-active *,
+.theme-dark .menu-item:hover *,
+.theme-dark .suggestion-item.is-selected * {
+  color: var(--fg-default);
+}
+
+.theme-dark a,
+.theme-dark .internal-link,
+.theme-dark .external-link {
+  color: var(--ink-accent);
+  text-decoration: none;
+  border-bottom: 1px solid var(--ink-link-border);
+}
+
+.theme-dark a:hover,
+.theme-dark .internal-link:hover,
+.theme-dark .external-link:hover {
+  color: var(--ink-accent-hover);
+  border-bottom-color: var(--ink-link-border-hover);
+}
+
+.theme-dark strong,
+.theme-dark .cm-strong {
+  color: var(--fg-default);
+  font-weight: var(--font-weight-semibold);
+}
+
+.theme-dark em,
+.theme-dark .cm-em {
+  color: var(--fg-muted);
+  font-style: italic;
+}
+
+.theme-dark .tag {
+  color: var(--tag-color);
+  background: var(--tag-background);
+  border: 1px solid var(--tag-border-color);
+  border-radius: var(--tag-radius);
+  padding: var(--tag-padding-y) var(--tag-padding-x);
+}
+
+.theme-dark .tag:hover {
+  color: var(--tag-color-hover);
+  background: var(--tag-background-hover);
+  border-color: var(--tag-border-color-hover);
+}
+
+.theme-dark .workspace-tab-header.is-active::before,
+.theme-dark .workspace-tab-header.is-active::after {
+  display: none;
+}

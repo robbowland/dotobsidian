@@ -1,0 +1,215 @@
+/* Ink tokens.
+   Terminal palette is sourced from ~/.config/fish/palettes/github_dark.fish. */
+.theme-dark {
+  --ink-palette-black-bright: #161b22;
+  --ink-palette-black: #000000;
+  --ink-palette-black-dim: #0d1117;
+
+  --ink-palette-white-bright: #ffffff;
+  --ink-palette-white: #e6edf3;
+  --ink-palette-white-dim: #b1bac4;
+
+  --ink-palette-gray-bright: #8b949e;
+  --ink-palette-gray: #6e7681;
+  --ink-palette-gray-dim: #24282d;
+
+  --ink-palette-surface-0: #0c0c0c;
+  --ink-palette-surface-1: #101010;
+  --ink-palette-surface-2: #181818;
+
+  --ink-palette-blue-bright: #a5d6ff;
+  --ink-palette-blue: #79c0ff;
+  --ink-palette-blue-dim: #58a6ff;
+
+  --ink-palette-cyan-bright: #d2f8ff;
+  --ink-palette-cyan: #a3e8f2;
+  --ink-palette-cyan-dim: #6ec1cc;
+
+  --ink-palette-green-bright: #56d364;
+  --ink-palette-green: #3fb950;
+  --ink-palette-green-dim: #2ea043;
+
+  --ink-palette-yellow-bright: #f2cc60;
+  --ink-palette-yellow: #e3b341;
+  --ink-palette-yellow-dim: #d29922;
+
+  --ink-palette-magenta-bright: #d2a8ff;
+  --ink-palette-magenta: #bc8cff;
+  --ink-palette-magenta-dim: #a371f7;
+
+  --ink-palette-orange-bright: #ffa657;
+  --ink-palette-orange: #f0883e;
+  --ink-palette-orange-dim: #db6d28;
+
+  --ink-palette-pink-bright: #ff9bce;
+  --ink-palette-pink: #db61a2;
+  --ink-palette-pink-dim: #bf4b8a;
+
+  --ink-palette-red-bright: #ffa198;
+  --ink-palette-red: #ff7b72;
+  --ink-palette-red-dim: #da3633;
+
+  --ink-terminal-black: var(--ink-palette-black);
+  --ink-terminal-surface-0: var(--ink-palette-surface-0);
+  --ink-terminal-surface-1: var(--ink-palette-surface-1);
+  --ink-terminal-surface-2: var(--ink-palette-surface-2);
+  --ink-terminal-border: var(--ink-palette-gray-dim);
+  --ink-terminal-border-strong: var(--ink-palette-white-bright);
+  --ink-terminal-muted: var(--ink-palette-gray);
+  --ink-terminal-muted-bright: var(--ink-palette-gray-bright);
+  --ink-terminal-text: var(--ink-palette-white);
+  --ink-terminal-text-dim: var(--ink-palette-white-dim);
+  --ink-terminal-blue: var(--ink-palette-blue-dim);
+  --ink-terminal-blue-bright: var(--ink-palette-blue);
+  --ink-terminal-cyan: var(--ink-palette-cyan);
+  --ink-terminal-green: var(--ink-palette-green);
+  --ink-terminal-yellow: var(--ink-palette-yellow);
+  --ink-terminal-magenta: var(--ink-palette-magenta);
+  --ink-terminal-orange: var(--ink-palette-orange);
+  --ink-terminal-pink: var(--ink-palette-pink);
+  --ink-terminal-red: var(--ink-palette-red);
+
+  --ink-accent: #d3d3d3;
+  --ink-accent-hover: #d3d3d3;
+  --ink-accent-rgb: 232, 232, 232;
+  --ink-selection: rgba(var(--ink-accent-rgb), 0.15);
+  --ink-highlight-bg: rgba(var(--ink-accent-rgb), 0.16);
+  --ink-link-border: rgba(232, 232, 232, 0.25);
+  --ink-link-border-hover: rgba(255, 255, 255, 0.7);
+
+  --fg-default: #c9d1d9;
+  --fg-muted: var(--ink-palette-gray-bright);
+  --fg-on-emphasis: var(--ink-palette-white-bright);
+  --canvas-default: var(--ink-palette-black);
+  --canvas-overlay: var(--ink-palette-black-bright);
+  --canvas-subtle: var(--ink-palette-black);
+  --border-default: #30363d;
+  --border-muted: #21262d;
+  --neutral-emphasis: #484f58;
+  --neutral-muted: rgba(110, 118, 129, 0.4);
+  --selection-muted: #30363d;
+  --accent-fg: var(--ink-accent);
+  --accent-emphasis: var(--ink-accent-hover);
+  --accent-muted: var(--ink-selection);
+  --attention-fg: var(--ink-palette-yellow-dim);
+  --attention-emphasis: #9e6a03;
+  --danger-emphasis: var(--ink-palette-red-dim);
+  --open-fg: var(--ink-palette-green);
+  --open-emphasis: #238636;
+  --done-fg: var(--ink-palette-magenta-dim);
+  --done-emphasis: #8957e5;
+
+  --accent-h: 0;
+  --accent-s: 0%;
+  --accent-l: 83%;
+  --color-red-rgb: 255, 123, 114;
+  --color-orange-rgb: 255, 166, 87;
+  --color-yellow-rgb: 210, 153, 34;
+  --color-green-rgb: 63, 185, 80;
+  --color-cyan-rgb: 57, 197, 187;
+  --color-blue-rgb: 88, 166, 255;
+  --color-purple-rgb: 163, 113, 247;
+  --color-pink-rgb: 219, 97, 162;
+
+  --background-primary: var(--canvas-default);
+  --background-primary-alt: var(--canvas-default);
+  --background-secondary: var(--canvas-default);
+  --background-secondary-alt: var(--canvas-overlay);
+  --background-modifier-hover: var(--neutral-muted);
+  --background-modifier-active-hover: var(--neutral-muted);
+  --background-modifier-border: var(--border-default);
+  --background-modifier-border-hover: var(--neutral-emphasis);
+  --background-modifier-border-focus: var(--ink-link-border-hover);
+  --background-modifier-form-field: var(--canvas-overlay);
+  --modal-background: var(--canvas-overlay);
+  --prompt-background: var(--canvas-overlay);
+  --interactive-normal: var(--canvas-overlay);
+  --interactive-hover: #1f242d;
+  --interactive-accent: var(--ink-accent);
+  --interactive-accent-hover: var(--ink-accent-hover);
+  --text-normal: var(--fg-default);
+  --text-muted: var(--fg-muted);
+  --text-faint: var(--ink-palette-gray);
+  --text-accent: var(--ink-accent);
+  --text-accent-hover: var(--ink-accent-hover);
+  --text-on-accent: var(--fg-on-emphasis);
+  --text-on-accent-inverted: var(--fg-on-emphasis);
+  --text-selection: var(--ink-selection);
+  --text-highlight-bg: var(--ink-highlight-bg);
+  --link-color: var(--ink-accent);
+  --link-color-hover: var(--ink-accent-hover);
+  --link-external-color: var(--ink-accent);
+  --link-external-color-hover: var(--ink-accent-hover);
+  --link-unresolved-color: var(--ink-terminal-text-dim);
+  --link-unresolved-color-hover: var(--ink-accent);
+  --link-unresolved-decoration-color: var(--ink-link-border);
+  --link-unresolved-decoration-color-hover: var(--ink-link-border-hover);
+  --tag-color: var(--ink-terminal-text-dim);
+  --tag-color-hover: var(--ink-accent);
+  --tag-background: var(--ink-terminal-surface-2);
+  --tag-background-hover: var(--ink-terminal-surface-1);
+  --tag-border-color: transparent;
+  --tag-border-color-hover: transparent;
+  --tag-radius: 2em;
+  --tag-padding-x: 8px;
+  --tag-padding-y: 4px;
+  --tag-weight: var(--font-medium);
+  --blockquote-background-color: var(--canvas-default);
+  --blockquote-border-color: var(--border-default);
+  --blockquote-color: var(--fg-default);
+  --embed-border-color: var(--blockquote-border-color);
+  --embed-border-start: var(--embed-border-thickness, 2px) solid
+    var(--embed-border-color);
+  --table-border-color: var(--border-default);
+  --table-header-background: var(--canvas-default);
+  --table-row-background-hover: var(--canvas-overlay);
+  --table-row-alt-background: var(--canvas-default);
+  --divider-color: var(--border-default);
+  --divider-color-hover: var(--neutral-emphasis);
+  --nav-item-background-active: var(--selection-muted);
+  --nav-item-background-selected: var(--selection-muted);
+  --nav-item-color-active: var(--fg-default);
+  --nav-item-color-selected: var(--fg-default);
+  --yazi-selected-bg: var(--ink-palette-blue-dim);
+  --yazi-selected-fg: var(--ink-palette-black);
+  --yazi-hover-bg: var(--ink-palette-surface-0);
+  --yazi-folder-fg: var(--ink-palette-blue-dim);
+  --yazi-link-fg: var(--ink-palette-magenta);
+  --yazi-orphan-fg: var(--ink-palette-red);
+  --yazi-exec-fg: var(--ink-palette-green);
+  --yazi-archive-fg: var(--ink-palette-orange);
+  --yazi-image-fg: var(--ink-palette-yellow);
+  --yazi-media-fg: var(--ink-palette-magenta);
+  --yazi-disk-fg: var(--ink-palette-yellow);
+  --yazi-hidden-fg: var(--ink-palette-gray-dim);
+  --yazi-note-fg: var(--ink-palette-white);
+
+  --github-code-bg: var(--ink-palette-black-dim);
+  --github-code-line-bg: var(--ink-palette-black-bright);
+  --github-syntax-fg: var(--ink-palette-white);
+  --github-syntax-muted: var(--ink-palette-gray-bright);
+  --github-syntax-keyword: var(--ink-palette-red);
+  --github-syntax-string: var(--ink-palette-blue-bright);
+  --github-syntax-function: var(--ink-palette-magenta-bright);
+  --github-syntax-constant: var(--ink-palette-blue);
+  --github-syntax-variable: var(--ink-palette-orange-bright);
+  --github-syntax-tag: var(--ink-palette-green-bright);
+  --github-syntax-addition-bg: #033a16;
+  --github-syntax-addition-fg: var(--ink-palette-green-bright);
+  --github-syntax-invalid-bg: #8e1519;
+
+  --code-background: var(--github-code-bg);
+  --code-normal: var(--github-syntax-fg);
+  --code-comment: var(--github-syntax-muted);
+  --code-function: var(--github-syntax-function);
+  --code-important: var(--github-syntax-keyword);
+  --code-keyword: var(--github-syntax-keyword);
+  --code-property: var(--github-syntax-constant);
+  --code-punctuation: var(--github-syntax-fg);
+  --code-string: var(--github-syntax-string);
+  --code-tag: var(--github-syntax-tag);
+  --code-value: var(--github-syntax-constant);
+  --code-size: 0.9em;
+  --inline-code-background: var(--ink-terminal-surface-2);
+  --inline-code-color: var(--ink-accent);
+}

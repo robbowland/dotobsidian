@@ -1,0 +1,134 @@
+{
+  "defaultTaskStatus": "inbox",
+  "defaultTaskPriority": "normal",
+  "tasksFolder": "tasks",
+  "taskTag": "task",
+  "showTaskCardInNote": true,
+  "showRelationships": true,
+  "relationshipsPosition": "bottom",
+  "enableBases": true,
+  "enableModalSplitLayout": true,
+  "defaultVisibleProperties": [
+    "status",
+    "priority",
+    "due",
+    "scheduled",
+    "projects",
+    "contexts",
+    "tags",
+    "blocked",
+    "blocking"
+  ],
+  "inlineVisibleProperties": [
+    "status",
+    "priority",
+    "due",
+    "scheduled",
+    "recurrence"
+  ],
+  "customStatuses": [
+    {
+      "id": "none",
+      "value": "inbox",
+      "label": "Inbox",
+      "color": "#8b949e",
+      "isCompleted": false,
+      "excludeFromCycle": false,
+      "order": 0,
+      "autoArchive": false,
+      "autoArchiveDelay": 5
+    },
+    {
+      "id": "open",
+      "value": "todo",
+      "label": "TODO",
+      "color": "#d3455b",
+      "isCompleted": false,
+      "excludeFromCycle": false,
+      "order": 1,
+      "autoArchive": false,
+      "autoArchiveDelay": 5
+    },
+    {
+      "id": "in-progress",
+      "value": "doing",
+      "label": "Doing",
+      "color": "#2c89d9",
+      "isCompleted": false,
+      "excludeFromCycle": false,
+      "order": 2,
+      "autoArchive": false,
+      "autoArchiveDelay": 5
+    },
+    {
+      "id": "done",
+      "value": "done",
+      "label": "Done",
+      "color": "#27ae9e",
+      "isCompleted": true,
+      "excludeFromCycle": false,
+      "order": 3,
+      "autoArchive": false,
+      "autoArchiveDelay": 5
+    }
+  ],
+  "customPriorities": [
+    {
+      "id": "none",
+      "value": "none",
+      "label": "None",
+      "color": "#cccccc",
+      "weight": 0
+    },
+    {
+      "id": "low",
+      "value": "low",
+      "label": "Low",
+      "color": "#00aa00",
+      "weight": 1
+    },
+    {
+      "id": "normal",
+      "value": "normal",
+      "label": "Normal",
+      "color": "#ffaa00",
+      "weight": 2
+    },
+    {
+      "id": "high",
+      "value": "high",
+      "label": "High",
+      "color": "#ff0000",
+      "weight": 3
+    }
+  ],
+  "taskCreationDefaults": {
+    "defaultContexts": "",
+    "defaultTags": "",
+    "defaultProjects": "",
+    "useParentNoteForTaskCreation": false,
+    "useParentNoteAsProject": true,
+    "useParentHeaderAsProject": false,
+    "inheritParentTaskProperties": false,
+    "defaultTimeEstimate": 0,
+    "defaultRecurrence": "none",
+    "defaultDueDate": "none",
+    "defaultDueTime": "none",
+    "defaultScheduledDate": "today",
+    "defaultScheduledTime": "none",
+    "bodyTemplate": "",
+    "useBodyTemplate": false,
+    "occurrenceBodyTemplate": "",
+    "useOccurrenceBodyTemplate": false,
+    "defaultReminders": []
+  },
+  "commandFileMapping": {
+    "open-calendar-view": "tasks/views/mini-calendar-default.base",
+    "open-kanban-view": "tasks/views/kanban-default.base",
+    "open-tasks-view": "tasks/views/tasks-default.base",
+    "open-advanced-calendar-view": "tasks/views/calendar-default.base",
+    "open-agenda-view": "tasks/views/agenda-default.base",
+    "pomodoro-stats-base": "tasks/views/pomodoro-stats.base",
+    "relationships": "tasks/views/relationships.base"
+  }
+}

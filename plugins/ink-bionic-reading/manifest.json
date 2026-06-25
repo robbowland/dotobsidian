@@ -1,0 +1,9 @@
+{
+  "id": "ink-bionic-reading",
+  "name": "Ink Bionic Reading",
+  "version": "1.0.0",
+  "minAppVersion": "0.15.0",
+  "description": "Custom configurable bionic reading renderer for the Ink Obsidian setup.",
+  "author": "Rob Bowland",
+  "isDesktopOnly": false
+}

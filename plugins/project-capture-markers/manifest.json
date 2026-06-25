@@ -1,0 +1,9 @@
+{
+  "id": "project-capture-markers",
+  "name": "Project Capture Markers",
+  "version": "0.1.0",
+  "minAppVersion": "1.8.0",
+  "description": "Insert project capture markers and open workflow notes.",
+  "author": "Rob Bowland",
+  "isDesktopOnly": false
+}

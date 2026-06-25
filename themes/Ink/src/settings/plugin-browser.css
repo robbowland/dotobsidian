@@ -1,0 +1,192 @@
+/* Community plugin/theme browsers: separate modal over settings, so hide the base settings shell. */
+body.theme-dark:has(.modal.mod-community-modal)
+  .modal.mod-settings:not(.mod-community-modal) {
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+body.theme-dark .modal.mod-community-modal {
+  box-sizing: border-box !important;
+  width: min(94vw, 1380px) !important;
+  height: min(90vh, 940px) !important;
+  border: 1px solid var(--ink-settings-border) !important;
+  border-radius: var(--ink-settings-radius) !important;
+  background: var(--ink-terminal-black) !important;
+  box-shadow: 0 0 0 var(--ink-settings-matte) var(--ink-terminal-black) !important;
+  color: var(--ink-terminal-text) !important;
+  overflow: hidden !important;
+}
+
+body.theme-dark .modal.mod-community-modal .modal-content {
+  background: var(--ink-terminal-black) !important;
+  padding: 0 !important;
+}
+
+body.theme-dark .modal.mod-community-modal .modal-close-button {
+  top: 18px !important;
+  right: 18px !important;
+  color: var(--ink-terminal-muted-bright) !important;
+}
+
+body.theme-dark .modal.mod-community-modal .modal-close-button:hover {
+  background: transparent !important;
+  color: var(--ink-terminal-text) !important;
+}
+
+body.theme-dark .modal.mod-community-modal .modal-sidebar {
+  width: 100% !important;
+  max-width: none !important;
+  border: 0 !important;
+  background: var(--ink-terminal-black) !important;
+}
+
+body.theme-dark .modal.mod-community-modal .community-modal-controls {
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  min-height: 62px !important;
+  border-bottom: 1px solid var(--ink-settings-border-muted) !important;
+  background: var(--ink-terminal-black) !important;
+  padding: 12px 18px !important;
+}
+
+body.theme-dark
+  .modal.mod-community-modal
+  .community-modal-controls
+  .setting-item {
+  flex: 0 0 auto !important;
+  padding: 0 !important;
+}
+
+body.theme-dark
+  .modal.mod-community-modal
+  .community-modal-controls
+  .setting-item:first-child {
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+}
+
+body.theme-dark
+  .modal.mod-community-modal
+  .community-modal-controls
+  .setting-item:first-child
+  .setting-item-info {
+  display: none !important;
+}
+
+body.theme-dark
+  .modal.mod-community-modal
+  .community-modal-controls
+  .setting-item:not(:first-child)
+  .setting-item-info {
+  display: block !important;
+  color: var(--ink-terminal-text) !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  line-height: 22px !important;
+}
+
+body.theme-dark
+  .modal.mod-community-modal
+  .community-modal-controls
+  .setting-item-control {
+  flex: 0 0 auto !important;
+}
+
+body.theme-dark
+  .modal.mod-community-modal
+  .community-modal-controls
+  .setting-item:first-child
+  .setting-item-control {
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+}
+
+body.theme-dark
+  .modal.mod-community-modal
+  .community-modal-controls
+  .search-input-container {
+  flex: 1 1 auto !important;
+  width: 100% !important;
+  min-height: 34px !important;
+  border: 0 !important;
+  background: transparent !important;
+}
+
+body.theme-dark .modal.mod-community-modal .community-modal-controls input {
+  width: 100% !important;
+  color: var(--ink-terminal-text) !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+}
+
+body.theme-dark .modal.mod-community-modal .community-modal-search-summary {
+  color: var(--ink-terminal-muted) !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+}
+
+body.theme-dark
+  .modal.mod-community-modal
+  .community-modal-search-results-wrapper {
+  background: var(--ink-terminal-black) !important;
+  padding: 14px !important;
+}
+
+body.theme-dark .modal.mod-community-modal .community-modal-search-results {
+  background: var(--ink-terminal-black) !important;
+}
+
+body.theme-dark .modal.mod-community-modal .community-item {
+  border: 1px solid var(--ink-settings-border-muted) !important;
+  border-radius: var(--ink-settings-radius) !important;
+  background: var(--ink-terminal-black) !important;
+  color: var(--ink-terminal-text) !important;
+  box-shadow: none !important;
+}
+
+body.theme-dark .modal.mod-community-modal .community-item:hover,
+body.theme-dark .modal.mod-community-modal .community-item.is-selected {
+  border-color: var(--ink-settings-border) !important;
+  background: var(--ink-terminal-surface-0) !important;
+}
+
+body.theme-dark
+  .modal.mod-community-modal
+  :is(.community-item-name, .community-modal-info-name) {
+  color: var(--ink-terminal-text) !important;
+  font-weight: 600 !important;
+}
+
+body.theme-dark
+  .modal.mod-community-modal
+  :is(
+    .community-item-author,
+    .community-item-downloads,
+    .community-item-updated,
+    .community-item-desc,
+    .community-modal-info-author,
+    .community-modal-info-repo,
+    .community-modal-info-version,
+    .community-modal-info-desc
+  ) {
+  color: var(--ink-terminal-muted-bright) !important;
+}
+
+body.theme-dark
+  .modal.mod-community-modal
+  .community-item
+  .suggestion-highlight {
+  color: var(--ink-cmdline-accent) !important;
+  font-weight: 700 !important;
+}
+
+body.theme-dark .modal.mod-community-modal .community-modal-details {
+  border-left: 1px solid var(--ink-settings-border) !important;
+  background: var(--ink-terminal-black) !important;
+  color: var(--ink-terminal-text) !important;
+}
+
+body.theme-dark .modal.mod-community-modal .community-modal-readme {
+  color: var(--ink-terminal-text) !important;
+}

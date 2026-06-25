@@ -1,0 +1,16 @@
+{
+  "theme": "obsidian",
+  "cssTheme": "Ink",
+  "showRibbon": false,
+  "interfaceFontFamily": "Inter",
+  "textFontFamily": "Inter",
+  "monospaceFontFamily": "JetBrainsMono Nerd Font Mono",
+  "baseFontSize": 18,
+  "baseFontSizeAction": false,
+  "translucency": false,
+  "nativeMenus": false,
+  "showViewHeader": false,
+  "enabledCssSnippets": [
+    "project-note"
+  ]
+}

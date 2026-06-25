@@ -1,0 +1,9 @@
+{
+  "id": "ink-markdown-source",
+  "name": "Ink Markdown Source",
+  "version": "0.1.0",
+  "minAppVersion": "1.7.0",
+  "description": "Adds Neovim-style Markdown syntax decorations to Obsidian source editing.",
+  "author": "Local",
+  "isDesktopOnly": false
+}

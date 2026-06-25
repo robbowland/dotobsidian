@@ -1,0 +1,247 @@
+/* Neovim-style raw Markdown source highlighting. */
+.theme-dark .markdown-source-view.mod-cm6 {
+  --ink-md-source-font:
+    "JetBrains Mono", "JetBrainsMono Nerd Font Mono",
+    "JetBrainsMonoNL Nerd Font Mono", ui-monospace, SFMono-Regular, "SF Mono",
+    Menlo, Consolas, "Liberation Mono", monospace;
+  --ink-md-normal: var(--ink-palette-white);
+  --ink-md-muted: var(--ink-palette-gray-bright);
+  --ink-md-dash: var(--ink-palette-gray-dim);
+  --ink-md-heading: var(--ink-palette-blue);
+  --ink-md-code-bg: #171b22;
+  --ink-md-code-info: #7ee787;
+  --ink-md-unchecked: var(--ink-palette-gray);
+  --ink-md-checked: var(--ink-palette-green);
+  --ink-md-marker: var(--ink-md-dash);
+  --ink-md-heading-1: var(--ink-md-heading);
+  --ink-md-heading-2: var(--ink-md-heading);
+  --ink-md-heading-3: var(--ink-md-heading);
+  --ink-md-heading-4: var(--ink-md-heading);
+  --ink-md-heading-5: var(--ink-md-heading);
+  --ink-md-heading-6: var(--ink-md-heading);
+  --ink-md-link: var(--ink-md-normal);
+  --ink-md-tag: var(--ink-md-normal);
+  --ink-md-table: var(--ink-md-dash);
+  --ink-md-quote-bar: var(--ink-md-normal);
+  --ink-md-quote-text: var(--ink-md-normal);
+  --file-line-width: 100%;
+  --line-width: 100%;
+  --max-width: 100%;
+  color: var(--fg-default);
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .cm-sizer,
+.theme-dark .markdown-source-view.mod-cm6 .cm-contentContainer,
+.theme-dark .markdown-source-view.mod-cm6 .cm-content,
+.theme-dark .markdown-source-view.mod-cm6 .cm-line {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  max-width: none !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .cm-content,
+.theme-dark .markdown-source-view.mod-cm6 .cm-line {
+  color: var(--fg-default);
+  font-family: var(--ink-md-source-font) !important;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .cm-gutterElement {
+  color: var(--github-syntax-muted);
+  font-family: var(--ink-md-source-font) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .cm-formatting,
+.theme-dark .markdown-source-view.mod-cm6 .cm-formatting-header,
+.theme-dark .markdown-source-view.mod-cm6 .cm-formatting-list,
+.theme-dark .markdown-source-view.mod-cm6 .cm-formatting-quote,
+.theme-dark .markdown-source-view.mod-cm6 .cm-formatting-code,
+.theme-dark .markdown-source-view.mod-cm6 .cm-formatting-em,
+.theme-dark .markdown-source-view.mod-cm6 .cm-formatting-strong,
+.theme-dark .markdown-source-view.mod-cm6 .cm-formatting-link,
+.theme-dark .markdown-source-view.mod-cm6 .cm-formatting-link-string,
+.theme-dark .markdown-source-view.mod-cm6 .cm-formatting-strikethrough,
+.theme-dark .markdown-source-view.mod-cm6 .cm-formatting-highlight {
+  background: transparent !important;
+  color: var(--ink-md-marker) !important;
+  font-weight: 400 !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .cm-formatting-task {
+  background: transparent !important;
+  color: var(--checkbox-border-color) !important;
+  font-weight: 400 !important;
+}
+
+.theme-dark
+  .markdown-source-view.mod-cm6
+  .cm-line.HyperMD-task-line[data-task]:not([data-task=" "])
+  .cm-formatting-task {
+  color: var(--checkbox-color) !important;
+}
+
+.theme-dark
+  .markdown-source-view.mod-cm6
+  :is(
+    .cm-header,
+    .cm-header-1,
+    .cm-header-2,
+    .cm-header-3,
+    .cm-header-4,
+    .cm-header-5,
+    .cm-header-6
+  ) {
+  font-family: var(--ink-md-source-font) !important;
+  font-size: inherit !important;
+  font-weight: 600;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .cm-header-1 {
+  color: var(--ink-md-heading-1) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .cm-header-2 {
+  color: var(--ink-md-heading-2) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .cm-header-3 {
+  color: var(--ink-md-heading-3) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .cm-header-4 {
+  color: var(--ink-md-heading-4) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .cm-header-5 {
+  color: var(--ink-md-heading-5) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .cm-header-6 {
+  color: var(--ink-md-heading-6) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .cm-inline-code {
+  border: 0 !important;
+  border-radius: 4px;
+  background-color: var(--tag-background) !important;
+  color: var(--inline-code-color) !important;
+  font-family: var(--ink-md-source-font) !important;
+  font-size: inherit;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock,
+.theme-dark .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock-begin,
+.theme-dark .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock-end {
+  border: 0 !important;
+  background-color: var(--ink-md-code-bg) !important;
+  color: var(--github-syntax-fg);
+  font-family: var(--ink-md-source-font) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock-begin {
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  color: var(--ink-md-marker) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock-end {
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+  color: var(--ink-md-marker) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .cm-line.HyperMD-quote {
+  border-left: 2px solid var(--ink-md-quote-bar);
+  background: transparent !important;
+  color: var(--ink-md-quote-text);
+}
+
+.theme-dark
+  .markdown-source-view.mod-cm6
+  .cm-line.HyperMD-quote
+  .cm-formatting-quote {
+  color: var(--ink-md-marker) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .cm-line.HyperMD-table-row,
+.theme-dark .markdown-source-view.mod-cm6 .cm-line.HyperMD-table-row-0,
+.theme-dark .markdown-source-view.mod-cm6 .cm-line.HyperMD-table-row-1 {
+  color: var(--fg-default);
+  font-family: var(--ink-md-source-font) !important;
+}
+
+.theme-dark
+  .markdown-source-view.mod-cm6
+  :is(.cm-hmd-table-sep, .cm-table-widget, .HyperMD-table-row .cm-formatting) {
+  color: var(--ink-md-table) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .cm-line.HyperMD-frontmatter,
+.theme-dark .markdown-source-view.mod-cm6 .cm-line.HyperMD-frontmatter-begin,
+.theme-dark .markdown-source-view.mod-cm6 .cm-line.HyperMD-frontmatter-end,
+.theme-dark .markdown-source-view.mod-cm6 .cm-hmd-frontmatter {
+  color: var(--github-syntax-muted) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .cm-comment {
+  color: var(--github-syntax-muted) !important;
+  font-style: normal;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .cm-strong {
+  font-weight: 600 !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .cm-em {
+  font-style: italic;
+}
+
+.theme-dark
+  .markdown-source-view.mod-cm6
+  :is(
+    .cm-link,
+    .cm-url,
+    .cm-hmd-internal-link,
+    .cm-hmd-external-link,
+    .cm-hmd-barelink,
+    .cm-link-alias,
+    .cm-link-has-alias,
+    .cm-underline
+  ) {
+  color: var(--ink-accent) !important;
+  text-decoration: none !important;
+  border-bottom: 1px solid var(--ink-link-border);
+}
+
+.theme-dark
+  .markdown-source-view.mod-cm6
+  :is(.is-unresolved, .cm-hmd-internal-link.is-unresolved) {
+  color: var(--ink-terminal-text-dim) !important;
+  border-bottom-color: var(--ink-link-border);
+}
+
+.theme-dark
+  .markdown-source-view.mod-cm6
+  :is(
+    .cm-link,
+    .cm-url,
+    .cm-hmd-internal-link,
+    .cm-hmd-external-link,
+    .cm-hmd-barelink,
+    .cm-link-alias,
+    .cm-link-has-alias,
+    .cm-underline
+  ):hover {
+  color: var(--ink-accent-hover) !important;
+  border-bottom-color: var(--ink-link-border-hover);
+}
+
+.theme-dark ::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  background-color: var(--border-default);
+}
+
+.theme-dark ::-webkit-scrollbar-thumb:hover {
+  background-color: var(--neutral-emphasis);
+}

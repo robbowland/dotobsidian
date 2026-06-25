@@ -1,0 +1,5598 @@
+/*
+ * Ink theme generated from .obsidian/themes/Ink/src/ component partials.
+ * Edit the source partials, then run scripts/build-theme.sh.
+ */
+
+/* === core/tokens.css === */
+
+/* Ink tokens.
+   Terminal palette is sourced from ~/.config/fish/palettes/github_dark.fish. */
+.theme-dark {
+  --ink-palette-black-bright: #161b22;
+  --ink-palette-black: #000000;
+  --ink-palette-black-dim: #0d1117;
+
+  --ink-palette-white-bright: #ffffff;
+  --ink-palette-white: #e6edf3;
+  --ink-palette-white-dim: #b1bac4;
+
+  --ink-palette-gray-bright: #8b949e;
+  --ink-palette-gray: #6e7681;
+  --ink-palette-gray-dim: #24282d;
+
+  --ink-palette-surface-0: #0c0c0c;
+  --ink-palette-surface-1: #101010;
+  --ink-palette-surface-2: #181818;
+
+  --ink-palette-blue-bright: #a5d6ff;
+  --ink-palette-blue: #79c0ff;
+  --ink-palette-blue-dim: #58a6ff;
+
+  --ink-palette-cyan-bright: #d2f8ff;
+  --ink-palette-cyan: #a3e8f2;
+  --ink-palette-cyan-dim: #6ec1cc;
+
+  --ink-palette-green-bright: #56d364;
+  --ink-palette-green: #3fb950;
+  --ink-palette-green-dim: #2ea043;
+
+  --ink-palette-yellow-bright: #f2cc60;
+  --ink-palette-yellow: #e3b341;
+  --ink-palette-yellow-dim: #d29922;
+
+  --ink-palette-magenta-bright: #d2a8ff;
+  --ink-palette-magenta: #bc8cff;
+  --ink-palette-magenta-dim: #a371f7;
+
+  --ink-palette-orange-bright: #ffa657;
+  --ink-palette-orange: #f0883e;
+  --ink-palette-orange-dim: #db6d28;
+
+  --ink-palette-pink-bright: #ff9bce;
+  --ink-palette-pink: #db61a2;
+  --ink-palette-pink-dim: #bf4b8a;
+
+  --ink-palette-red-bright: #ffa198;
+  --ink-palette-red: #ff7b72;
+  --ink-palette-red-dim: #da3633;
+
+  --ink-terminal-black: var(--ink-palette-black);
+  --ink-terminal-surface-0: var(--ink-palette-surface-0);
+  --ink-terminal-surface-1: var(--ink-palette-surface-1);
+  --ink-terminal-surface-2: var(--ink-palette-surface-2);
+  --ink-terminal-border: var(--ink-palette-gray-dim);
+  --ink-terminal-border-strong: var(--ink-palette-white-bright);
+  --ink-terminal-muted: var(--ink-palette-gray);
+  --ink-terminal-muted-bright: var(--ink-palette-gray-bright);
+  --ink-terminal-text: var(--ink-palette-white);
+  --ink-terminal-text-dim: var(--ink-palette-white-dim);
+  --ink-terminal-blue: var(--ink-palette-blue-dim);
+  --ink-terminal-blue-bright: var(--ink-palette-blue);
+  --ink-terminal-cyan: var(--ink-palette-cyan);
+  --ink-terminal-green: var(--ink-palette-green);
+  --ink-terminal-yellow: var(--ink-palette-yellow);
+  --ink-terminal-magenta: var(--ink-palette-magenta);
+  --ink-terminal-orange: var(--ink-palette-orange);
+  --ink-terminal-pink: var(--ink-palette-pink);
+  --ink-terminal-red: var(--ink-palette-red);
+
+  --ink-accent: #d3d3d3;
+  --ink-accent-hover: #d3d3d3;
+  --ink-accent-rgb: 232, 232, 232;
+  --ink-selection: rgba(var(--ink-accent-rgb), 0.15);
+  --ink-highlight-bg: rgba(var(--ink-accent-rgb), 0.16);
+  --ink-link-border: rgba(232, 232, 232, 0.25);
+  --ink-link-border-hover: rgba(255, 255, 255, 0.7);
+
+  --fg-default: #c9d1d9;
+  --fg-muted: var(--ink-palette-gray-bright);
+  --fg-on-emphasis: var(--ink-palette-white-bright);
+  --canvas-default: var(--ink-palette-black);
+  --canvas-overlay: var(--ink-palette-black-bright);
+  --canvas-subtle: var(--ink-palette-black);
+  --border-default: #30363d;
+  --border-muted: #21262d;
+  --neutral-emphasis: #484f58;
+  --neutral-muted: rgba(110, 118, 129, 0.4);
+  --selection-muted: #30363d;
+  --accent-fg: var(--ink-accent);
+  --accent-emphasis: var(--ink-accent-hover);
+  --accent-muted: var(--ink-selection);
+  --attention-fg: var(--ink-palette-yellow-dim);
+  --attention-emphasis: #9e6a03;
+  --danger-emphasis: var(--ink-palette-red-dim);
+  --open-fg: var(--ink-palette-green);
+  --open-emphasis: #238636;
+  --done-fg: var(--ink-palette-magenta-dim);
+  --done-emphasis: #8957e5;
+
+  --accent-h: 0;
+  --accent-s: 0%;
+  --accent-l: 83%;
+  --color-red-rgb: 255, 123, 114;
+  --color-orange-rgb: 255, 166, 87;
+  --color-yellow-rgb: 210, 153, 34;
+  --color-green-rgb: 63, 185, 80;
+  --color-cyan-rgb: 57, 197, 187;
+  --color-blue-rgb: 88, 166, 255;
+  --color-purple-rgb: 163, 113, 247;
+  --color-pink-rgb: 219, 97, 162;
+
+  --background-primary: var(--canvas-default);
+  --background-primary-alt: var(--canvas-default);
+  --background-secondary: var(--canvas-default);
+  --background-secondary-alt: var(--canvas-overlay);
+  --background-modifier-hover: var(--neutral-muted);
+  --background-modifier-active-hover: var(--neutral-muted);
+  --background-modifier-border: var(--border-default);
+  --background-modifier-border-hover: var(--neutral-emphasis);
+  --background-modifier-border-focus: var(--ink-link-border-hover);
+  --background-modifier-form-field: var(--canvas-overlay);
+  --modal-background: var(--canvas-overlay);
+  --prompt-background: var(--canvas-overlay);
+  --interactive-normal: var(--canvas-overlay);
+  --interactive-hover: #1f242d;
+  --interactive-accent: var(--ink-accent);
+  --interactive-accent-hover: var(--ink-accent-hover);
+  --text-normal: var(--fg-default);
+  --text-muted: var(--fg-muted);
+  --text-faint: var(--ink-palette-gray);
+  --text-accent: var(--ink-accent);
+  --text-accent-hover: var(--ink-accent-hover);
+  --text-on-accent: var(--fg-on-emphasis);
+  --text-on-accent-inverted: var(--fg-on-emphasis);
+  --text-selection: var(--ink-selection);
+  --text-highlight-bg: var(--ink-highlight-bg);
+  --link-color: var(--ink-accent);
+  --link-color-hover: var(--ink-accent-hover);
+  --link-external-color: var(--ink-accent);
+  --link-external-color-hover: var(--ink-accent-hover);
+  --link-unresolved-color: var(--ink-terminal-text-dim);
+  --link-unresolved-color-hover: var(--ink-accent);
+  --link-unresolved-decoration-color: var(--ink-link-border);
+  --link-unresolved-decoration-color-hover: var(--ink-link-border-hover);
+  --tag-color: var(--ink-terminal-text-dim);
+  --tag-color-hover: var(--ink-accent);
+  --tag-background: var(--ink-terminal-surface-2);
+  --tag-background-hover: var(--ink-terminal-surface-1);
+  --tag-border-color: transparent;
+  --tag-border-color-hover: transparent;
+  --tag-radius: 2em;
+  --tag-padding-x: 8px;
+  --tag-padding-y: 4px;
+  --tag-weight: var(--font-medium);
+  --blockquote-background-color: var(--canvas-default);
+  --blockquote-border-color: var(--border-default);
+  --blockquote-color: var(--fg-default);
+  --embed-border-color: var(--blockquote-border-color);
+  --embed-border-start: var(--embed-border-thickness, 2px) solid
+    var(--embed-border-color);
+  --table-border-color: var(--border-default);
+  --table-header-background: var(--canvas-default);
+  --table-row-background-hover: var(--canvas-overlay);
+  --table-row-alt-background: var(--canvas-default);
+  --divider-color: var(--border-default);
+  --divider-color-hover: var(--neutral-emphasis);
+  --nav-item-background-active: var(--selection-muted);
+  --nav-item-background-selected: var(--selection-muted);
+  --nav-item-color-active: var(--fg-default);
+  --nav-item-color-selected: var(--fg-default);
+  --yazi-selected-bg: var(--ink-palette-blue-dim);
+  --yazi-selected-fg: var(--ink-palette-black);
+  --yazi-hover-bg: var(--ink-palette-surface-0);
+  --yazi-folder-fg: var(--ink-palette-blue-dim);
+  --yazi-link-fg: var(--ink-palette-magenta);
+  --yazi-orphan-fg: var(--ink-palette-red);
+  --yazi-exec-fg: var(--ink-palette-green);
+  --yazi-archive-fg: var(--ink-palette-orange);
+  --yazi-image-fg: var(--ink-palette-yellow);
+  --yazi-media-fg: var(--ink-palette-magenta);
+  --yazi-disk-fg: var(--ink-palette-yellow);
+  --yazi-hidden-fg: var(--ink-palette-gray-dim);
+  --yazi-note-fg: var(--ink-palette-white);
+
+  --github-code-bg: var(--ink-palette-black-dim);
+  --github-code-line-bg: var(--ink-palette-black-bright);
+  --github-syntax-fg: var(--ink-palette-white);
+  --github-syntax-muted: var(--ink-palette-gray-bright);
+  --github-syntax-keyword: var(--ink-palette-red);
+  --github-syntax-string: var(--ink-palette-blue-bright);
+  --github-syntax-function: var(--ink-palette-magenta-bright);
+  --github-syntax-constant: var(--ink-palette-blue);
+  --github-syntax-variable: var(--ink-palette-orange-bright);
+  --github-syntax-tag: var(--ink-palette-green-bright);
+  --github-syntax-addition-bg: #033a16;
+  --github-syntax-addition-fg: var(--ink-palette-green-bright);
+  --github-syntax-invalid-bg: #8e1519;
+
+  --code-background: var(--github-code-bg);
+  --code-normal: var(--github-syntax-fg);
+  --code-comment: var(--github-syntax-muted);
+  --code-function: var(--github-syntax-function);
+  --code-important: var(--github-syntax-keyword);
+  --code-keyword: var(--github-syntax-keyword);
+  --code-property: var(--github-syntax-constant);
+  --code-punctuation: var(--github-syntax-fg);
+  --code-string: var(--github-syntax-string);
+  --code-tag: var(--github-syntax-tag);
+  --code-value: var(--github-syntax-constant);
+  --code-size: 0.9em;
+  --inline-code-background: var(--ink-terminal-surface-2);
+  --inline-code-color: var(--ink-accent);
+}
+
+/* === core/base.css === */
+
+/* Ink-owned Obsidian foundation. Keep this small and theme-wide. */
+body.theme-dark {
+  font-size: var(--font-text-size);
+  line-height: var(--line-height-normal);
+  -webkit-font-smoothing: antialiased;
+}
+
+.theme-dark .workspace,
+.theme-dark .workspace-split,
+.theme-dark .workspace-tabs,
+.theme-dark .workspace-leaf,
+.theme-dark .workspace-leaf-content,
+.theme-dark .markdown-preview-view,
+.theme-dark .markdown-source-view {
+  background-color: var(--canvas-default);
+}
+
+.theme-dark .titlebar,
+.theme-dark .workspace-ribbon,
+.theme-dark .mod-sidedock,
+.theme-dark .workspace-tab-header-container,
+.theme-dark .status-bar {
+  background-color: var(--canvas-default);
+  border-color: var(--border-default);
+}
+
+.theme-dark .menu,
+.theme-dark .modal,
+.theme-dark .popover,
+.theme-dark .prompt,
+.theme-dark .suggestion-container,
+.theme-dark .tooltip,
+.theme-dark .notice {
+  background-color: var(--canvas-overlay);
+  border-color: var(--border-default);
+  box-shadow: none;
+}
+
+.theme-dark .tree-item-self.is-active,
+.theme-dark .nav-file-title.is-active,
+.theme-dark .nav-folder-title.is-active,
+.theme-dark .menu-item:hover,
+.theme-dark .suggestion-item.is-selected {
+  background-color: var(--selection-muted);
+  color: var(--fg-default);
+}
+
+.theme-dark .tree-item-self.is-active *,
+.theme-dark .nav-file-title.is-active *,
+.theme-dark .nav-folder-title.is-active *,
+.theme-dark .menu-item:hover *,
+.theme-dark .suggestion-item.is-selected * {
+  color: var(--fg-default);
+}
+
+.theme-dark a,
+.theme-dark .internal-link,
+.theme-dark .external-link {
+  color: var(--ink-accent);
+  text-decoration: none;
+  border-bottom: 1px solid var(--ink-link-border);
+}
+
+.theme-dark a:hover,
+.theme-dark .internal-link:hover,
+.theme-dark .external-link:hover {
+  color: var(--ink-accent-hover);
+  border-bottom-color: var(--ink-link-border-hover);
+}
+
+.theme-dark strong,
+.theme-dark .cm-strong {
+  color: var(--fg-default);
+  font-weight: var(--font-weight-semibold);
+}
+
+.theme-dark em,
+.theme-dark .cm-em {
+  color: var(--fg-muted);
+  font-style: italic;
+}
+
+.theme-dark .tag {
+  color: var(--tag-color);
+  background: var(--tag-background);
+  border: 1px solid var(--tag-border-color);
+  border-radius: var(--tag-radius);
+  padding: var(--tag-padding-y) var(--tag-padding-x);
+}
+
+.theme-dark .tag:hover {
+  color: var(--tag-color-hover);
+  background: var(--tag-background-hover);
+  border-color: var(--tag-border-color-hover);
+}
+
+.theme-dark .workspace-tab-header.is-active::before,
+.theme-dark .workspace-tab-header.is-active::after {
+  display: none;
+}
+
+/* === file-explorer/tree.css === */
+
+/* Yazi-mode file explorer. This intentionally overrides the vendor nav chrome. */
+.theme-dark .workspace-leaf-content[data-type="file-explorer"] {
+  --file-line-width: 100%;
+  --nav-item-background-hover: var(--yazi-hover-bg);
+  --nav-item-background-active: var(--yazi-selected-bg);
+  --nav-item-background-selected: var(--yazi-selected-bg);
+  --nav-item-color: var(--yazi-note-fg);
+  --nav-item-color-hover: var(--yazi-note-fg);
+  --nav-item-color-active: var(--yazi-selected-fg);
+  --nav-item-color-selected: var(--yazi-selected-fg);
+  --nav-collapse-icon-color: var(--yazi-folder-fg);
+  --nav-collapse-icon-color-collapsed: var(--yazi-folder-fg);
+  background: var(--canvas-default) !important;
+}
+
+.theme-dark .workspace-leaf-content[data-type="file-explorer"] .view-header,
+.theme-dark .workspace-leaf-content[data-type="file-explorer"] .nav-header {
+  display: none !important;
+}
+
+.theme-dark .workspace-leaf-content[data-type="file-explorer"] .view-content {
+  margin: 0 10px;
+  border-left: 1px solid var(--yazi-note-fg);
+  border-right: 1px solid var(--yazi-note-fg);
+  padding: 18px 10px !important;
+  background: var(--canvas-default) !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-files-container,
+.theme-dark .workspace-leaf-content[data-type="file-explorer"] .tree-item,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .tree-item-children {
+  margin: 0 !important;
+  border: none !important;
+  padding: 0 !important;
+  background: transparent !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .tree-item-children {
+  --nav-indentation-width: 0px;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder-title,
+.theme-dark .workspace-leaf-content[data-type="file-explorer"] .nav-file-title {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0 !important;
+  width: 100% !important;
+  height: 1.28em !important;
+  min-height: 1.28em !important;
+  margin: 0 !important;
+  border-radius: 999px !important;
+  padding: 0 0.65em !important;
+  background: transparent !important;
+  color: var(--yazi-note-fg) !important;
+  font-family:
+    "JetBrainsMonoNL Nerd Font Mono", "Symbols Nerd Font Mono", monospace !important;
+  font-size: 1.2rem !important;
+  font-weight: 700 !important;
+  line-height: 1.28 !important;
+  letter-spacing: 0 !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder-title {
+  color: var(--yazi-folder-fg) !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title[data-path$=".md" i]
+  .nav-file-title-content::after {
+  content: ".md";
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .tree-item-self:hover,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder-title:hover,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title:hover {
+  background: var(--yazi-hover-bg) !important;
+  color: inherit !important;
+  font-weight: 700 !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .tree-item-self.is-active,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder-title.is-active,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title.is-active {
+  background: var(--yazi-selected-bg) !important;
+  color: var(--yazi-selected-fg) !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .tree-item-self.is-active
+  *,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .tree-item-self.is-active::before,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .tree-item-self.is-active::after,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .tree-item-self.is-active
+  .collapse-icon::before,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .tree-item-self.is-active
+  .nav-file-title-content::before {
+  color: var(--yazi-selected-fg) !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .tree-item-self::before,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .tree-item-self::after,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder-title::before,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder-title::after,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title::before,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title::after {
+  display: none !important;
+  content: none !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder-title
+  > .collapse-icon,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder-collapse-indicator {
+  display: inline-grid !important;
+  flex: 0 0 1.15em !important;
+  place-items: center !important;
+  width: 1.15em !important;
+  height: 1em !important;
+  margin: 0 0.35em 0 0 !important;
+  padding: 0 !important;
+  color: transparent !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder-title
+  > .collapse-icon
+  svg,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder-title
+  > .collapse-icon
+  path,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder-collapse-indicator
+  svg,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder-collapse-indicator
+  path {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder-title
+  > .collapse-icon::before,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder-collapse-indicator::before,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title-content::before {
+  display: inline-block !important;
+  width: 1.15em !important;
+  margin: 0 0.35em 0 0 !important;
+  background: none !important;
+  color: var(--yazi-note-fg) !important;
+  font-family:
+    "JetBrainsMonoNL Nerd Font Mono", "Symbols Nerd Font Mono", monospace !important;
+  font-size: 0.78em !important;
+  font-weight: 400 !important;
+  line-height: 1 !important;
+  text-align: center !important;
+  opacity: 1 !important;
+  -webkit-mask: none !important;
+  mask: none !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder-title
+  > .collapse-icon::before,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder-collapse-indicator::before {
+  content: "\f07b" !important;
+  color: var(--yazi-folder-fg) !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder:not(.is-collapsed)
+  > .nav-folder-title
+  > .collapse-icon::before,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder:not(.is-collapsed)
+  > .nav-folder-title
+  .nav-folder-collapse-indicator::before {
+  content: "\f07c" !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title-content::before {
+  content: "\f15b" !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title[data-path$=".md" i]
+  .nav-file-title-content::before {
+  content: "\e73e" !important;
+  color: var(--yazi-note-fg) !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title[data-path$="README.md" i]
+  .nav-file-title-content::before {
+  content: "\f02e" !important;
+  color: var(--yazi-note-fg) !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title[data-path$="LICENSE" i]
+  .nav-file-title-content::before,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title[data-path$="LICENSE.md" i]
+  .nav-file-title-content::before {
+  content: "\f084" !important;
+  color: var(--yazi-image-fg) !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  :is(
+    .nav-folder-title[data-path^="."],
+    .nav-folder-title[data-path*="/."],
+    .nav-file-title[data-path^="."],
+    .nav-file-title[data-path*="/."]
+  ) {
+  color: var(--yazi-hidden-fg) !important;
+}
+
+.theme-dark a.tag,
+.theme-dark .tag,
+.theme-dark .cm-hashtag,
+.theme-dark .metadata-property[data-property-key="tags"] .multi-select-pill,
+.theme-dark
+  .metadata-property-value[data-property-type="tags"]
+  .multi-select-pill {
+  border-radius: var(--tag-radius);
+  border: 0 !important;
+  background-color: var(--tag-background);
+  color: var(--tag-color) !important;
+  font-size: 0.85em;
+  font-weight: var(--tag-weight);
+  padding: var(--tag-padding-y) var(--tag-padding-x);
+  box-shadow: none;
+}
+
+.theme-dark .metadata-property[data-property-key="tags"] .multi-select-pill *,
+.theme-dark
+  .metadata-property-value[data-property-type="tags"]
+  .multi-select-pill
+  * {
+  color: var(--tag-color) !important;
+}
+
+.theme-dark a.tag:hover,
+.theme-dark .tag:hover,
+.theme-dark .cm-hashtag:hover,
+.theme-dark
+  .metadata-property[data-property-key="tags"]
+  .multi-select-pill:hover,
+.theme-dark
+  .metadata-property-value[data-property-type="tags"]
+  .multi-select-pill:hover {
+  background-color: var(--tag-background-hover);
+  border-color: transparent !important;
+  color: var(--tag-color) !important;
+}
+
+.theme-dark
+  .metadata-property[data-property-key="tags"]
+  .multi-select-pill:hover
+  *,
+.theme-dark
+  .metadata-property-value[data-property-type="tags"]
+  .multi-select-pill:hover
+  * {
+  color: var(--tag-color) !important;
+}
+
+.theme-dark .markdown-rendered hr {
+  border-top: 1px dashed #6e7681;
+}
+
+.theme-dark .markdown-rendered blockquote,
+.theme-dark .cm-quote {
+  border-color: var(--border-default);
+  background-color: var(--canvas-default);
+  color: var(--fg-default);
+}
+
+.theme-dark .markdown-rendered pre,
+.theme-dark .markdown-rendered pre code,
+.theme-dark .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock,
+.theme-dark .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock-begin,
+.theme-dark .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock-end,
+.theme-dark .cm-s-obsidian div.HyperMD-codeblock-bg {
+  background-color: var(--github-code-bg) !important;
+  color: var(--github-syntax-fg);
+}
+
+.theme-dark .markdown-rendered pre,
+.theme-dark .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock {
+  border: none !important;
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.theme-dark .markdown-rendered pre {
+  border: none !important;
+  box-shadow: none;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock-begin,
+.theme-dark .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock-end {
+  color: var(--github-syntax-muted);
+}
+
+.theme-dark .markdown-rendered :not(pre) > code,
+.theme-dark .cm-inline-code {
+  border: 1px solid var(--border-default);
+  border-radius: 4px;
+  background-color: var(--tag-background);
+  color: var(--inline-code-color);
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .HyperMD-codeblock .cm-comment,
+.theme-dark .markdown-rendered pre code .token.comment,
+.theme-dark .markdown-rendered pre code .token.prolog,
+.theme-dark .markdown-rendered pre code .token.doctype,
+.theme-dark .markdown-rendered pre code .token.cdata,
+.theme-dark .markdown-rendered pre code .hljs-comment,
+.theme-dark .markdown-rendered pre code .hljs-quote {
+  color: var(--github-syntax-muted) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .HyperMD-codeblock .cm-keyword,
+.theme-dark .markdown-rendered pre code .token.keyword,
+.theme-dark .markdown-rendered pre code .hljs-keyword {
+  color: var(--github-syntax-keyword) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .HyperMD-codeblock .cm-operator,
+.theme-dark .markdown-rendered pre code .token.operator,
+.theme-dark .markdown-rendered pre code .hljs-operator {
+  color: var(--github-syntax-constant) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .HyperMD-codeblock .cm-string,
+.theme-dark .markdown-source-view.mod-cm6 .HyperMD-codeblock .cm-string-2,
+.theme-dark .markdown-rendered pre code .token.string,
+.theme-dark .markdown-rendered pre code .token.char,
+.theme-dark .markdown-rendered pre code .hljs-string {
+  color: var(--github-syntax-string) !important;
+}
+
+.theme-dark .markdown-rendered pre code .token.inserted,
+.theme-dark .markdown-rendered pre code .hljs-addition {
+  border-radius: 2px;
+  background-color: var(--github-syntax-addition-bg);
+  color: var(--github-syntax-addition-fg) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .HyperMD-codeblock .cm-def,
+.theme-dark .markdown-rendered pre code .token.function,
+.theme-dark .markdown-rendered pre code .hljs-title {
+  color: var(--github-syntax-function) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .HyperMD-codeblock .cm-number,
+.theme-dark .markdown-source-view.mod-cm6 .HyperMD-codeblock .cm-atom,
+.theme-dark .markdown-source-view.mod-cm6 .HyperMD-codeblock .cm-property,
+.theme-dark .markdown-rendered pre code .token.number,
+.theme-dark .markdown-rendered pre code .token.boolean,
+.theme-dark .markdown-rendered pre code .token.constant,
+.theme-dark .markdown-rendered pre code .token.property,
+.theme-dark .markdown-rendered pre code .hljs-number,
+.theme-dark .markdown-rendered pre code .hljs-literal,
+.theme-dark .markdown-rendered pre code .hljs-attr {
+  color: var(--github-syntax-constant) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .HyperMD-codeblock .cm-variable,
+.theme-dark .markdown-source-view.mod-cm6 .HyperMD-codeblock .cm-variable-2,
+.theme-dark .markdown-source-view.mod-cm6 .HyperMD-codeblock .cm-variable-3,
+.theme-dark .markdown-source-view.mod-cm6 .HyperMD-codeblock .cm-builtin,
+.theme-dark .markdown-rendered pre code .token.variable,
+.theme-dark .markdown-rendered pre code .token.class-name,
+.theme-dark .markdown-rendered pre code .token.builtin,
+.theme-dark .markdown-rendered pre code .hljs-variable,
+.theme-dark .markdown-rendered pre code .hljs-class,
+.theme-dark .markdown-rendered pre code .hljs-built_in {
+  color: var(--github-syntax-variable) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .HyperMD-codeblock .cm-tag,
+.theme-dark .markdown-source-view.mod-cm6 .HyperMD-codeblock .cm-attribute,
+.theme-dark .markdown-rendered pre code .token.tag,
+.theme-dark .markdown-rendered pre code .token.attr-name,
+.theme-dark .markdown-rendered pre code .hljs-tag,
+.theme-dark .markdown-rendered pre code .hljs-name {
+  color: var(--github-syntax-tag) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .HyperMD-codeblock .cm-error,
+.theme-dark .markdown-rendered pre code .token.deleted,
+.theme-dark .markdown-rendered pre code .hljs-deletion {
+  border-radius: 2px;
+  background-color: var(--github-syntax-invalid-bg);
+  color: var(--fg-on-emphasis) !important;
+}
+
+
+
+/* Yazi final pass: keep the file explorer close to the terminal UI. */
+.theme-dark .workspace-leaf-content[data-type="file-explorer"] {
+  --yazi-sidebar-font-size: 1.2rem;
+  --yazi-row-height: 1.28em;
+  --yazi-row-padding-x: 0.65em;
+  --nav-item-size: var(--yazi-row-height);
+  --nav-item-children-padding-left: 0;
+  --nav-indentation-width: 0px;
+  background: var(--ink-palette-black) !important;
+}
+
+.theme-dark .workspace-leaf-content[data-type="file-explorer"] .view-content {
+  overflow-x: hidden !important;
+  margin: 0 10px !important;
+  border-right: 1px solid var(--yazi-note-fg) !important;
+  border-left: 1px solid var(--yazi-note-fg) !important;
+  padding: 18px 10px !important;
+  background: var(--ink-palette-black) !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  :is(
+    .nav-files-container,
+    .nav-folder,
+    .nav-file,
+    .tree-item,
+    .tree-item-children
+  ) {
+  margin: 0 !important;
+  border: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  :is(.nav-folder-title, .nav-file-title) {
+  box-sizing: border-box !important;
+  display: flex !important;
+  align-items: center !important;
+  width: 100% !important;
+  height: var(--yazi-row-height) !important;
+  min-height: var(--yazi-row-height) !important;
+  margin: 0 !important;
+  border: 0 !important;
+  border-radius: 999px !important;
+  box-shadow: none !important;
+  padding: 0 var(--yazi-row-padding-x) !important;
+  background: transparent !important;
+  color: var(--yazi-note-fg) !important;
+  font-family:
+    "JetBrainsMonoNL Nerd Font Mono", "Symbols Nerd Font Mono", monospace !important;
+  font-size: var(--yazi-sidebar-font-size) !important;
+  font-weight: 700 !important;
+  line-height: var(--yazi-row-height) !important;
+  letter-spacing: 0 !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder-title {
+  color: var(--yazi-folder-fg) !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  :is(.nav-folder-title:hover, .nav-file-title:hover) {
+  background: var(--yazi-hover-bg) !important;
+  color: inherit !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  :is(.nav-folder-title.is-active, .nav-file-title.is-active) {
+  background: var(--yazi-selected-bg) !important;
+  color: var(--yazi-selected-fg) !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  :is(
+    .nav-folder-title.is-active,
+    .nav-file-title.is-active,
+    .nav-folder-title.is-active *,
+    .nav-file-title.is-active *,
+    .nav-folder-title.is-active::before,
+    .nav-folder-title.is-active::after,
+    .nav-file-title.is-active::before,
+    .nav-file-title.is-active::after,
+    .nav-folder-title.is-active .collapse-icon::before,
+    .nav-folder-title.is-active .nav-folder-collapse-indicator::before,
+    .nav-file-title.is-active .nav-file-title-content::before,
+    .nav-file-title.is-active .nav-file-title-content::after
+  ) {
+  color: var(--yazi-selected-fg) !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  :is(.nav-folder-title, .nav-file-title)::before,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  :is(.nav-folder-title, .nav-file-title)::after {
+  display: none !important;
+  content: none !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  :is(.collapse-icon, .nav-folder-collapse-indicator) {
+  display: inline-grid !important;
+  flex: 0 0 1.15em !important;
+  place-items: center !important;
+  width: 1.15em !important;
+  height: 1em !important;
+  margin: 0 0.35em 0 0 !important;
+  padding: 0 !important;
+  color: transparent !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  :is(.collapse-icon, .nav-folder-collapse-indicator)
+  :is(svg, path) {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  :is(
+    .collapse-icon,
+    .nav-folder-collapse-indicator,
+    .nav-file-title-content
+  )::before {
+  display: inline-block !important;
+  width: 1.15em !important;
+  margin: 0 0.35em 0 0 !important;
+  background: none !important;
+  color: var(--yazi-note-fg) !important;
+  font-family:
+    "JetBrainsMonoNL Nerd Font Mono", "Symbols Nerd Font Mono", monospace !important;
+  font-size: 0.78em !important;
+  font-weight: 400 !important;
+  line-height: 1 !important;
+  text-align: center !important;
+  opacity: 1 !important;
+  -webkit-mask: none !important;
+  mask: none !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  :is(.collapse-icon, .nav-folder-collapse-indicator)::before {
+  content: "\f07b" !important;
+  color: var(--yazi-folder-fg) !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder:not(.is-collapsed)
+  > .nav-folder-title
+  :is(.collapse-icon, .nav-folder-collapse-indicator)::before {
+  content: "\f07c" !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title-content::before {
+  content: "\f15b" !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title[data-path$=".md" i]
+  .nav-file-title-content::before,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title[data-path$=".canvas" i]
+  .nav-file-title-content::before {
+  content: "\e73e" !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title[data-path$="README.md" i]
+  .nav-file-title-content::before {
+  content: "\f02e" !important;
+  color: var(--yazi-note-fg) !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title[data-path$="LICENSE" i]
+  .nav-file-title-content::before,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title[data-path$="LICENSE.md" i]
+  .nav-file-title-content::before {
+  content: "\f084" !important;
+  color: var(--yazi-image-fg) !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title:is(
+    [data-path$=".png" i],
+    [data-path$=".jpg" i],
+    [data-path$=".jpeg" i],
+    [data-path$=".gif" i],
+    [data-path$=".webp" i],
+    [data-path$=".svg" i],
+    [data-path$=".heic" i]
+  )
+  .nav-file-title-content::before {
+  content: "\f1c5" !important;
+  color: var(--yazi-image-fg) !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title:is(
+    [data-path$=".mp4" i],
+    [data-path$=".mov" i],
+    [data-path$=".mkv" i],
+    [data-path$=".webm" i]
+  )
+  .nav-file-title-content::before {
+  content: "\f1c8" !important;
+  color: var(--yazi-media-fg) !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title:is(
+    [data-path$=".mp3" i],
+    [data-path$=".wav" i],
+    [data-path$=".flac" i],
+    [data-path$=".m4a" i],
+    [data-path$=".ogg" i]
+  )
+  .nav-file-title-content::before {
+  content: "\f1c7" !important;
+  color: var(--yazi-media-fg) !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title:is(
+    [data-path$=".zip" i],
+    [data-path$=".tar" i],
+    [data-path$=".gz" i],
+    [data-path$=".tgz" i],
+    [data-path$=".7z" i],
+    [data-path$=".rar" i]
+  )
+  .nav-file-title-content::before {
+  content: "\f1c6" !important;
+  color: var(--yazi-archive-fg) !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title:is([data-path$=".dmg" i], [data-path$=".iso" i])
+  .nav-file-title-content::before {
+  content: "\f0a0" !important;
+  color: var(--yazi-disk-fg) !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title[data-path$=".pdf" i]
+  .nav-file-title-content::before {
+  content: "\f1c1" !important;
+  color: var(--danger-emphasis) !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title:is(
+    [data-path$=".sh" i],
+    [data-path$=".fish" i],
+    [data-path$=".zsh" i],
+    [data-path$=".bash" i],
+    [data-path$=".command" i]
+  )
+  .nav-file-title-content::before {
+  content: "\f121" !important;
+  color: var(--yazi-exec-fg) !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  :is(
+    .nav-folder-title.is-active .collapse-icon::before,
+    .nav-folder-title.is-active .nav-folder-collapse-indicator::before,
+    .nav-file-title.is-active .nav-file-title-content::before
+  ) {
+  color: var(--yazi-selected-fg) !important;
+}
+
+/* Yazi icon state pass: icons follow filetype, hidden, and selection colors. */
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder-title {
+  --yazi-row-icon-fg: var(--yazi-folder-fg);
+  --yazi-row-highlight-bg: var(--yazi-folder-fg);
+}
+
+.theme-dark .workspace-leaf-content[data-type="file-explorer"] .nav-file-title {
+  --yazi-row-icon-fg: var(--yazi-note-fg);
+  --yazi-row-highlight-bg: var(--yazi-note-fg);
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder-title
+  :is(.collapse-icon, .nav-folder-collapse-indicator)::before,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title
+  .nav-file-title-content::before {
+  color: var(--yazi-row-icon-fg) !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title:is(
+    [data-path$=".png" i],
+    [data-path$=".jpg" i],
+    [data-path$=".jpeg" i],
+    [data-path$=".gif" i],
+    [data-path$=".webp" i],
+    [data-path$=".svg" i],
+    [data-path$=".heic" i]
+  ) {
+  --yazi-row-icon-fg: var(--yazi-image-fg);
+  --yazi-row-highlight-bg: var(--yazi-image-fg);
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title:is(
+    [data-path$=".mp4" i],
+    [data-path$=".mov" i],
+    [data-path$=".mkv" i],
+    [data-path$=".webm" i],
+    [data-path$=".mp3" i],
+    [data-path$=".wav" i],
+    [data-path$=".flac" i],
+    [data-path$=".m4a" i],
+    [data-path$=".ogg" i]
+  ) {
+  --yazi-row-icon-fg: var(--yazi-media-fg);
+  --yazi-row-highlight-bg: var(--yazi-media-fg);
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title:is(
+    [data-path$=".zip" i],
+    [data-path$=".tar" i],
+    [data-path$=".gz" i],
+    [data-path$=".tgz" i],
+    [data-path$=".7z" i],
+    [data-path$=".rar" i]
+  ) {
+  --yazi-row-icon-fg: var(--yazi-archive-fg);
+  --yazi-row-highlight-bg: var(--yazi-archive-fg);
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title:is([data-path$=".dmg" i], [data-path$=".iso" i]) {
+  --yazi-row-icon-fg: var(--yazi-disk-fg);
+  --yazi-row-highlight-bg: var(--yazi-disk-fg);
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title:is([data-path$="LICENSE" i], [data-path$="LICENSE.md" i]) {
+  --yazi-row-icon-fg: var(--yazi-image-fg);
+  --yazi-row-highlight-bg: var(--yazi-image-fg);
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title[data-path$=".pdf" i] {
+  --yazi-row-icon-fg: var(--danger-emphasis);
+  --yazi-row-highlight-bg: var(--danger-emphasis);
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title:is(
+    [data-path$=".sh" i],
+    [data-path$=".fish" i],
+    [data-path$=".zsh" i],
+    [data-path$=".bash" i],
+    [data-path$=".command" i]
+  ) {
+  --yazi-row-icon-fg: var(--yazi-exec-fg);
+  --yazi-row-highlight-bg: var(--yazi-exec-fg);
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  :is(
+    .nav-folder-title[data-path^="."],
+    .nav-folder-title[data-path*="/."],
+    .nav-file-title[data-path^="."],
+    .nav-file-title[data-path*="/."]
+  ) {
+  --yazi-row-icon-fg: var(--yazi-hidden-fg);
+  --yazi-row-highlight-bg: var(--yazi-hidden-fg);
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  :is(
+    .nav-folder-title:hover,
+    .nav-folder-title.is-active,
+    .nav-folder-title.is-selected,
+    .nav-folder-title.mod-active,
+    .nav-file-title:hover,
+    .nav-file-title.is-active,
+    .nav-file-title.is-selected,
+    .nav-file-title.mod-active
+  ) {
+  --yazi-row-icon-fg: var(--yazi-selected-fg);
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  :is(
+    .nav-folder-title:hover,
+    .nav-folder-title.is-active,
+    .nav-folder-title.is-selected,
+    .nav-folder-title.mod-active,
+    .nav-file-title:hover,
+    .nav-file-title.is-active,
+    .nav-file-title.is-selected,
+    .nav-file-title.mod-active
+  ) {
+  background: var(--yazi-row-highlight-bg) !important;
+  color: var(--yazi-selected-fg) !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  :is(
+    .nav-folder-title:hover,
+    .nav-folder-title.is-active,
+    .nav-folder-title.is-selected,
+    .nav-folder-title.mod-active,
+    .nav-file-title:hover,
+    .nav-file-title.is-active,
+    .nav-file-title.is-selected,
+    .nav-file-title.mod-active
+  )
+  * {
+  color: var(--yazi-selected-fg) !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title[data-path]
+  .nav-file-title-content::before,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder-title
+  :is(.collapse-icon, .nav-folder-collapse-indicator)::before {
+  color: var(--yazi-row-icon-fg) !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder-title.is-active
+  .collapse-icon::before,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder-title.is-active
+  .nav-folder-collapse-indicator::before,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder-title:hover
+  .collapse-icon::before,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder-title:hover
+  .nav-folder-collapse-indicator::before,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder-title.is-selected
+  .collapse-icon::before,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder-title.is-selected
+  .nav-folder-collapse-indicator::before,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder-title.mod-active
+  .collapse-icon::before,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder-title.mod-active
+  .nav-folder-collapse-indicator::before,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title:hover
+  .nav-file-title-content::before,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title.is-active
+  .nav-file-title-content::before,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title.is-selected
+  .nav-file-title-content::before,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title.mod-active
+  .nav-file-title-content::before {
+  color: var(--yazi-selected-fg) !important;
+}
+
+/* Yazi geometry correction pass: match Ghostty's font and keep icons in a stable column. */
+.theme-dark
+  .workspace-split.mod-left-split:has(
+    .workspace-leaf-content[data-type="file-explorer"]
+  )
+  .workspace-tab-header-container {
+  display: none !important;
+}
+
+.theme-dark .workspace-leaf-content[data-type="file-explorer"] {
+  --yazi-terminal-font:
+    "JetBrainsMono Nerd Font Mono", "JetBrainsMonoNL Nerd Font Mono",
+    "Symbols Nerd Font Mono", monospace;
+  --yazi-sidebar-font-size: 16px;
+  --yazi-row-height: 1.36em;
+  --yazi-row-padding-x: 0.42em;
+  --yazi-icon-cell: 1.12em;
+  --yazi-icon-gap: 0.42em;
+  font-family: var(--yazi-terminal-font) !important;
+}
+
+.theme-dark .workspace-leaf-content[data-type="file-explorer"] .view-content {
+  padding: 0.95em 0.65em !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  :is(.nav-folder-title, .nav-file-title) {
+  box-sizing: border-box !important;
+  display: flex !important;
+  align-items: center !important;
+  width: 100% !important;
+  height: var(--yazi-row-height) !important;
+  min-height: var(--yazi-row-height) !important;
+  margin: 0 !important;
+  padding: 0 var(--yazi-row-padding-x) !important;
+  font-family: var(--yazi-terminal-font) !important;
+  font-size: var(--yazi-sidebar-font-size) !important;
+  font-weight: 600 !important;
+  line-height: var(--yazi-row-height) !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  :is(
+    .nav-folder-title:hover,
+    .nav-folder-title.is-active,
+    .nav-folder-title.is-selected,
+    .nav-folder-title.mod-active,
+    .nav-file-title:hover,
+    .nav-file-title.is-active,
+    .nav-file-title.is-selected,
+    .nav-file-title.mod-active
+  ) {
+  font-weight: 700 !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  :is(.nav-folder-title-content, .nav-file-title-content) {
+  position: static !important;
+  display: inline-flex !important;
+  flex: 1 1 auto !important;
+  align-items: center !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  color: inherit !important;
+  line-height: inherit !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  :is(.collapse-icon, .nav-folder-collapse-indicator) {
+  position: static !important;
+  display: inline-grid !important;
+  flex: 0 0 var(--yazi-icon-cell) !important;
+  place-items: center !important;
+  width: var(--yazi-icon-cell) !important;
+  min-width: var(--yazi-icon-cell) !important;
+  height: 1em !important;
+  margin: 0 var(--yazi-icon-gap) 0 0 !important;
+  padding: 0 !important;
+  transform: none !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title-content::before {
+  position: static !important;
+  display: inline-block !important;
+  flex: 0 0 var(--yazi-icon-cell) !important;
+  width: var(--yazi-icon-cell) !important;
+  min-width: var(--yazi-icon-cell) !important;
+  margin: 0 var(--yazi-icon-gap) 0 0 !important;
+  padding: 0 !important;
+  font-family: var(--yazi-terminal-font) !important;
+  font-size: 0.82em !important;
+  font-weight: 400 !important;
+  line-height: 1 !important;
+  text-align: center !important;
+  transform: none !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  :is(.collapse-icon, .nav-folder-collapse-indicator)::before {
+  position: static !important;
+  display: inline-block !important;
+  width: var(--yazi-icon-cell) !important;
+  min-width: var(--yazi-icon-cell) !important;
+  margin: 0 !important;
+  font-family: var(--yazi-terminal-font) !important;
+  font-size: 0.82em !important;
+  font-weight: 400 !important;
+  line-height: 1 !important;
+  text-align: center !important;
+  transform: none !important;
+}
+
+/* Restore Obsidian sidebar chrome and tree depth after the Yazi file-list pass. */
+.theme-dark
+  .workspace-split.mod-left-split:has(
+    .workspace-leaf-content[data-type="file-explorer"]
+  )
+  .workspace-tab-header-container {
+  display: flex !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  :is(.view-header, .nav-header) {
+  display: flex !important;
+}
+
+.theme-dark .workspace-leaf-content[data-type="file-explorer"] {
+  --nav-indentation-width: calc(var(--yazi-icon-cell) + var(--yazi-icon-gap));
+  --nav-item-children-padding-left: calc(
+    var(--yazi-icon-cell) + var(--yazi-icon-gap)
+  );
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  :is(.nav-folder-children, .tree-item-children) {
+  padding-left: calc(var(--yazi-icon-cell) + var(--yazi-icon-gap)) !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  > .view-content
+  :is(.nav-files-container, .tree-item-children)
+  > :is(.nav-folder, .nav-file, .tree-item) {
+  margin-left: 0 !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-files-container
+  > :is(.nav-folder, .nav-file, .tree-item) {
+  margin-left: 0 !important;
+}
+
+/* Yazi weight correction: Ghostty thickens regular text; Yazi only bolds hovered rows. */
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  :is(.nav-folder-title, .nav-file-title) {
+  font-weight: 425 !important;
+  font-synthesis-weight: none !important;
+  -webkit-font-smoothing: antialiased;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  :is(
+    .nav-folder-title:hover,
+    .nav-folder-title.is-active,
+    .nav-folder-title.is-selected,
+    .nav-folder-title.mod-active,
+    .nav-file-title:hover,
+    .nav-file-title.is-active,
+    .nav-file-title.is-selected,
+    .nav-file-title.mod-active
+  ) {
+  font-weight: 700 !important;
+}
+
+/* Folder icon hard override: render the folder from the row itself so sizing works. */
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder-title {
+  --yazi-folder-icon-cell: 1.2em;
+  --yazi-folder-icon-gap: 0.34em;
+  display: grid !important;
+  grid-template-columns: var(--yazi-folder-icon-cell) minmax(0, 1fr) !important;
+  column-gap: var(--yazi-folder-icon-gap) !important;
+  align-items: center !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder-title
+  > :is(.collapse-icon, .nav-folder-collapse-indicator, .tree-item-icon) {
+  display: none !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder-title::before {
+  content: "\f07b" !important;
+  display: block !important;
+  grid-column: 1 !important;
+  width: var(--yazi-folder-icon-cell) !important;
+  min-width: var(--yazi-folder-icon-cell) !important;
+  height: 1em !important;
+  margin: 0 !important;
+  color: var(--yazi-row-icon-fg) !important;
+  font-family: var(--yazi-terminal-font) !important;
+  font-size: 1.08em !important;
+  font-weight: 400 !important;
+  line-height: 1 !important;
+  text-align: center !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder:not(.is-collapsed)
+  > .nav-folder-title::before {
+  content: "\f07c" !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder-title
+  .nav-folder-title-content {
+  grid-column: 2 !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  :is(
+    .nav-folder-title:hover,
+    .nav-folder-title.is-active,
+    .nav-folder-title.is-selected,
+    .nav-folder-title.mod-active
+  )::before {
+  color: var(--yazi-selected-fg) !important;
+}
+
+/* === editor/source-syntax.css === */
+
+/* Neovim-style raw Markdown source highlighting. */
+.theme-dark .markdown-source-view.mod-cm6 {
+  --ink-md-source-font:
+    "JetBrains Mono", "JetBrainsMono Nerd Font Mono",
+    "JetBrainsMonoNL Nerd Font Mono", ui-monospace, SFMono-Regular, "SF Mono",
+    Menlo, Consolas, "Liberation Mono", monospace;
+  --ink-md-normal: var(--ink-palette-white);
+  --ink-md-muted: var(--ink-palette-gray-bright);
+  --ink-md-dash: var(--ink-palette-gray-dim);
+  --ink-md-heading: var(--ink-palette-blue);
+  --ink-md-code-bg: #171b22;
+  --ink-md-code-info: #7ee787;
+  --ink-md-unchecked: var(--ink-palette-gray);
+  --ink-md-checked: var(--ink-palette-green);
+  --ink-md-marker: var(--ink-md-dash);
+  --ink-md-heading-1: var(--ink-md-heading);
+  --ink-md-heading-2: var(--ink-md-heading);
+  --ink-md-heading-3: var(--ink-md-heading);
+  --ink-md-heading-4: var(--ink-md-heading);
+  --ink-md-heading-5: var(--ink-md-heading);
+  --ink-md-heading-6: var(--ink-md-heading);
+  --ink-md-link: var(--ink-md-normal);
+  --ink-md-tag: var(--ink-md-normal);
+  --ink-md-table: var(--ink-md-dash);
+  --ink-md-quote-bar: var(--ink-md-normal);
+  --ink-md-quote-text: var(--ink-md-normal);
+  --file-line-width: 100%;
+  --line-width: 100%;
+  --max-width: 100%;
+  color: var(--fg-default);
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .cm-sizer,
+.theme-dark .markdown-source-view.mod-cm6 .cm-contentContainer,
+.theme-dark .markdown-source-view.mod-cm6 .cm-content,
+.theme-dark .markdown-source-view.mod-cm6 .cm-line {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  max-width: none !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .cm-content,
+.theme-dark .markdown-source-view.mod-cm6 .cm-line {
+  color: var(--fg-default);
+  font-family: var(--ink-md-source-font) !important;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .cm-gutterElement {
+  color: var(--github-syntax-muted);
+  font-family: var(--ink-md-source-font) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .cm-formatting,
+.theme-dark .markdown-source-view.mod-cm6 .cm-formatting-header,
+.theme-dark .markdown-source-view.mod-cm6 .cm-formatting-list,
+.theme-dark .markdown-source-view.mod-cm6 .cm-formatting-quote,
+.theme-dark .markdown-source-view.mod-cm6 .cm-formatting-code,
+.theme-dark .markdown-source-view.mod-cm6 .cm-formatting-em,
+.theme-dark .markdown-source-view.mod-cm6 .cm-formatting-strong,
+.theme-dark .markdown-source-view.mod-cm6 .cm-formatting-link,
+.theme-dark .markdown-source-view.mod-cm6 .cm-formatting-link-string,
+.theme-dark .markdown-source-view.mod-cm6 .cm-formatting-strikethrough,
+.theme-dark .markdown-source-view.mod-cm6 .cm-formatting-highlight {
+  background: transparent !important;
+  color: var(--ink-md-marker) !important;
+  font-weight: 400 !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .cm-formatting-task {
+  background: transparent !important;
+  color: var(--checkbox-border-color) !important;
+  font-weight: 400 !important;
+}
+
+.theme-dark
+  .markdown-source-view.mod-cm6
+  .cm-line.HyperMD-task-line[data-task]:not([data-task=" "])
+  .cm-formatting-task {
+  color: var(--checkbox-color) !important;
+}
+
+.theme-dark
+  .markdown-source-view.mod-cm6
+  :is(
+    .cm-header,
+    .cm-header-1,
+    .cm-header-2,
+    .cm-header-3,
+    .cm-header-4,
+    .cm-header-5,
+    .cm-header-6
+  ) {
+  font-family: var(--ink-md-source-font) !important;
+  font-size: inherit !important;
+  font-weight: 600;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .cm-header-1 {
+  color: var(--ink-md-heading-1) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .cm-header-2 {
+  color: var(--ink-md-heading-2) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .cm-header-3 {
+  color: var(--ink-md-heading-3) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .cm-header-4 {
+  color: var(--ink-md-heading-4) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .cm-header-5 {
+  color: var(--ink-md-heading-5) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .cm-header-6 {
+  color: var(--ink-md-heading-6) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .cm-inline-code {
+  border: 0 !important;
+  border-radius: 4px;
+  background-color: var(--tag-background) !important;
+  color: var(--inline-code-color) !important;
+  font-family: var(--ink-md-source-font) !important;
+  font-size: inherit;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock,
+.theme-dark .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock-begin,
+.theme-dark .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock-end {
+  border: 0 !important;
+  background-color: var(--ink-md-code-bg) !important;
+  color: var(--github-syntax-fg);
+  font-family: var(--ink-md-source-font) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock-begin {
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  color: var(--ink-md-marker) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock-end {
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+  color: var(--ink-md-marker) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .cm-line.HyperMD-quote {
+  border-left: 2px solid var(--ink-md-quote-bar);
+  background: transparent !important;
+  color: var(--ink-md-quote-text);
+}
+
+.theme-dark
+  .markdown-source-view.mod-cm6
+  .cm-line.HyperMD-quote
+  .cm-formatting-quote {
+  color: var(--ink-md-marker) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .cm-line.HyperMD-table-row,
+.theme-dark .markdown-source-view.mod-cm6 .cm-line.HyperMD-table-row-0,
+.theme-dark .markdown-source-view.mod-cm6 .cm-line.HyperMD-table-row-1 {
+  color: var(--fg-default);
+  font-family: var(--ink-md-source-font) !important;
+}
+
+.theme-dark
+  .markdown-source-view.mod-cm6
+  :is(.cm-hmd-table-sep, .cm-table-widget, .HyperMD-table-row .cm-formatting) {
+  color: var(--ink-md-table) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .cm-line.HyperMD-frontmatter,
+.theme-dark .markdown-source-view.mod-cm6 .cm-line.HyperMD-frontmatter-begin,
+.theme-dark .markdown-source-view.mod-cm6 .cm-line.HyperMD-frontmatter-end,
+.theme-dark .markdown-source-view.mod-cm6 .cm-hmd-frontmatter {
+  color: var(--github-syntax-muted) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .cm-comment {
+  color: var(--github-syntax-muted) !important;
+  font-style: normal;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .cm-strong {
+  font-weight: 600 !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .cm-em {
+  font-style: italic;
+}
+
+.theme-dark
+  .markdown-source-view.mod-cm6
+  :is(
+    .cm-link,
+    .cm-url,
+    .cm-hmd-internal-link,
+    .cm-hmd-external-link,
+    .cm-hmd-barelink,
+    .cm-link-alias,
+    .cm-link-has-alias,
+    .cm-underline
+  ) {
+  color: var(--ink-accent) !important;
+  text-decoration: none !important;
+  border-bottom: 1px solid var(--ink-link-border);
+}
+
+.theme-dark
+  .markdown-source-view.mod-cm6
+  :is(.is-unresolved, .cm-hmd-internal-link.is-unresolved) {
+  color: var(--ink-terminal-text-dim) !important;
+  border-bottom-color: var(--ink-link-border);
+}
+
+.theme-dark
+  .markdown-source-view.mod-cm6
+  :is(
+    .cm-link,
+    .cm-url,
+    .cm-hmd-internal-link,
+    .cm-hmd-external-link,
+    .cm-hmd-barelink,
+    .cm-link-alias,
+    .cm-link-has-alias,
+    .cm-underline
+  ):hover {
+  color: var(--ink-accent-hover) !important;
+  border-bottom-color: var(--ink-link-border-hover);
+}
+
+.theme-dark ::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  background-color: var(--border-default);
+}
+
+.theme-dark ::-webkit-scrollbar-thumb:hover {
+  background-color: var(--neutral-emphasis);
+}
+
+/* === markdown/document.css === */
+
+/* GitHub-style Markdown document rendering. */
+.theme-dark {
+  --github-markdown-font:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  --github-markdown-mono:
+    ui-monospace, SFMono-Regular, "SF Mono", "JetBrainsMono Nerd Font Mono",
+    "JetBrains Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  --github-markdown-padding: 45px;
+  --github-markdown-padding-mobile: 15px;
+  --github-markdown-heading-border: #21262d;
+}
+
+.theme-dark
+  :is(.markdown-reading-view, .markdown-preview-view, .markdown-rendered) {
+  background: var(--canvas-default) !important;
+}
+
+.theme-dark .markdown-preview-view .markdown-preview-sizer {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+  padding-right: var(--github-markdown-padding) !important;
+  padding-left: var(--github-markdown-padding) !important;
+}
+
+.theme-dark .markdown-rendered,
+.theme-dark
+  .markdown-rendered
+  :is(p, li, td, th, blockquote, details, summary, .callout, .callout-content) {
+  color: var(--fg-default);
+  font-family: var(--github-markdown-font);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  overflow-wrap: break-word;
+}
+
+.theme-dark .markdown-rendered {
+  --ink-list-marker-inset: 1ch;
+  --ink-list-bullet-offset: 0.8em;
+  --list-indent: calc(
+    var(--ink-list-marker-inset) + var(--ink-list-bullet-offset)
+  );
+  --list-spacing: 0;
+}
+
+.theme-dark
+  .markdown-rendered
+  :is(p, blockquote, ul, ol, dl, table, pre, details) {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.theme-dark .markdown-rendered summary {
+  cursor: pointer;
+}
+
+.theme-dark .markdown-rendered details:not([open]) > :not(summary) {
+  display: none !important;
+}
+
+.theme-dark .markdown-rendered :is(h1, h2, h3, h4, h5, h6) {
+  margin-top: 24px;
+  margin-bottom: 16px;
+  color: var(--fg-default);
+  font-family: var(--github-markdown-font);
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.theme-dark .markdown-rendered :is(strong, b) {
+  font-weight: 600;
+}
+
+.theme-dark .markdown-rendered :is(em, i) {
+  font-style: italic;
+}
+
+.theme-dark
+  .markdown-rendered
+  :is(a, .internal-link, .external-link, .is-unresolved) {
+  color: var(--ink-accent) !important;
+  text-decoration: none;
+  border-bottom: 1px solid var(--ink-link-border);
+}
+
+.theme-dark
+  .markdown-rendered
+  :is(a, .internal-link, .external-link, .is-unresolved):hover {
+  color: var(--ink-accent-hover) !important;
+  border-bottom-color: var(--ink-link-border-hover);
+}
+
+.theme-dark .markdown-rendered .is-unresolved {
+  color: var(--ink-terminal-text-dim) !important;
+}
+
+.theme-dark .markdown-rendered h1 {
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid var(--github-markdown-heading-border);
+  font-size: 2em;
+}
+
+.theme-dark .markdown-rendered h2 {
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid var(--github-markdown-heading-border);
+  font-size: 1.5em;
+}
+
+.theme-dark .markdown-rendered h3 {
+  font-size: 1.25em;
+}
+
+.theme-dark .markdown-rendered h4 {
+  font-size: 1em;
+}
+
+.theme-dark .markdown-rendered h5 {
+  font-size: 0.875em;
+}
+
+.theme-dark .markdown-rendered h6 {
+  color: var(--fg-muted);
+  font-size: 0.85em;
+}
+
+.theme-dark .markdown-rendered > :first-child,
+.theme-dark .markdown-rendered .markdown-preview-section > :first-child {
+  margin-top: 0 !important;
+}
+
+.theme-dark .markdown-rendered > :last-child,
+.theme-dark .markdown-rendered .markdown-preview-section > :last-child {
+  margin-bottom: 0 !important;
+}
+
+.theme-dark .markdown-rendered :is(ul:not(.contains-task-list), ol) {
+  padding-left: 0 !important;
+  padding-inline-start: 0 !important;
+}
+
+.theme-dark .markdown-rendered :is(ul:not(.contains-task-list), ol) > li {
+  margin-inline-start: var(--list-indent) !important;
+}
+
+.theme-dark .markdown-rendered ul:not(.contains-task-list) > li > .list-bullet {
+  margin-inline-start: calc(-1 * var(--ink-list-bullet-offset)) !important;
+}
+
+.theme-dark .markdown-rendered :is(ul, ol) {
+  margin-top: 0 !important;
+  margin-bottom: 0.25em !important;
+}
+
+.theme-dark .markdown-rendered div.el-p:has(+ div:is(.el-ul, .el-ol)) > p {
+  margin-bottom: 8px !important;
+}
+
+body.theme-dark.readable-spacing
+  .markdown-rendered
+  div.el-p
+  + div:is(.el-ul, .el-ol)
+  > * {
+  margin-block-start: 0.125em !important;
+}
+
+.theme-dark .markdown-rendered :is(ul, ol) :is(ul, ol) {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.theme-dark .markdown-rendered li + li {
+  margin-top: 0;
+}
+
+.theme-dark .markdown-rendered li > p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.theme-dark .markdown-rendered .task-list-item-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(
+    var(--ink-task-marker-checkbox-size, 0.82em) /
+      var(--ink-task-done-glyph-size, 0.82)
+  );
+  height: calc(
+    var(--ink-task-marker-checkbox-size, 0.82em) /
+      var(--ink-task-done-glyph-size, 0.82)
+  );
+  margin: 0 0.2em 0 -1.35em;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  opacity: 1 !important;
+  vertical-align: middle;
+  transform: none !important;
+}
+
+.theme-dark .markdown-rendered .task-list-item-checkbox::before {
+  content: "";
+  position: static;
+  display: inline-block;
+  width: var(--ink-task-marker-checkbox-size, 0.82em) !important;
+  height: var(--ink-task-marker-checkbox-size, 0.82em) !important;
+  border: 2px solid var(--ink-terminal-black) !important;
+  border-radius: 5px;
+  background-color: var(--ink-terminal-surface-2) !important;
+  opacity: 0.4;
+}
+
+.theme-dark .markdown-rendered .task-list-item-checkbox:checked {
+  background: transparent !important;
+}
+
+.theme-dark .markdown-rendered .task-list-item-checkbox:checked::before {
+  content: "✓" !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(
+    var(--ink-task-marker-checkbox-size, 0.82em) /
+      var(--ink-task-done-glyph-size, 0.82)
+  ) !important;
+  height: calc(
+    var(--ink-task-marker-checkbox-size, 0.82em) /
+      var(--ink-task-done-glyph-size, 0.82)
+  ) !important;
+  background-color: var(--ink-terminal-surface-2) !important;
+  color: var(--ink-terminal-text);
+  font-size: calc(var(--ink-task-done-glyph-size, 0.82) * 1em);
+  font-weight: 900;
+  line-height: 1;
+  opacity: 0.72;
+}
+
+.theme-dark .markdown-rendered .task-list-item-checkbox::after {
+  display: none !important;
+  content: none !important;
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+}
+
+.theme-dark .markdown-rendered blockquote {
+  position: static;
+  margin: 0 0 16px;
+  padding: 0 1em;
+  border: 0;
+  border-inline-start: 0.25em solid var(--border-default);
+  border-radius: 0;
+  background: transparent;
+  color: var(--fg-muted);
+}
+
+.theme-dark .markdown-rendered blockquote::before {
+  content: none;
+}
+
+.theme-dark .markdown-rendered blockquote blockquote {
+  margin: 0.75em 0 0;
+  padding-left: 1em;
+  border-inline-start-color: var(--neutral-emphasis);
+  background: transparent;
+}
+
+.theme-dark .markdown-rendered blockquote :is(p, ul, ol, blockquote) {
+  margin-top: 0;
+  margin-bottom: 0.75em;
+}
+
+.theme-dark .markdown-rendered blockquote > :first-child {
+  margin-top: 0;
+}
+
+.theme-dark .markdown-rendered blockquote > :last-child {
+  margin-bottom: 0;
+}
+
+.theme-dark .markdown-rendered hr {
+  height: 0.25em;
+  margin: 24px 0;
+  padding: 0;
+  border: 0;
+  background-color: var(--github-markdown-heading-border);
+}
+
+.theme-dark .markdown-rendered table th,
+.theme-dark .markdown-rendered table tr:hover td {
+  background: var(--tag-background);
+}
+
+.theme-dark .markdown-rendered .embedded-backlinks {
+  margin-top: 48px;
+}
+
+.theme-dark .markdown-rendered :is(img, video) {
+  box-sizing: content-box;
+  max-width: 100%;
+  background-color: var(--canvas-default);
+}
+
+.theme-dark .markdown-rendered :not(pre) > code {
+  padding: 0.2em 0.4em;
+  border: 0;
+  border-radius: 6px;
+  background-color: var(--tag-background);
+  color: var(--fg-default);
+  font-family: var(--github-markdown-mono);
+  font-size: 85%;
+}
+
+.theme-dark .markdown-rendered pre {
+  margin-top: 0;
+  margin-bottom: 16px;
+  padding: 16px;
+  overflow: auto;
+  border: 0 !important;
+  border-radius: 6px;
+  background-color: var(--github-code-bg) !important;
+  color: var(--github-syntax-fg);
+  font-family: var(--github-markdown-mono);
+  font-size: 16px;
+  line-height: 1.45;
+}
+
+.theme-dark .markdown-rendered pre code {
+  padding: 0;
+  border: 0;
+  background: transparent !important;
+  color: inherit;
+  font-family: inherit;
+  font-size: 100%;
+  line-height: inherit;
+}
+
+.theme-dark .markdown-rendered .callout {
+  padding: 0.75em 1em;
+  border: 0 !important;
+  border-inline-start: 0.25em solid rgb(var(--callout-color)) !important;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  color: var(--fg-default);
+}
+
+.theme-dark .markdown-rendered .callout-title {
+  color: rgb(var(--callout-color));
+  font-weight: 600;
+}
+
+.theme-dark .markdown-rendered .callout-title + .callout-content {
+  margin-top: 0.8em;
+}
+
+.theme-dark .markdown-rendered mark,
+.theme-dark .markdown-rendered .search-highlight > div {
+  border-radius: 2px;
+  background-color: var(--text-highlight-bg);
+  color: var(--fg-default);
+}
+
+@media (max-width: 767px) {
+  .theme-dark .markdown-preview-view .markdown-preview-sizer {
+    padding-right: var(--github-markdown-padding-mobile) !important;
+    padding-left: var(--github-markdown-padding-mobile) !important;
+  }
+}
+
+/* === chrome/workspace.css === */
+
+/* Yazi terminal frame: white vertical pane borders like the Ghostty layout. */
+.theme-dark .workspace-leaf-content[data-type="file-explorer"] {
+  --yazi-pane-border: var(--ink-terminal-border-strong);
+  --yazi-pane-margin-x: 0.9em;
+  --yazi-pane-padding-x: 0.65em;
+  --yazi-pane-padding-y: 1em;
+}
+
+.theme-dark .workspace-leaf-content[data-type="file-explorer"] .view-content {
+  box-sizing: border-box !important;
+  height: 100% !important;
+  margin-right: var(--yazi-pane-margin-x) !important;
+  margin-left: var(--yazi-pane-margin-x) !important;
+  border-right: 2px solid var(--yazi-pane-border) !important;
+  border-left: 2px solid var(--yazi-pane-border) !important;
+  padding: var(--yazi-pane-padding-y) var(--yazi-pane-padding-x) !important;
+}
+
+/* Terminal chrome typography: keep non-note UI aligned with Ghostty/Yazi. */
+.theme-dark {
+  --ink-terminal-font:
+    "JetBrainsMono Nerd Font Mono", "JetBrainsMonoNL Nerd Font Mono",
+    "Symbols Nerd Font Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo,
+    Consolas, "Liberation Mono", monospace;
+  --font-interface-theme: var(--ink-terminal-font);
+  --font-monospace-theme: var(--ink-terminal-font);
+  --font-text-theme: var(--github-markdown-font);
+}
+
+.theme-dark
+  :is(
+    .titlebar,
+    .titlebar *,
+    .workspace-ribbon,
+    .workspace-ribbon *,
+    .workspace-tab-header-container,
+    .workspace-tab-header-container *,
+    .workspace-tab-header,
+    .workspace-tab-header *,
+    .view-header,
+    .view-header *,
+    .nav-header,
+    .nav-header *,
+    .status-bar,
+    .status-bar *,
+    .menu,
+    .menu *,
+    .modal,
+    .modal *,
+    .prompt,
+    .prompt *,
+    .suggestion-container,
+    .suggestion-container *,
+    .notice,
+    .notice *,
+    .tooltip,
+    .tooltip *,
+    .popover,
+    .popover *,
+    .setting-item,
+    .setting-item *,
+    .vertical-tab-nav-item,
+    .vertical-tab-nav-item *,
+    .metadata-container,
+    .metadata-container *,
+    .metadata-property,
+    .metadata-property *,
+    .search-input-container,
+    .search-input-container *,
+    .workspace-leaf-content:not([data-type="markdown"]),
+    .workspace-leaf-content:not([data-type="markdown"]) *,
+    input,
+    textarea,
+    button,
+    select
+  ) {
+  font-family: var(--ink-terminal-font) !important;
+  letter-spacing: 0 !important;
+}
+
+.theme-dark .markdown-rendered,
+.theme-dark
+  .markdown-rendered
+  :is(
+    p,
+    li,
+    td,
+    th,
+    blockquote,
+    details,
+    summary,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    a,
+    strong,
+    em,
+    .callout,
+    .callout-content
+  ) {
+  font-family: var(--github-markdown-font) !important;
+}
+
+.theme-dark .markdown-rendered :is(code, pre, pre *) {
+  font-family: var(--github-markdown-mono) !important;
+}
+
+/* Yazi frame hard pass: keep scrolling local to the file-list surface. */
+.theme-dark .workspace-leaf-content[data-type="file-explorer"] .view-content {
+  position: relative !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+}
+
+/* Terminal chrome pass: tune the surrounding app UI without touching the Yazi file tree. */
+.theme-dark {
+  --ink-terminal-ui-weight: 425;
+  --ink-terminal-ui-weight-strong: 700;
+}
+
+.theme-dark
+  :is(
+    .app-container,
+    .workspace,
+    .workspace-split,
+    .workspace-tabs,
+    .workspace-leaf,
+    .mod-root,
+    .mod-root .workspace-tab-container,
+    .mod-root .workspace-leaf-content
+  ) {
+  background: var(--ink-terminal-black) !important;
+}
+
+.theme-dark
+  :is(
+    .titlebar,
+    .workspace-ribbon,
+    .workspace-split.mod-root .workspace-tab-header-container,
+    .workspace-split.mod-root .workspace-tab-header-container-inner,
+    .workspace-split.mod-root .view-header,
+    .status-bar
+  ) {
+  border: 0 !important;
+  border-color: transparent !important;
+  background: var(--ink-terminal-black) !important;
+  box-shadow: none !important;
+}
+
+.theme-dark .workspace-split.mod-root {
+  box-sizing: border-box !important;
+  border-left: 0 !important;
+}
+
+.theme-dark .workspace.is-left-sidedock-open .workspace-split.mod-root {
+  border-left: 0 !important;
+}
+
+.theme-dark .workspace-split.mod-root .workspace-tab-header-container {
+  height: 38px !important;
+  border-bottom: 0 !important;
+}
+
+.theme-dark .workspace-split.mod-root .view-header {
+  height: 38px !important;
+  border-bottom: 0 !important;
+}
+
+.theme-dark .workspace-split.mod-sidedock .workspace-tab-header-container {
+  border-bottom: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.theme-dark
+  :is(
+    .titlebar,
+    .workspace-ribbon,
+    .workspace-split.mod-root .workspace-tab-header-container,
+    .workspace-split.mod-root .view-header,
+    .status-bar
+  )
+  :is(
+    .workspace-tab-header-inner-title,
+    .view-header-title,
+    .view-header-breadcrumb,
+    .status-bar-item,
+    .clickable-icon,
+    .nav-action-button,
+    .side-dock-ribbon-action
+  ) {
+  color: var(--ink-terminal-muted-bright) !important;
+  font-family: var(--ink-terminal-font) !important;
+  font-weight: var(--ink-terminal-ui-weight) !important;
+  letter-spacing: 0 !important;
+}
+
+.theme-dark .workspace-split.mod-root .workspace-tab-header {
+  border-radius: 0 !important;
+  background: transparent !important;
+  color: var(--ink-terminal-muted) !important;
+}
+
+.theme-dark .workspace-split.mod-root .workspace-tab-header.is-active {
+  background: transparent !important;
+}
+
+.theme-dark
+  .workspace-split.mod-root
+  .workspace-tab-header.is-active
+  .workspace-tab-header-inner-title,
+.theme-dark .workspace-split.mod-root .view-header-title {
+  color: var(--ink-terminal-text) !important;
+  font-weight: var(--ink-terminal-ui-weight-strong) !important;
+}
+
+.theme-dark .workspace-split.mod-root .workspace-tab-header.is-active::before,
+.theme-dark .workspace-split.mod-root .workspace-tab-header.is-active::after {
+  display: none !important;
+  content: none !important;
+  background: transparent !important;
+}
+
+.theme-dark
+  :is(
+    .clickable-icon,
+    .nav-action-button,
+    .side-dock-ribbon-action,
+    .workspace-tab-header
+  ):hover {
+  border-radius: 4px !important;
+  background: var(--ink-terminal-surface-0) !important;
+  color: var(--ink-terminal-text) !important;
+}
+
+.theme-dark :is(.sidebar-toggle-button, .sidebar-toggle-button .clickable-icon),
+.theme-dark
+  :is(.sidebar-toggle-button, .sidebar-toggle-button .clickable-icon):hover {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.theme-dark .workspace-ribbon {
+  border-right: 0 !important;
+}
+
+.theme-dark * {
+  scrollbar-width: none;
+}
+
+.theme-dark ::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0 !important;
+}
+
+.theme-dark
+  .workspace-ribbon
+  :is(.side-dock-ribbon-action, .sidebar-toggle-button) {
+  color: var(--ink-terminal-muted) !important;
+}
+
+.theme-dark
+  .workspace-ribbon
+  :is(.side-dock-ribbon-action, .sidebar-toggle-button):hover {
+  color: var(--ink-accent-hover) !important;
+}
+
+.theme-dark
+  :is(
+    .menu,
+    .modal,
+    .popover,
+    .prompt,
+    .suggestion-container,
+    .tooltip,
+    .notice
+  ) {
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: var(--ink-terminal-black) !important;
+  box-shadow: none !important;
+  color: var(--ink-terminal-text) !important;
+  font-family: var(--ink-terminal-font) !important;
+}
+
+.theme-dark
+  :is(
+    .menu-item:hover,
+    .suggestion-item.is-selected,
+    .vertical-tab-nav-item.is-active,
+    .vertical-tab-nav-item:hover,
+    .setting-item-control button:hover
+  ) {
+  background: var(--ink-terminal-surface-0) !important;
+  color: var(--ink-terminal-text) !important;
+}
+
+.theme-dark
+  :is(input, textarea, select, .search-input-container input, .prompt-input) {
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: var(--ink-terminal-black) !important;
+  color: var(--ink-terminal-text) !important;
+  caret-color: var(--ink-accent-hover) !important;
+  font-family: var(--ink-terminal-font) !important;
+}
+
+.theme-dark
+  :is(
+    input,
+    textarea,
+    select,
+    .search-input-container input,
+    .prompt-input
+  ):focus {
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.theme-dark .status-bar {
+  min-height: 22px !important;
+  border-top: 0 !important;
+  padding: 0 10px !important;
+}
+
+.theme-dark .status-bar-item {
+  color: var(--ink-terminal-muted) !important;
+}
+
+.theme-dark .status-bar-item:is(:hover, .mod-clickable:hover) {
+  background: transparent !important;
+  color: var(--ink-accent-hover) !important;
+}
+
+.theme-dark .metadata-container,
+.theme-dark .metadata-property,
+.theme-dark .metadata-property-key,
+.theme-dark .metadata-property-value,
+.theme-dark .metadata-property-key-input,
+.theme-dark .metadata-property-value input,
+.theme-dark .metadata-property-value textarea,
+.theme-dark .metadata-property-value .multi-select-container,
+.theme-dark
+  .workspace-leaf-content:not([data-type="file-explorer"]):not(
+    [data-type="markdown"]
+  )
+  .view-content {
+  border: 0 !important;
+  border-color: transparent !important;
+  background: var(--ink-terminal-black) !important;
+  color: var(--ink-terminal-text) !important;
+  box-shadow: none !important;
+}
+
+.theme-dark
+  :is(.markdown-preview-view, .markdown-source-view.mod-cm6)
+  .metadata-container {
+  --ink-properties-font-size: 14px;
+  --ink-properties-key-width: minmax(86px, 38%);
+  --ink-properties-row-height: 24px;
+  --ink-properties-column-gap: 20px;
+  --ink-properties-column-width: calc((100% - 40px) / 3);
+  --input-height: var(--ink-properties-row-height);
+  --metadata-gap: 0px;
+  --metadata-divider-width: 0px;
+  box-sizing: border-box !important;
+  margin: 8px 0 14px !important;
+  padding: 0 !important;
+}
+
+.theme-dark
+  :is(.markdown-preview-view, .markdown-source-view.mod-cm6)
+  .metadata-properties-heading {
+  margin: 0 0 6px !important;
+  padding: 0 !important;
+  color: var(--ink-terminal-text) !important;
+  font-family: var(--ink-terminal-font) !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  line-height: 1.2 !important;
+}
+
+.theme-dark
+  :is(.markdown-preview-view, .markdown-source-view.mod-cm6)
+  .metadata-container
+  :is(.metadata-content, .metadata-properties) {
+  column-gap: var(--ink-properties-column-gap) !important;
+  row-gap: 0 !important;
+  justify-content: flex-start !important;
+}
+
+.theme-dark
+  :is(.markdown-preview-view, .markdown-source-view.mod-cm6)
+  .metadata-property {
+  display: grid !important;
+  grid-template-columns: var(--ink-properties-key-width) minmax(0, 1fr) !important;
+  gap: 8px !important;
+  align-items: center !important;
+  box-sizing: border-box !important;
+  flex: 1 1 var(--ink-properties-column-width) !important;
+  min-width: 0 !important;
+  width: var(--ink-properties-column-width) !important;
+  max-width: var(--ink-properties-column-width) !important;
+  min-height: var(--ink-properties-row-height) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.theme-dark
+  :is(.markdown-preview-view, .markdown-source-view.mod-cm6)
+  .metadata-property-key,
+.theme-dark
+  :is(.markdown-preview-view, .markdown-source-view.mod-cm6)
+  .metadata-property-value {
+  min-width: 0 !important;
+  min-height: var(--ink-properties-row-height) !important;
+  padding: 0 !important;
+  font-family: var(--ink-terminal-font) !important;
+  font-size: var(--ink-properties-font-size) !important;
+  font-weight: 400 !important;
+  line-height: var(--ink-properties-row-height) !important;
+}
+
+.theme-dark
+  :is(.markdown-preview-view, .markdown-source-view.mod-cm6)
+  .metadata-property
+  :is(.metadata-property-key *, .metadata-property-value *) {
+  font-family: var(--ink-terminal-font) !important;
+  font-size: var(--ink-properties-font-size) !important;
+  line-height: var(--ink-properties-row-height) !important;
+}
+
+.theme-dark
+  :is(.markdown-preview-view, .markdown-source-view.mod-cm6)
+  .metadata-property-key {
+  color: var(--ink-terminal-text) !important;
+}
+
+.theme-dark
+  :is(.markdown-preview-view, .markdown-source-view.mod-cm6)
+  .metadata-property-value {
+  color: var(--ink-terminal-muted-bright) !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+.theme-dark
+  :is(.markdown-preview-view, .markdown-source-view.mod-cm6)
+  .metadata-property
+  :is(
+    .metadata-property-key-input,
+    .metadata-property-value input,
+    .metadata-property-value textarea
+  ) {
+  height: var(--ink-properties-row-height) !important;
+  min-height: var(--ink-properties-row-height) !important;
+  padding: 0 !important;
+  font-size: var(--ink-properties-font-size) !important;
+  line-height: var(--ink-properties-row-height) !important;
+}
+
+.theme-dark
+  :is(.markdown-preview-view, .markdown-source-view.mod-cm6)
+  .metadata-property-icon {
+  margin-inline-end: 6px !important;
+  color: var(--ink-terminal-muted) !important;
+}
+
+.theme-dark
+  :is(.markdown-preview-view, .markdown-source-view.mod-cm6)
+  .metadata-property-value
+  .multi-select-container {
+  min-height: var(--ink-properties-row-height) !important;
+  padding: 0 !important;
+  gap: 4px !important;
+}
+
+.theme-dark
+  :is(.markdown-preview-view, .markdown-source-view.mod-cm6)
+  .metadata-property-value
+  .multi-select-pill {
+  margin: 0 !important;
+}
+
+.theme-dark
+  :is(.markdown-preview-view, .markdown-source-view.mod-cm6)
+  .metadata-add-button {
+  min-height: var(--ink-properties-row-height) !important;
+  margin-top: 2px !important;
+  padding: 0 !important;
+  color: var(--ink-terminal-muted) !important;
+  font-family: var(--ink-terminal-font) !important;
+  font-size: 14px !important;
+  line-height: var(--ink-properties-row-height) !important;
+}
+
+@media (max-width: 900px) {
+  .theme-dark
+    :is(.markdown-preview-view, .markdown-source-view.mod-cm6)
+    .metadata-container {
+    --ink-properties-column-width: calc(
+      (100% - var(--ink-properties-column-gap)) / 2
+    );
+  }
+}
+
+@media (max-width: 640px) {
+  .theme-dark
+    :is(.markdown-preview-view, .markdown-source-view.mod-cm6)
+    .metadata-container {
+    --ink-properties-column-width: 100%;
+  }
+}
+
+/* === chrome/stacked-tabs.css === */
+
+body:not(.is-mobile) .workspace .mod-root .workspace-tabs.mod-stacked {
+	--stacked-focus-spine-width: 34px;
+	--tab-stacked-header-width: var(--stacked-focus-spine-width) !important;
+}
+
+body:not(.is-mobile) .workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-header {
+	flex: 0 0 var(--stacked-focus-spine-width) !important;
+	min-width: var(--stacked-focus-spine-width) !important;
+	width: var(--stacked-focus-spine-width) !important;
+	max-width: var(--stacked-focus-spine-width) !important;
+}
+
+body:not(.is-mobile) .workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container {
+	overflow-x: hidden !important;
+}
+
+body:not(.is-mobile) .workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container > .workspace-leaf {
+	flex: 0 0 0 !important;
+	min-width: 0 !important;
+	width: 0 !important;
+	max-width: 0 !important;
+	overflow: hidden !important;
+	pointer-events: none !important;
+}
+
+body:not(.is-mobile)
+	.workspace
+	.mod-root
+	.workspace-tabs.mod-stacked
+	.workspace-tab-container
+	> .workspace-tab-header.is-active
+	+ .workspace-leaf {
+	flex: 1 1 auto !important;
+	min-width: 0 !important;
+	width: auto !important;
+	max-width: none !important;
+	overflow: auto !important;
+	pointer-events: auto !important;
+}
+
+/* === settings/base.css === */
+
+/* Settings: Noice-inspired terminal panes. */
+.theme-dark {
+  --ink-settings-border: var(--ink-cmdline-border, var(--ink-palette-white));
+  --ink-settings-border-muted: #30363d;
+  --ink-settings-row: var(--ink-palette-surface-0);
+  --ink-settings-row-hover: var(--ink-palette-surface-1);
+  --ink-settings-selected: var(--ink-cmdline-selection, var(--fg-default));
+  --ink-settings-radius: var(--ink-cmdline-radius, 4px);
+  --ink-settings-matte: var(--ink-cmdline-matte, 12px);
+  --ink-settings-sidebar-width: clamp(240px, 23vw, 330px);
+  --ink-settings-content-gutter: clamp(42px, 5vw, 86px);
+}
+
+.theme-dark .modal.mod-settings {
+  box-sizing: border-box !important;
+  width: min(96vw, 1440px) !important;
+  height: min(92vh, 980px) !important;
+  border: 1px solid var(--ink-settings-border) !important;
+  border-radius: var(--ink-settings-radius) !important;
+  background: var(--ink-terminal-black) !important;
+  box-shadow: 0 0 0 var(--ink-settings-matte) var(--ink-terminal-black) !important;
+  color: var(--ink-terminal-text) !important;
+  overflow: hidden !important;
+}
+
+.theme-dark .modal.mod-settings .modal-content {
+  background: var(--ink-terminal-black) !important;
+  padding: 0 !important;
+}
+
+.theme-dark .modal.mod-settings .modal-close-button {
+  top: 16px !important;
+  right: 16px !important;
+  color: var(--ink-terminal-muted-bright) !important;
+}
+
+.theme-dark .modal.mod-settings .modal-close-button:hover {
+  background: transparent !important;
+  color: var(--ink-terminal-text) !important;
+}
+
+.theme-dark .modal.mod-settings .vertical-tab-container {
+  display: grid !important;
+  grid-template-columns: var(--ink-settings-sidebar-width) minmax(0, 1fr) !important;
+  height: 100% !important;
+  background: var(--ink-terminal-black) !important;
+}
+
+.theme-dark .modal.mod-settings .vertical-tab-header {
+  box-sizing: border-box !important;
+  width: var(--ink-settings-sidebar-width) !important;
+  border-right: 1px solid var(--ink-settings-border) !important;
+  background: var(--ink-terminal-black) !important;
+  padding: 20px 14px 28px !important;
+}
+
+.theme-dark .modal.mod-settings .vertical-tab-header-group-title {
+  margin: 20px 10px 8px !important;
+  color: var(--ink-terminal-muted) !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  line-height: 18px !important;
+  text-transform: none !important;
+}
+
+.theme-dark .modal.mod-settings .vertical-tab-nav-item {
+  min-height: 32px !important;
+  margin: 2px 0 !important;
+  border: 0 !important;
+  border-radius: var(--ink-settings-radius) !important;
+  background: transparent !important;
+  padding: 5px 10px !important;
+  color: var(--ink-terminal-text) !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  line-height: 22px !important;
+}
+
+.theme-dark .modal.mod-settings .vertical-tab-nav-item:hover {
+  background: var(--ink-settings-row-hover) !important;
+  color: var(--ink-terminal-text) !important;
+}
+
+.theme-dark .modal.mod-settings .vertical-tab-nav-item.is-active {
+  background: var(--ink-settings-selected) !important;
+  color: var(--ink-terminal-black) !important;
+}
+
+.theme-dark .modal.mod-settings .vertical-tab-nav-item.is-active * {
+  color: var(--ink-terminal-black) !important;
+}
+
+.theme-dark .modal.mod-settings .vertical-tab-nav-item :is(.svg-icon, svg) {
+  color: currentColor !important;
+  stroke-width: 2px !important;
+}
+
+.theme-dark .modal.mod-settings .vertical-tab-content-container,
+.theme-dark .modal.mod-settings .vertical-tab-content {
+  background: var(--ink-terminal-black) !important;
+}
+
+.theme-dark .modal.mod-settings .vertical-tab-content {
+  box-sizing: border-box !important;
+  max-width: none !important;
+  padding: 28px var(--ink-settings-content-gutter) 56px !important;
+}
+
+.theme-dark
+  .modal.mod-settings
+  :is(h1, h2, h3, h4, .setting-item-heading, .setting-item-name) {
+  color: var(--ink-terminal-text) !important;
+  font-family: var(--ink-terminal-font) !important;
+  letter-spacing: 0 !important;
+}
+
+.theme-dark .modal.mod-settings .setting-item {
+  border: 0 !important;
+  background: transparent !important;
+  padding: 15px 0 !important;
+}
+
+.theme-dark .modal.mod-settings .setting-item-heading {
+  position: relative !important;
+  margin: 32px 0 6px !important;
+  border-top: 1px solid var(--ink-settings-border-muted) !important;
+  padding-top: 16px !important;
+}
+
+.theme-dark .modal.mod-settings .setting-item-heading .setting-item-name {
+  display: inline-block !important;
+  position: relative !important;
+  top: -28px !important;
+  margin-bottom: -22px !important;
+  background: var(--ink-terminal-black) !important;
+  padding-right: 12px !important;
+  color: var(--ink-terminal-muted-bright) !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  line-height: 18px !important;
+}
+
+.theme-dark .modal.mod-settings .setting-item-name {
+  color: var(--ink-terminal-text) !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  line-height: 24px !important;
+}
+
+.theme-dark .modal.mod-settings .setting-item-description {
+  color: var(--ink-terminal-muted) !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  line-height: 22px !important;
+}
+
+.theme-dark .modal.mod-settings a,
+.theme-dark .modal.mod-settings .setting-item-description a {
+  color: var(--ink-accent) !important;
+  text-decoration: none !important;
+}
+
+.theme-dark .modal.mod-settings a:hover,
+.theme-dark .modal.mod-settings .setting-item-description a:hover {
+  color: var(--ink-accent-hover) !important;
+  text-decoration: underline !important;
+}
+
+.theme-dark
+  .modal.mod-settings
+  :is(
+    input:not([type="range"]),
+    textarea,
+    select,
+    .dropdown,
+    .search-input-container
+  ) {
+  min-height: 34px !important;
+  border: 1px solid var(--ink-settings-border-muted) !important;
+  border-radius: var(--ink-settings-radius) !important;
+  background: var(--ink-terminal-black) !important;
+  color: var(--ink-terminal-text) !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  line-height: 22px !important;
+}
+
+.theme-dark
+  .modal.mod-settings
+  :is(
+    input:not([type="range"]),
+    textarea,
+    select,
+    .dropdown,
+    .search-input-container
+  ):focus-within,
+.theme-dark .modal.mod-settings :is(input, textarea, select):focus {
+  border-color: var(--ink-settings-border) !important;
+  box-shadow: none !important;
+}
+
+.theme-dark .modal.mod-settings button {
+  min-height: 34px !important;
+  border: 1px solid var(--ink-settings-border-muted) !important;
+  border-radius: var(--ink-settings-radius) !important;
+  background: var(--ink-terminal-surface-1) !important;
+  color: var(--ink-terminal-text) !important;
+  padding: 4px 14px !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  line-height: 22px !important;
+  box-shadow: none !important;
+}
+
+.theme-dark .modal.mod-settings button:hover {
+  border-color: var(--ink-settings-border) !important;
+  background: var(--ink-settings-selected) !important;
+  color: var(--ink-terminal-black) !important;
+}
+
+.theme-dark .modal.mod-settings button.mod-cta {
+  border-color: var(--ink-settings-selected) !important;
+  background: var(--ink-settings-selected) !important;
+  color: var(--ink-terminal-black) !important;
+}
+
+.theme-dark .modal.mod-settings .checkbox-container {
+  border: 1px solid var(--ink-settings-border-muted) !important;
+  border-radius: 999px !important;
+  background: var(--ink-terminal-surface-1) !important;
+  box-shadow: none !important;
+}
+
+.theme-dark .modal.mod-settings .checkbox-container.is-enabled {
+  border-color: var(--ink-terminal-green) !important;
+  background: var(--ink-terminal-green) !important;
+}
+
+.theme-dark .modal.mod-settings .checkbox-container::after {
+  background: var(--ink-terminal-text) !important;
+  box-shadow: none !important;
+}
+
+.theme-dark .modal.mod-settings .slider {
+  background: var(--ink-settings-border-muted) !important;
+}
+
+.theme-dark .modal.mod-settings .slider::-webkit-slider-thumb {
+  border: 1px solid var(--ink-settings-border) !important;
+  background: var(--ink-terminal-text) !important;
+  box-shadow: none !important;
+}
+
+/* === settings/plugin-browser.css === */
+
+/* Community plugin/theme browsers: separate modal over settings, so hide the base settings shell. */
+body.theme-dark:has(.modal.mod-community-modal)
+  .modal.mod-settings:not(.mod-community-modal) {
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+body.theme-dark .modal.mod-community-modal {
+  box-sizing: border-box !important;
+  width: min(94vw, 1380px) !important;
+  height: min(90vh, 940px) !important;
+  border: 1px solid var(--ink-settings-border) !important;
+  border-radius: var(--ink-settings-radius) !important;
+  background: var(--ink-terminal-black) !important;
+  box-shadow: 0 0 0 var(--ink-settings-matte) var(--ink-terminal-black) !important;
+  color: var(--ink-terminal-text) !important;
+  overflow: hidden !important;
+}
+
+body.theme-dark .modal.mod-community-modal .modal-content {
+  background: var(--ink-terminal-black) !important;
+  padding: 0 !important;
+}
+
+body.theme-dark .modal.mod-community-modal .modal-close-button {
+  top: 18px !important;
+  right: 18px !important;
+  color: var(--ink-terminal-muted-bright) !important;
+}
+
+body.theme-dark .modal.mod-community-modal .modal-close-button:hover {
+  background: transparent !important;
+  color: var(--ink-terminal-text) !important;
+}
+
+body.theme-dark .modal.mod-community-modal .modal-sidebar {
+  width: 100% !important;
+  max-width: none !important;
+  border: 0 !important;
+  background: var(--ink-terminal-black) !important;
+}
+
+body.theme-dark .modal.mod-community-modal .community-modal-controls {
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  min-height: 62px !important;
+  border-bottom: 1px solid var(--ink-settings-border-muted) !important;
+  background: var(--ink-terminal-black) !important;
+  padding: 12px 18px !important;
+}
+
+body.theme-dark
+  .modal.mod-community-modal
+  .community-modal-controls
+  .setting-item {
+  flex: 0 0 auto !important;
+  padding: 0 !important;
+}
+
+body.theme-dark
+  .modal.mod-community-modal
+  .community-modal-controls
+  .setting-item:first-child {
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+}
+
+body.theme-dark
+  .modal.mod-community-modal
+  .community-modal-controls
+  .setting-item:first-child
+  .setting-item-info {
+  display: none !important;
+}
+
+body.theme-dark
+  .modal.mod-community-modal
+  .community-modal-controls
+  .setting-item:not(:first-child)
+  .setting-item-info {
+  display: block !important;
+  color: var(--ink-terminal-text) !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  line-height: 22px !important;
+}
+
+body.theme-dark
+  .modal.mod-community-modal
+  .community-modal-controls
+  .setting-item-control {
+  flex: 0 0 auto !important;
+}
+
+body.theme-dark
+  .modal.mod-community-modal
+  .community-modal-controls
+  .setting-item:first-child
+  .setting-item-control {
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+}
+
+body.theme-dark
+  .modal.mod-community-modal
+  .community-modal-controls
+  .search-input-container {
+  flex: 1 1 auto !important;
+  width: 100% !important;
+  min-height: 34px !important;
+  border: 0 !important;
+  background: transparent !important;
+}
+
+body.theme-dark .modal.mod-community-modal .community-modal-controls input {
+  width: 100% !important;
+  color: var(--ink-terminal-text) !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+}
+
+body.theme-dark .modal.mod-community-modal .community-modal-search-summary {
+  color: var(--ink-terminal-muted) !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+}
+
+body.theme-dark
+  .modal.mod-community-modal
+  .community-modal-search-results-wrapper {
+  background: var(--ink-terminal-black) !important;
+  padding: 14px !important;
+}
+
+body.theme-dark .modal.mod-community-modal .community-modal-search-results {
+  background: var(--ink-terminal-black) !important;
+}
+
+body.theme-dark .modal.mod-community-modal .community-item {
+  border: 1px solid var(--ink-settings-border-muted) !important;
+  border-radius: var(--ink-settings-radius) !important;
+  background: var(--ink-terminal-black) !important;
+  color: var(--ink-terminal-text) !important;
+  box-shadow: none !important;
+}
+
+body.theme-dark .modal.mod-community-modal .community-item:hover,
+body.theme-dark .modal.mod-community-modal .community-item.is-selected {
+  border-color: var(--ink-settings-border) !important;
+  background: var(--ink-terminal-surface-0) !important;
+}
+
+body.theme-dark
+  .modal.mod-community-modal
+  :is(.community-item-name, .community-modal-info-name) {
+  color: var(--ink-terminal-text) !important;
+  font-weight: 600 !important;
+}
+
+body.theme-dark
+  .modal.mod-community-modal
+  :is(
+    .community-item-author,
+    .community-item-downloads,
+    .community-item-updated,
+    .community-item-desc,
+    .community-modal-info-author,
+    .community-modal-info-repo,
+    .community-modal-info-version,
+    .community-modal-info-desc
+  ) {
+  color: var(--ink-terminal-muted-bright) !important;
+}
+
+body.theme-dark
+  .modal.mod-community-modal
+  .community-item
+  .suggestion-highlight {
+  color: var(--ink-cmdline-accent) !important;
+  font-weight: 700 !important;
+}
+
+body.theme-dark .modal.mod-community-modal .community-modal-details {
+  border-left: 1px solid var(--ink-settings-border) !important;
+  background: var(--ink-terminal-black) !important;
+  color: var(--ink-terminal-text) !important;
+}
+
+body.theme-dark .modal.mod-community-modal .community-modal-readme {
+  color: var(--ink-terminal-text) !important;
+}
+
+/* === modals/command-palette.css === */
+
+/* NeoVim cmdline prompts: command palette, quick switcher, and related suggesters. */
+.theme-dark {
+  --ink-cmdline-border: var(--ink-palette-white);
+  --ink-cmdline-accent: var(--ink-palette-magenta);
+  --ink-cmdline-accent-selected: var(--ink-terminal-black);
+  --ink-cmdline-accent-selected-rule: var(--ink-terminal-black);
+  --ink-cmdline-cursor: var(--fg-default);
+  --ink-cmdline-selection: var(--fg-default);
+  --ink-cmdline-error: var(--ink-palette-red);
+  --ink-cmdline-font-size: 16px;
+  --ink-cmdline-symbol-size: 20px;
+  --ink-cmdline-line-height: 24px;
+  --ink-cmdline-width: 60ch;
+  --ink-cmdline-top: 35vh;
+  --ink-cmdline-results-height: 332px;
+  --ink-cmdline-radius: 4px;
+  --ink-cmdline-matte: 12px;
+  --ink-inline-suggestion-matte: 4px;
+  --ink-inline-suggestion-offset: 10px;
+  --ink-cmdline-results-gap: 18px;
+  --ink-cmdline-prompt-left: 16px;
+  --ink-cmdline-input-left: 30px;
+  --ink-terminal-cursor: var(--ink-cmdline-cursor);
+  --ink-terminal-cursor-text: var(--ink-terminal-black);
+  --ink-terminal-cursor-width: 1ch;
+  --ink-terminal-cursor-bar-width: 0.25ch;
+}
+
+/* Cursor shapes follow nvim's effective guicursor: i=ver25, n/v/c=block. */
+.theme-dark :is(input, textarea, .prompt-input, .search-input-container input) {
+  caret-color: var(--ink-terminal-cursor) !important;
+}
+
+.theme-dark :is(.prompt-input, .omnisearch-input-field input) {
+  caret-shape: block;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .cm-editor.cm-focused .cm-cursor {
+  border-left: var(--ink-terminal-cursor-bar-width) solid
+    var(--ink-terminal-cursor) !important;
+  border-right: 0 !important;
+  margin-left: 0 !important;
+}
+
+.theme-dark
+  .markdown-source-view.mod-cm6
+  .cm-editor.cm-focused
+  > .cm-scroller
+  > .cm-cursorLayer
+  > .cm-fat-cursor {
+  border: 0 !important;
+  background: var(--ink-terminal-cursor) !important;
+  color: var(--ink-terminal-cursor-text) !important;
+  width: var(--ink-terminal-cursor-width) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .cm-fat-cursor-mark {
+  background: var(--ink-terminal-cursor) !important;
+  color: var(--ink-terminal-cursor-text) !important;
+}
+
+.theme-dark .prompt {
+  position: fixed !important;
+  top: var(--ink-cmdline-top) !important;
+  left: 50% !important;
+  width: min(var(--ink-cmdline-width), calc(100vw - 48px)) !important;
+  max-width: min(var(--ink-cmdline-width), calc(100vw - 48px)) !important;
+  margin: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  padding: 18px 0 0 !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+  transform: translateX(-50%) !important;
+}
+
+.theme-dark .prompt-input-container {
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  min-height: 42px !important;
+  border: 1px solid var(--ink-cmdline-border) !important;
+  border-radius: var(--ink-cmdline-radius) !important;
+  background: var(--ink-terminal-black) !important;
+  padding: 0 16px !important;
+  isolation: isolate !important;
+  z-index: 2 !important;
+  box-shadow: 0 0 0 var(--ink-cmdline-matte) var(--ink-terminal-black) !important;
+}
+
+.theme-dark .prompt-input-container::before {
+  content: "Cmdline";
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  background: var(--ink-terminal-black);
+  padding: 2px 12px;
+  transform: translateX(-50%);
+  color: var(--ink-terminal-text);
+  font-family: var(--ink-terminal-font);
+  font-size: var(--ink-cmdline-font-size);
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1;
+}
+
+.theme-dark
+  .prompt:has(.task-selector-modal__suggestion)
+  .prompt-input-container::before {
+  content: "Task";
+}
+
+.theme-dark .prompt:has(.task-selector-modal__suggestion) .prompt-instructions {
+  display: none !important;
+}
+
+.theme-dark
+  .prompt:has(.prompt-input[placeholder="Type to search for project notes..."])
+  .prompt-input-container::before {
+  content: "Project";
+}
+
+.theme-dark
+  .prompt:has(.prompt-input[placeholder="Type to search for project notes..."])
+  .prompt-instructions {
+  display: none !important;
+}
+
+.theme-dark .prompt-input-container::after {
+  content: "❯";
+  position: absolute;
+  left: var(--ink-cmdline-prompt-left);
+  top: 50%;
+  transform: translateY(-52%);
+  color: var(--ink-cmdline-accent);
+  font-family: var(--ink-terminal-font);
+  font-size: var(--ink-cmdline-symbol-size);
+  font-weight: 800;
+  line-height: 1;
+}
+
+.theme-dark .prompt-input {
+  height: var(--ink-cmdline-line-height) !important;
+  margin: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  padding: 0 0 0 var(--ink-cmdline-input-left) !important;
+  color: var(--ink-terminal-text) !important;
+  caret-color: var(--ink-cmdline-cursor) !important;
+  font-family: var(--ink-terminal-font) !important;
+  font-size: var(--ink-cmdline-font-size) !important;
+  font-weight: 400 !important;
+  line-height: var(--ink-cmdline-line-height) !important;
+}
+
+.theme-dark .prompt-input::placeholder {
+  color: transparent !important;
+  opacity: 0 !important;
+}
+
+.theme-dark .prompt-input:focus {
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.theme-dark
+  .prompt
+  .prompt-input-container
+  :is(.search-input-clear-button, .clickable-icon[aria-label="Clear search"]) {
+  display: none !important;
+}
+
+.theme-dark .prompt:has(.suggestion-empty) .prompt-input {
+  color: var(--ink-cmdline-error) !important;
+}
+
+.theme-dark .prompt-results {
+  position: relative !important;
+  z-index: 1 !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  max-height: var(--ink-cmdline-results-height) !important;
+  margin-top: var(--ink-cmdline-results-gap) !important;
+  border: 1px solid var(--ink-cmdline-border) !important;
+  border-radius: var(--ink-cmdline-radius) !important;
+  background: var(--ink-terminal-black) !important;
+  padding: 6px 0 !important;
+  box-shadow: 0 0 0 var(--ink-cmdline-matte) var(--ink-terminal-black) !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+}
+
+.theme-dark .suggestion-container {
+  box-sizing: border-box !important;
+  max-height: var(--ink-cmdline-results-height) !important;
+  border: 1px solid var(--ink-cmdline-border) !important;
+  border-radius: var(--ink-cmdline-radius) !important;
+  background: var(--ink-terminal-black) !important;
+  box-shadow: 0 0 0 var(--ink-inline-suggestion-matte) var(--ink-terminal-black) !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  translate: 0 var(--ink-inline-suggestion-offset) !important;
+}
+
+.theme-dark :is(.prompt, .suggestion-container) .suggestion-item {
+  min-height: 32px !important;
+  border-radius: 0 !important;
+  padding: 5px 16px !important;
+  color: var(--ink-terminal-muted-bright) !important;
+  font-family: var(--ink-terminal-font) !important;
+  font-size: var(--ink-cmdline-font-size) !important;
+  font-weight: 500 !important;
+}
+
+.theme-dark :is(.prompt, .suggestion-container) .suggestion-item.is-selected,
+.theme-dark
+  :is(.prompt, .suggestion-container)
+  .suggestion-item.is-highlighted {
+  background: var(--ink-cmdline-selection) !important;
+  color: var(--ink-terminal-black) !important;
+}
+
+.theme-dark :is(.prompt, .suggestion-container) .suggestion-item.is-selected *,
+.theme-dark
+  :is(.prompt, .suggestion-container)
+  .suggestion-item.is-highlighted
+  * {
+  color: var(--ink-terminal-black) !important;
+}
+
+.theme-dark :is(.prompt, .suggestion-container) .suggestion-highlight {
+  color: var(--ink-cmdline-accent) !important;
+  font-weight: 700 !important;
+}
+
+.theme-dark
+  :is(.prompt, .suggestion-container)
+  .suggestion-item.is-selected
+  .suggestion-highlight,
+.theme-dark
+  :is(.prompt, .suggestion-container)
+  .suggestion-item.is-highlighted
+  .suggestion-highlight {
+  color: var(--ink-cmdline-accent-selected) !important;
+  text-decoration: underline !important;
+  text-decoration-color: var(--ink-cmdline-accent-selected-rule) !important;
+  text-decoration-thickness: 2px !important;
+  text-underline-offset: 0.12em !important;
+}
+
+.theme-dark
+  :is(.prompt, .suggestion-container)
+  :is(.suggestion-flair, .suggestion-note, .suggestion-hotkey) {
+  color: var(--ink-terminal-muted) !important;
+  font-family: var(--ink-terminal-font) !important;
+}
+
+.theme-dark
+  :is(.prompt, .suggestion-container)
+  .suggestion-item:is(.is-selected, .is-highlighted)
+  :is(.suggestion-hotkey, .suggestion-hotkey *) {
+  color: var(--ink-terminal-text) !important;
+}
+
+/* === plugins/omnisearch/search-modal.css === */
+
+/* Omnisearch: reuse the NeoVim cmdline treatment. */
+.theme-dark .omnisearch-modal.prompt {
+  position: fixed !important;
+  top: var(--ink-cmdline-top) !important;
+  left: 50% !important;
+  width: min(var(--ink-cmdline-width), calc(100vw - 48px)) !important;
+  max-width: min(var(--ink-cmdline-width), calc(100vw - 48px)) !important;
+  margin: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  padding: 18px 0 0 !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+  transform: translateX(-50%) !important;
+}
+
+.theme-dark .omnisearch-modal.prompt .omnisearch-input-container {
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  min-height: 42px !important;
+  border: 1px solid var(--ink-cmdline-border) !important;
+  border-radius: var(--ink-cmdline-radius) !important;
+  background: var(--ink-terminal-black) !important;
+  padding: 0 16px !important;
+  isolation: isolate !important;
+  z-index: 2 !important;
+  box-shadow: 0 0 0 var(--ink-cmdline-matte) var(--ink-terminal-black) !important;
+}
+
+.theme-dark .omnisearch-modal.prompt .omnisearch-input-container::before {
+  content: "Search";
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  background: var(--ink-terminal-black);
+  padding: 2px 12px;
+  transform: translateX(-50%);
+  color: var(--ink-terminal-text);
+  font-family: var(--ink-terminal-font);
+  font-size: var(--ink-cmdline-font-size);
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1;
+}
+
+.theme-dark .omnisearch-modal.prompt .omnisearch-input-container::after {
+  content: "\f002";
+  position: absolute;
+  left: var(--ink-cmdline-prompt-left);
+  top: 50%;
+  transform: translateY(-52%);
+  color: var(--ink-cmdline-accent);
+  font-family: var(--ink-terminal-font);
+  font-size: var(--ink-cmdline-font-size);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.theme-dark .omnisearch-modal.prompt .omnisearch-input-field {
+  flex: 1 1 auto !important;
+  width: 100% !important;
+}
+
+.theme-dark .omnisearch-modal.prompt .omnisearch-input-field .prompt-input {
+  height: var(--ink-cmdline-line-height) !important;
+  margin: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  padding: 0 0 0 var(--ink-cmdline-input-left) !important;
+  color: var(--ink-terminal-text) !important;
+  caret-color: var(--ink-cmdline-cursor) !important;
+  font-family: var(--ink-terminal-font) !important;
+  font-size: var(--ink-cmdline-font-size) !important;
+  font-weight: 400 !important;
+  line-height: var(--ink-cmdline-line-height) !important;
+}
+
+.theme-dark
+  .omnisearch-modal.prompt
+  .omnisearch-input-field
+  .prompt-input::placeholder {
+  color: transparent !important;
+  opacity: 0 !important;
+}
+
+.theme-dark .omnisearch-modal.prompt .omnisearch-input-container__buttons {
+  display: none !important;
+}
+
+.theme-dark .omnisearch-modal.prompt .prompt-results {
+  max-height: var(--ink-cmdline-results-height) !important;
+}
+
+.theme-dark
+  .omnisearch-modal.prompt:has(.prompt-input:placeholder-shown)
+  .prompt-results:not(:has(.suggestion-item)) {
+  display: none !important;
+}
+
+.theme-dark
+  .omnisearch-modal.prompt:has(.prompt-results:not(:has(.suggestion-item))):not(
+    :has(.prompt-input:placeholder-shown)
+  )
+  .prompt-input {
+  color: var(--ink-cmdline-error) !important;
+}
+
+.theme-dark .omnisearch-modal.prompt .suggestion-item {
+  min-height: 0 !important;
+  padding: 0 !important;
+}
+
+.theme-dark .omnisearch-modal.prompt .omnisearch-result {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  padding: 8px 16px !important;
+  color: var(--ink-terminal-muted-bright) !important;
+  font-family: var(--ink-terminal-font) !important;
+  font-size: var(--ink-cmdline-font-size) !important;
+  font-weight: 500 !important;
+  line-height: var(--ink-cmdline-line-height) !important;
+}
+
+.theme-dark .omnisearch-modal.prompt .omnisearch-result__title {
+  color: var(--ink-terminal-text) !important;
+  font-size: var(--ink-cmdline-font-size) !important;
+  font-weight: 500 !important;
+  line-height: var(--ink-cmdline-line-height) !important;
+}
+
+.theme-dark
+  .omnisearch-modal.prompt
+  :is(
+    .omnisearch-result__folder-path,
+    .omnisearch-result__extension,
+    .omnisearch-result__counter,
+    .omnisearch-result__body
+  ) {
+  color: var(--ink-terminal-muted-bright) !important;
+  font-size: var(--ink-cmdline-font-size) !important;
+  line-height: var(--ink-cmdline-line-height) !important;
+}
+
+.theme-dark
+  .omnisearch-modal.prompt
+  :is(.omnisearch-highlight, .omnisearch-default-highlight) {
+  color: var(--ink-cmdline-accent) !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+}
+
+.theme-dark
+  .omnisearch-modal.prompt
+  .suggestion-item.is-selected
+  .omnisearch-result,
+.theme-dark
+  .omnisearch-modal.prompt
+  .suggestion-item.is-highlighted
+  .omnisearch-result {
+  color: var(--ink-terminal-black) !important;
+}
+
+.theme-dark
+  .omnisearch-modal.prompt
+  .suggestion-item.is-selected
+  .omnisearch-result
+  *,
+.theme-dark
+  .omnisearch-modal.prompt
+  .suggestion-item.is-highlighted
+  .omnisearch-result
+  * {
+  color: var(--ink-terminal-black) !important;
+}
+
+.theme-dark
+  .omnisearch-modal.prompt
+  .suggestion-item.is-selected
+  :is(.omnisearch-highlight, .omnisearch-default-highlight),
+.theme-dark
+  .omnisearch-modal.prompt
+  .suggestion-item.is-highlighted
+  :is(.omnisearch-highlight, .omnisearch-default-highlight) {
+  color: var(--ink-cmdline-accent-selected) !important;
+  font-weight: 700 !important;
+  text-decoration: underline !important;
+  text-decoration-color: var(--ink-cmdline-accent-selected-rule) !important;
+  text-decoration-thickness: 2px !important;
+  text-underline-offset: 0.12em !important;
+}
+
+.theme-dark .omnisearch-modal.prompt .prompt-instructions {
+  display: none !important;
+}
+
+/* === plugins/spacekeys/which-key.css === */
+
+.spacekeys-modal-container {
+	--spacekeys-whichkey-bg: var(--ink-palette-black);
+	--spacekeys-whichkey-border: var(--ink-palette-white);
+	--spacekeys-whichkey-key: var(--ink-palette-white);
+	--spacekeys-whichkey-arrow: var(--ink-palette-gray-bright);
+	--spacekeys-whichkey-command: var(--ink-palette-red);
+	--spacekeys-whichkey-group: var(--ink-palette-magenta-bright);
+	--spacekeys-whichkey-muted: var(--ink-palette-gray-bright);
+	--spacekeys-whichkey-hover: rgba(255, 255, 255, 0.08);
+	--spacekeys-whichkey-blue: var(--ink-palette-blue);
+	--spacekeys-whichkey-cyan: var(--ink-palette-cyan);
+	--spacekeys-whichkey-green: var(--ink-palette-green);
+	--spacekeys-whichkey-orange: var(--ink-palette-orange);
+	--spacekeys-whichkey-purple: var(--ink-palette-magenta);
+	--spacekeys-whichkey-red: var(--ink-palette-red);
+}
+
+.spacekeys-modal-container .modal-bg {
+	background: rgba(0, 0, 0, 0.42) !important;
+}
+
+.spacekeys-modal-container .spacekeys-modal {
+	position: fixed !important;
+	inset: auto clamp(18px, 2.6vw, 44px) clamp(18px, 3vh, 44px) auto !important;
+	right: clamp(18px, 2.6vw, 44px) !important;
+	bottom: clamp(18px, 3vh, 44px) !important;
+	left: auto !important;
+	top: auto !important;
+	transform: none !important;
+	width: max-content !important;
+	min-width: 34ch !important;
+	max-width: min(54ch, calc(100vw - 48px)) !important;
+	height: auto !important;
+	min-height: 0 !important;
+	max-height: min(80vh, 900px) !important;
+	padding: 1.1em 2ch 1em !important;
+	gap: 0.75em !important;
+	overflow: hidden !important;
+	background: var(--spacekeys-whichkey-bg) !important;
+	border: 1px solid var(--spacekeys-whichkey-border) !important;
+	border-radius: 8px !important;
+	box-shadow: 0 24px 72px rgba(0, 0, 0, 0.72) !important;
+	color: var(--spacekeys-whichkey-key) !important;
+	font-family: "JetBrainsMono Nerd Font Mono", "JetBrains Mono", monospace !important;
+}
+
+.spacekeys-modal-container .spacekeys-modal .spacekeys-suggestions {
+	display: flex !important;
+	flex: 0 1 auto !important;
+	flex-direction: column !important;
+	grid-template-columns: none !important;
+	gap: 0 !important;
+	padding: 0 !important;
+	overflow-y: auto !important;
+}
+
+.spacekeys-modal-container .spacekeys-modal .spacekeys-suggestion {
+	display: grid !important;
+	grid-template-columns: 2ch 2ch 2ch minmax(0, 1fr) !important;
+	align-items: center !important;
+	gap: 0 0.5ch !important;
+	min-height: 1.35em !important;
+	padding: 0 0.25ch !important;
+	border-radius: 4px !important;
+	font-family: inherit !important;
+	font-size: 16px !important;
+	font-weight: 400 !important;
+	line-height: 1.25 !important;
+	letter-spacing: 0 !important;
+}
+
+.spacekeys-modal-container .spacekeys-modal .spacekeys-suggestion:hover {
+	background: var(--spacekeys-whichkey-hover) !important;
+}
+
+.spacekeys-modal-container .spacekeys-modal .spacekeys-suggestion::before {
+	content: "→";
+	grid-column: 2;
+	grid-row: 1;
+	color: var(--spacekeys-whichkey-arrow);
+	font-size: 0.9em;
+	line-height: 1;
+	text-align: center;
+}
+
+.spacekeys-modal-container .spacekeys-modal .spacekeys-suggestion::after {
+	content: "󰍜";
+	grid-column: 3;
+	grid-row: 1;
+	color: var(--spacekeys-whichkey-purple);
+	font-size: 0.78em;
+	line-height: 1;
+	text-align: center;
+}
+
+.spacekeys-modal-container .spacekeys-modal .spacekeys-suggestion-key {
+	grid-column: 1;
+	grid-row: 1;
+	min-width: 0 !important;
+	text-align: left;
+}
+
+.spacekeys-modal-container .spacekeys-modal .spacekeys-suggestion-key kbd {
+	display: inline !important;
+	min-width: 0 !important;
+	padding: 0 !important;
+	background: transparent !important;
+	border: 0 !important;
+	border-radius: 0 !important;
+	box-shadow: none !important;
+	color: var(--spacekeys-whichkey-key) !important;
+	font: inherit !important;
+}
+
+.spacekeys-modal-container .spacekeys-modal .spacekeys-suggestion-label {
+	grid-column: 4;
+	grid-row: 1;
+	min-width: 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.spacekeys-modal-container .spacekeys-modal .spacekeys-command .spacekeys-suggestion-label,
+.spacekeys-modal-container .spacekeys-modal .spacekeys-file .spacekeys-suggestion-label {
+	color: var(--spacekeys-whichkey-command) !important;
+}
+
+.spacekeys-modal-container .spacekeys-modal .spacekeys-group .spacekeys-suggestion-label {
+	color: var(--spacekeys-whichkey-group) !important;
+}
+
+.spacekeys-modal-container .spacekeys-modal .spacekeys-group .spacekeys-suggestion-label::before {
+	content: "+";
+}
+
+.spacekeys-modal-container .spacekeys-modal .spacekeys-command::after,
+.spacekeys-modal-container .spacekeys-modal .spacekeys-file::after {
+	content: "󰍜";
+	color: var(--spacekeys-whichkey-purple);
+}
+
+.spacekeys-modal-container .spacekeys-modal .spacekeys-command[title="Find Files (Root Dir)"]::after,
+.spacekeys-modal-container .spacekeys-modal .spacekeys-command[title="Recent Files"]::after,
+.spacekeys-modal-container .spacekeys-modal .spacekeys-command[title="Reveal active note"]::after {
+	content: "󰈞";
+	color: var(--spacekeys-whichkey-cyan);
+}
+
+.spacekeys-modal-container .spacekeys-modal .spacekeys-command[title="Vault search"]::after,
+.spacekeys-modal-container .spacekeys-modal .spacekeys-command[title="In-file search"]::after {
+	content: "󰍉";
+	color: var(--spacekeys-whichkey-green);
+}
+
+.spacekeys-modal-container .spacekeys-modal .spacekeys-command[title="Command palette"]::after,
+.spacekeys-modal-container .spacekeys-modal .spacekeys-command[title="Commands"]::after {
+	content: "λ";
+	color: var(--spacekeys-whichkey-orange);
+}
+
+.spacekeys-modal-container .spacekeys-modal .spacekeys-group[title="Commands"]::after {
+	content: "λ";
+	color: var(--spacekeys-whichkey-orange);
+}
+
+.spacekeys-modal-container .spacekeys-modal .spacekeys-group[title="Extract"]::after {
+	content: "󰈙";
+	color: var(--spacekeys-whichkey-cyan);
+}
+
+.spacekeys-modal-container .spacekeys-modal .spacekeys-group[title="Files"]::after {
+	content: "󰈞";
+	color: var(--spacekeys-whichkey-cyan);
+}
+
+.spacekeys-modal-container .spacekeys-modal .spacekeys-group[title="Notes"]::after {
+	content: "󰈙";
+	color: var(--spacekeys-whichkey-cyan);
+}
+
+.spacekeys-modal-container .spacekeys-modal .spacekeys-group[title="Search"]::after {
+	content: "󰍉";
+	color: var(--spacekeys-whichkey-green);
+}
+
+.spacekeys-modal-container .spacekeys-modal .spacekeys-group[title="Windows"]::after {
+	content: "󱡴";
+	color: var(--spacekeys-whichkey-blue);
+}
+
+.spacekeys-modal-container .spacekeys-modal .spacekeys-invalid .spacekeys-suggestion-label {
+	color: var(--spacekeys-whichkey-command) !important;
+	text-decoration: underline wavy currentColor;
+	text-underline-offset: 0.16em;
+}
+
+.spacekeys-modal-container .spacekeys-modal .spacekeys-modal-status {
+	display: grid !important;
+	grid-template-columns: minmax(2ch, 1fr) auto minmax(2ch, 1fr);
+	align-items: baseline;
+	gap: 1ch;
+	margin-top: 1.35em;
+	padding-top: 0.65em;
+	color: var(--spacekeys-whichkey-muted) !important;
+	font-family: inherit !important;
+	font-size: 0 !important;
+	font-weight: 400;
+	line-height: 1;
+	letter-spacing: 0;
+	min-height: 20px;
+	white-space: nowrap;
+}
+
+.spacekeys-modal-container .spacekeys-modal .spacekeys-modal-status::before {
+	content: "␣";
+	grid-column: 1;
+	color: var(--spacekeys-whichkey-purple);
+	font-size: 16px;
+	line-height: 20px;
+	text-align: left;
+}
+
+.spacekeys-modal-container .spacekeys-modal .spacekeys-modal-status::after {
+	content: "esc  close    ⌫  back";
+	grid-column: 2;
+	color: var(--spacekeys-whichkey-muted);
+	font-size: 16px;
+	line-height: 20px;
+	text-align: center;
+	white-space: pre;
+}
+
+.spacekeys-modal-container .spacekeys-modal .spacekeys-modal-status-empty {
+	color: var(--spacekeys-whichkey-muted) !important;
+}
+
+.spacekeys-modal-container.spacekeys-modal-collapsed .spacekeys-modal {
+	width: max-content !important;
+	min-width: 24ch !important;
+	max-width: min(42ch, calc(100vw - 48px)) !important;
+	padding: 1em 2ch !important;
+}
+
+@media (max-width: 640px) {
+	.spacekeys-modal-container .spacekeys-modal {
+		inset: auto 12px 12px auto !important;
+		right: 12px !important;
+		bottom: 12px !important;
+		left: auto !important;
+		top: auto !important;
+		width: calc(100vw - 24px) !important;
+		max-width: calc(100vw - 24px) !important;
+		padding: 24px 24px 20px !important;
+	}
+
+	.spacekeys-modal-container .spacekeys-modal .spacekeys-suggestion {
+		font-size: 16px !important;
+		min-height: 1.3em !important;
+	}
+
+	.spacekeys-modal-container .spacekeys-modal .spacekeys-modal-status {
+		grid-template-columns: 1fr;
+		gap: 10px;
+		font-size: 16px !important;
+	}
+}
+
+/* Spacekeys marks file switching commands so Ink can retitle the generic prompt. */
+.theme-dark.spacekeys-switcher-prompt .prompt-input-container::before {
+	content: "Files" !important;
+}
+
+/* === plugins/tasknotes/modal.css === */
+
+/* TaskNotes task modal: align with the terminal/Noice surface language. */
+.theme-dark :is(.modal.mod-tasknotes, .tasknotes-plugin.minimalist-task-modal) {
+  --tn-bg-primary: var(--ink-terminal-black);
+  --tn-bg-secondary: var(--ink-terminal-black);
+  --tn-bg-primary-alt: var(--ink-terminal-surface-0);
+  --tn-bg-secondary-alt: var(--ink-terminal-surface-0);
+  --tn-text-normal: var(--ink-terminal-text);
+  --tn-text-muted: var(--ink-terminal-muted-bright);
+  --tn-text-faint: var(--ink-terminal-muted);
+  --tn-text-accent: var(--ink-cmdline-accent);
+  --tn-border-color: var(--ink-terminal-border);
+  --tn-border-color-hover: var(--ink-cmdline-border);
+  --tn-border-color-focus: var(--ink-cmdline-border);
+  --tn-border-color-interactive: var(--ink-cmdline-accent);
+  --tn-interactive-normal: var(--ink-terminal-black);
+  --tn-interactive-hover: var(--ink-terminal-surface-0);
+  --tn-interactive-accent: var(--ink-cmdline-accent);
+  --tn-interactive-accent-hover: var(--ink-accent-hover);
+  --tn-color-error: var(--ink-cmdline-error);
+  --tn-color-info: var(--ink-accent);
+  --tn-color-success: var(--ink-terminal-green);
+  --tn-radius-xs: var(--ink-cmdline-radius);
+  --tn-radius-sm: var(--ink-cmdline-radius);
+  --tn-radius-md: var(--ink-cmdline-radius);
+  --tn-radius-lg: var(--ink-cmdline-radius);
+  --tn-radius-xl: var(--ink-cmdline-radius);
+  --modal-background: var(--ink-terminal-black);
+  --background-primary: var(--ink-terminal-black);
+  --background-secondary: var(--ink-terminal-black);
+  --background-primary-alt: var(--ink-terminal-surface-0);
+  --background-secondary-alt: var(--ink-terminal-surface-0);
+  --background-modifier-border: var(--ink-terminal-border);
+  --background-modifier-border-hover: var(--ink-cmdline-border);
+  --background-modifier-border-focus: var(--ink-cmdline-border);
+  --background-modifier-hover: var(--ink-terminal-surface-0);
+  --interactive-normal: var(--ink-terminal-black);
+  --interactive-hover: var(--ink-terminal-surface-0);
+  --interactive-accent: var(--ink-cmdline-accent);
+  --interactive-accent-hover: var(--ink-accent-hover);
+  --text-normal: var(--ink-terminal-text);
+  --text-muted: var(--ink-terminal-muted-bright);
+  --text-faint: var(--ink-terminal-muted);
+  color: var(--ink-terminal-text) !important;
+  font-family: var(--ink-terminal-font) !important;
+}
+
+.theme-dark
+  :is(
+    .modal.mod-tasknotes,
+    .tasknotes-plugin.minimalist-task-modal.modal,
+    .tasknotes-plugin.minimalist-task-modal > .modal
+  ) {
+  border: 1px solid var(--ink-cmdline-border) !important;
+  border-radius: var(--ink-cmdline-radius) !important;
+  background: var(--ink-terminal-black) !important;
+  box-shadow: 0 0 0 var(--ink-cmdline-matte) var(--ink-terminal-black) !important;
+  color: var(--ink-terminal-text) !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
+.theme-dark .modal.mod-tasknotes * {
+  letter-spacing: 0 !important;
+}
+
+.theme-dark .modal.mod-tasknotes .modal-title {
+  min-height: 40px !important;
+  border-bottom: 1px solid var(--ink-terminal-border) !important;
+  background: var(--ink-terminal-black) !important;
+  padding: 8px 40px 8px 16px !important;
+  color: var(--ink-terminal-text) !important;
+  font-family: var(--ink-terminal-font) !important;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  line-height: 24px !important;
+}
+
+.theme-dark .modal.mod-tasknotes .modal-close-button {
+  top: 8px !important;
+  right: 10px !important;
+  border-radius: var(--ink-cmdline-radius) !important;
+  color: var(--ink-terminal-muted-bright) !important;
+}
+
+.theme-dark .modal.mod-tasknotes .modal-close-button:hover {
+  background: var(--ink-terminal-surface-0) !important;
+  color: var(--ink-terminal-text) !important;
+}
+
+.theme-dark .tasknotes-plugin.minimalist-task-modal .modal-content,
+.theme-dark
+  .tasknotes-plugin.minimalist-task-modal
+  .minimalist-modal-container {
+  border-radius: var(--ink-cmdline-radius) !important;
+  background: var(--ink-terminal-black) !important;
+  box-shadow: none !important;
+  color: var(--ink-terminal-text) !important;
+  font-family: var(--ink-terminal-font) !important;
+}
+
+.theme-dark
+  .tasknotes-plugin.minimalist-task-modal
+  .minimalist-modal-container {
+  padding: 18px !important;
+}
+
+.theme-dark
+  .tasknotes-plugin.minimalist-task-modal
+  :is(
+    .modal-split-left,
+    .modal-split-right,
+    .details-container,
+    .metadata-container,
+    .completions-calendar-container
+  ) {
+  background: var(--ink-terminal-black) !important;
+  color: var(--ink-terminal-text) !important;
+  font-family: var(--ink-terminal-font) !important;
+}
+
+.theme-dark
+  .tasknotes-plugin.minimalist-task-modal.split-layout-enabled.expanded
+  .modal-split-right {
+  border-left: 1px solid var(--ink-terminal-border) !important;
+}
+
+.theme-dark
+  .tasknotes-plugin.minimalist-task-modal.split-layout-enabled.expanded
+  .modal-split-right
+  .detail-label {
+  border-bottom: 1px solid var(--ink-terminal-border) !important;
+  background: var(--ink-terminal-surface-0) !important;
+}
+
+.theme-dark
+  .tasknotes-plugin.minimalist-task-modal
+  :is(.detail-label, .tn-task-modal__section-label, .setting-item-name) {
+  color: var(--ink-terminal-muted-bright) !important;
+  font-family: var(--ink-terminal-font) !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+}
+
+.theme-dark
+  .tasknotes-plugin.minimalist-task-modal
+  :is(
+    .title-input,
+    .title-input-detailed,
+    .details-input,
+    .details-editor-fallback,
+    .setting-item-control input,
+    .setting-item-control textarea,
+    .setting-item-control select
+  ) {
+  border: 1px solid var(--ink-terminal-border) !important;
+  border-radius: var(--ink-cmdline-radius) !important;
+  background: var(--ink-terminal-black) !important;
+  color: var(--ink-terminal-text) !important;
+  caret-color: var(--ink-cmdline-cursor) !important;
+  font-family: var(--ink-terminal-font) !important;
+  font-size: var(--ink-cmdline-font-size) !important;
+  font-weight: 400 !important;
+  line-height: var(--ink-cmdline-line-height) !important;
+}
+
+.theme-dark
+  .tasknotes-plugin.minimalist-task-modal
+  :is(
+    .title-input,
+    .title-input-detailed,
+    .details-input,
+    .setting-item-control input,
+    .setting-item-control textarea,
+    .setting-item-control select
+  ):focus {
+  border-color: var(--ink-cmdline-border) !important;
+  background: var(--ink-terminal-black) !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.theme-dark .tasknotes-plugin.minimalist-task-modal .title-input::placeholder,
+.theme-dark
+  .tasknotes-plugin.minimalist-task-modal
+  .title-input-detailed::placeholder,
+.theme-dark .tasknotes-plugin.minimalist-task-modal .details-input::placeholder,
+.theme-dark
+  .tasknotes-plugin.minimalist-task-modal
+  .details-editor-fallback::placeholder {
+  color: var(--ink-terminal-muted) !important;
+  opacity: 1 !important;
+}
+
+.theme-dark .tasknotes-plugin.minimalist-task-modal .tn-task-modal__action-bar {
+  gap: 6px !important;
+  margin-bottom: 16px !important;
+  padding: 0 !important;
+}
+
+.theme-dark .tasknotes-plugin.minimalist-task-modal .action-icon {
+  width: 28px !important;
+  height: 28px !important;
+  border: 1px solid transparent !important;
+  border-radius: var(--ink-cmdline-radius) !important;
+  background: transparent !important;
+  color: var(--ink-terminal-muted-bright) !important;
+  transform: none !important;
+}
+
+.theme-dark .tasknotes-plugin.minimalist-task-modal .action-icon:hover {
+  border-color: var(--ink-terminal-border) !important;
+  background: var(--ink-terminal-surface-0) !important;
+  color: var(--ink-terminal-text) !important;
+}
+
+.theme-dark
+  .tasknotes-plugin.minimalist-task-modal
+  .action-icon
+  :is(.icon, svg) {
+  color: inherit !important;
+  stroke: currentColor !important;
+}
+
+.theme-dark
+  .tasknotes-plugin.minimalist-task-modal
+  .action-icon.has-value::after {
+  top: -3px !important;
+  right: -3px !important;
+  background: var(--ink-accent) !important;
+  border-color: var(--ink-terminal-black) !important;
+}
+
+.theme-dark
+  .tasknotes-plugin.minimalist-task-modal
+  :is(
+    .tn-task-modal__markdown-editor--details,
+    .tn-task-modal__markdown-editor--nlp
+  ) {
+  border: 1px solid var(--ink-terminal-border) !important;
+  border-radius: var(--ink-cmdline-radius) !important;
+  background: var(--ink-terminal-black) !important;
+  box-shadow: none !important;
+}
+
+.theme-dark
+  .tasknotes-plugin.minimalist-task-modal
+  :is(
+    .tn-task-modal__markdown-editor--details,
+    .tn-task-modal__markdown-editor--nlp
+  )
+  :is(.cm-editor, .cm-scroller, .cm-content, .details-editor-fallback) {
+  background: var(--ink-terminal-black) !important;
+  color: var(--ink-terminal-text) !important;
+  font-family: var(--ink-terminal-font) !important;
+  font-size: var(--ink-cmdline-font-size) !important;
+  line-height: var(--ink-cmdline-line-height) !important;
+}
+
+.theme-dark
+  .tasknotes-plugin.minimalist-task-modal
+  :is(
+    .tn-task-modal__markdown-editor--details,
+    .tn-task-modal__markdown-editor--nlp
+  )
+  .cm-placeholder {
+  color: var(--ink-terminal-muted) !important;
+  font-style: italic !important;
+}
+
+.theme-dark .tasknotes-plugin.minimalist-task-modal .cm-cursor {
+  border-left-color: var(--ink-cmdline-cursor) !important;
+}
+
+.theme-dark .tasknotes-plugin.minimalist-task-modal .tn-task-modal__user-fields,
+.theme-dark
+  .tasknotes-plugin.minimalist-task-modal
+  .details-container
+  .setting-item,
+.theme-dark
+  .tasknotes-plugin.minimalist-task-modal.expanded
+  .modal-button-container {
+  border-color: var(--ink-terminal-border) !important;
+}
+
+.theme-dark .modal.mod-tasknotes .modal-button-container {
+  border-top: 1px solid var(--ink-terminal-border) !important;
+  gap: 8px !important;
+  margin-top: 16px !important;
+  padding-top: 14px !important;
+}
+
+.theme-dark .modal.mod-tasknotes .modal-button-container button,
+.theme-dark
+  .tasknotes-plugin.minimalist-task-modal
+  .tn-task-modal__open-note-button {
+  min-height: 32px !important;
+  border: 1px solid var(--ink-terminal-border) !important;
+  border-radius: var(--ink-cmdline-radius) !important;
+  background: var(--ink-terminal-black) !important;
+  color: var(--ink-terminal-text) !important;
+  font-family: var(--ink-terminal-font) !important;
+  font-size: var(--ink-cmdline-font-size) !important;
+  font-weight: 500 !important;
+  box-shadow: none !important;
+}
+
+.theme-dark .modal.mod-tasknotes .modal-button-container button:hover,
+.theme-dark
+  .tasknotes-plugin.minimalist-task-modal
+  .tn-task-modal__open-note-button:hover {
+  border-color: var(--ink-cmdline-border) !important;
+  background: var(--ink-terminal-surface-0) !important;
+  color: var(--ink-terminal-text) !important;
+}
+
+.theme-dark .modal.mod-tasknotes .modal-button-container button.mod-cta {
+  border-color: var(--ink-cmdline-selection) !important;
+  background: var(--ink-cmdline-selection) !important;
+  color: var(--ink-terminal-black) !important;
+}
+
+.theme-dark
+  .modal.mod-tasknotes
+  .modal-button-container
+  :is(.mod-warning, .mod-destructive, .tn-task-modal__archive-button),
+.theme-dark
+  .tasknotes-plugin.minimalist-task-modal
+  :is(.tn-task-modal__archive-button, .tn-task-modal__delete-button) {
+  border-color: var(--ink-cmdline-error) !important;
+  background: var(--ink-cmdline-error) !important;
+  color: var(--ink-terminal-black) !important;
+}
+
+.theme-dark .tasknotes-plugin.minimalist-task-modal .cm-tooltip-autocomplete {
+  border: 1px solid var(--ink-cmdline-border) !important;
+  border-radius: var(--ink-cmdline-radius) !important;
+  background: var(--ink-terminal-black) !important;
+  box-shadow: 0 0 0 var(--ink-inline-suggestion-matte) var(--ink-terminal-black) !important;
+  color: var(--ink-terminal-text) !important;
+  font-family: var(--ink-terminal-font) !important;
+}
+
+.theme-dark
+  .tasknotes-plugin.minimalist-task-modal
+  .cm-tooltip-autocomplete
+  li[aria-selected="true"] {
+  background: var(--ink-cmdline-selection) !important;
+  color: var(--ink-terminal-black) !important;
+}
+
+.theme-dark
+  .tasknotes-plugin.minimalist-task-modal
+  .cm-tooltip-autocomplete
+  li[aria-selected="true"]
+  * {
+  color: var(--ink-terminal-black) !important;
+}
+
+.theme-dark
+  .tasknotes-plugin.minimalist-task-modal
+  :is(
+    .metadata-container,
+    .completions-calendar-container,
+    .task-projects-list,
+    .nl-preview-container
+  ) {
+  border-top: 1px solid var(--ink-terminal-border) !important;
+  background: var(--ink-terminal-black) !important;
+}
+
+.theme-dark
+  .tasknotes-plugin.minimalist-task-modal
+  :is(
+    .metadata-content,
+    .completions-calendar-content,
+    .nl-preview-container,
+    .task-project-item,
+    .task-project-card-host,
+    .task-projects-empty
+  ) {
+  border-color: var(--ink-terminal-border) !important;
+  border-radius: var(--ink-cmdline-radius) !important;
+  background: var(--ink-terminal-black) !important;
+  color: var(--ink-terminal-text) !important;
+  font-family: var(--ink-terminal-font) !important;
+}
+
+.theme-dark
+  .tasknotes-plugin.minimalist-task-modal
+  :is(
+    .metadata-item,
+    .nl-preview-item,
+    .task-project-name,
+    .task-project-path,
+    .project-name,
+    .project-path,
+    .clickable-project .internal-link,
+    .clickable-dependency .task-dependency-link,
+    .cm-project-suggestion,
+    .cm-project-suggestion__name,
+    .cm-project-suggestion__meta,
+    .cm-project-suggestion__meta-label,
+    .cm-project-suggestion__meta-value,
+    .nlp-suggest-text,
+    .nlp-suggest-project__filename,
+    .nlp-suggest-project__meta,
+    .nlp-suggest-project__meta-label,
+    .nlp-suggest-project__meta-value
+  ) {
+  font-family: var(--ink-terminal-font) !important;
+}
+
+.theme-dark
+  .tasknotes-plugin.minimalist-task-modal
+  :is(
+    .metadata-key,
+    .nl-preview-label,
+    .task-project-path,
+    .project-path,
+    .task-projects-empty,
+    .cm-project-suggestion__meta,
+    .cm-project-suggestion__meta-label,
+    .nlp-suggest-project__meta,
+    .nlp-suggest-project__meta-label
+  ) {
+  color: var(--ink-terminal-muted-bright) !important;
+}
+
+.theme-dark
+  .tasknotes-plugin.minimalist-task-modal
+  :is(
+    .metadata-value,
+    .nl-preview-value,
+    .task-project-name,
+    .project-name,
+    .cm-project-suggestion__name,
+    .cm-project-suggestion__meta-value,
+    .nlp-suggest-text,
+    .nlp-suggest-project__filename,
+    .nlp-suggest-project__meta-value
+  ) {
+  color: var(--ink-terminal-text) !important;
+}
+
+.theme-dark
+  .tasknotes-plugin.minimalist-task-modal
+  :is(
+    .clickable-project .internal-link,
+    .clickable-dependency .task-dependency-link,
+    .nlp-suggest-icon
+  ) {
+  color: var(--ink-accent) !important;
+}
+
+.theme-dark
+  .tasknotes-plugin.minimalist-task-modal
+  :is(
+    .clickable-project .internal-link:hover,
+    .clickable-dependency .task-dependency-link:hover,
+    .task-project-item:hover,
+    .project-suggestion:hover
+  ) {
+  background: var(--ink-terminal-surface-0) !important;
+  color: var(--ink-terminal-text) !important;
+  text-decoration: none !important;
+}
+
+.theme-dark
+  .tasknotes-plugin.minimalist-task-modal
+  :is(.autocomplete-suggestions, .suggestion-container) {
+  border: 1px solid var(--ink-cmdline-border) !important;
+  border-radius: var(--ink-cmdline-radius) !important;
+  background: var(--ink-terminal-black) !important;
+  box-shadow: 0 0 0 var(--ink-inline-suggestion-matte) var(--ink-terminal-black) !important;
+  color: var(--ink-terminal-text) !important;
+  font-family: var(--ink-terminal-font) !important;
+}
+
+.theme-dark
+  .tasknotes-plugin.minimalist-task-modal
+  :is(.autocomplete-suggestion, .project-suggestion, .suggestion-item) {
+  border-bottom: 1px solid var(--ink-terminal-border) !important;
+  background: var(--ink-terminal-black) !important;
+  color: var(--ink-terminal-text) !important;
+  font-family: var(--ink-terminal-font) !important;
+}
+
+.theme-dark
+  .tasknotes-plugin.minimalist-task-modal
+  :is(
+    .autocomplete-suggestion:hover,
+    .autocomplete-suggestion.is-selected,
+    .suggestion-item.is-selected,
+    .suggestion-item.mod-complex.is-selected
+  ) {
+  background: var(--ink-cmdline-selection) !important;
+  color: var(--ink-terminal-black) !important;
+}
+
+.theme-dark
+  .tasknotes-plugin.minimalist-task-modal
+  :is(
+    .autocomplete-suggestion.is-selected,
+    .suggestion-item.is-selected,
+    .suggestion-item.mod-complex.is-selected
+  )
+  * {
+  color: var(--ink-terminal-black) !important;
+}
+
+.theme-dark
+  .tasknotes-plugin.minimalist-task-modal
+  :is(
+    .recurring-calendar,
+    .recurring-calendar__month,
+    .recurring-calendar__day,
+    .recurring-calendar__nav
+  ) {
+  color: var(--ink-terminal-muted-bright) !important;
+  font-family: var(--ink-terminal-font) !important;
+}
+
+.theme-dark
+  .tasknotes-plugin.minimalist-task-modal
+  :is(.recurring-calendar__nav, .task-project-remove) {
+  border: 1px solid transparent !important;
+  border-radius: var(--ink-cmdline-radius) !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  color: var(--ink-terminal-muted-bright) !important;
+}
+
+.theme-dark
+  .tasknotes-plugin.minimalist-task-modal
+  :is(.recurring-calendar__nav:hover, .recurring-calendar__nav:focus-visible) {
+  border-color: var(--ink-terminal-border) !important;
+  background: var(--ink-terminal-surface-0) !important;
+  color: var(--ink-terminal-text) !important;
+}
+
+.theme-dark
+  .tasknotes-plugin.minimalist-task-modal
+  .recurring-calendar__day--recurring {
+  border-color: var(--ink-cmdline-accent) !important;
+  color: var(--ink-cmdline-accent) !important;
+}
+
+.theme-dark
+  .tasknotes-plugin.minimalist-task-modal
+  .recurring-calendar__day--completed {
+  border-color: var(--ink-terminal-green) !important;
+  background: var(--ink-terminal-green) !important;
+  color: var(--ink-terminal-black) !important;
+}
+
+.theme-dark
+  .tasknotes-plugin.minimalist-task-modal
+  .recurring-calendar__day--skipped {
+  border-color: var(--ink-terminal-muted) !important;
+  background: var(--ink-terminal-surface-0) !important;
+  color: var(--ink-terminal-muted) !important;
+}
+
+.theme-dark
+  .tasknotes-plugin.minimalist-task-modal
+  .task-project-item--unresolved {
+  border: 1px solid var(--ink-cmdline-error) !important;
+  background: var(--ink-terminal-black) !important;
+}
+
+.theme-dark
+  .tasknotes-plugin.minimalist-task-modal
+  .task-project-item--unresolved
+  .task-project-name {
+  color: var(--ink-cmdline-error) !important;
+}
+
+.theme-dark .tasknotes-plugin.minimalist-task-modal .task-project-remove:hover {
+  border-color: var(--ink-cmdline-error) !important;
+  background: var(--ink-cmdline-error) !important;
+  color: var(--ink-terminal-black) !important;
+}
+
+.theme-dark .tasknotes-plugin.minimalist-task-modal ::selection {
+  background: var(--ink-cmdline-selection) !important;
+  color: var(--ink-terminal-black) !important;
+}
+
+.theme-dark .tasknotes-plugin.minimalist-task-modal ::-webkit-scrollbar-thumb {
+  border-radius: var(--ink-cmdline-radius) !important;
+  background: var(--ink-terminal-border) !important;
+}
+
+.theme-dark
+  .tasknotes-plugin.minimalist-task-modal
+  ::-webkit-scrollbar-thumb:hover {
+  background: var(--ink-terminal-muted-bright) !important;
+}
+
+/* === plugins/tasknotes/status-priority.css === */
+
+/* TaskNotes statuses/priorities: ported from Logseq Awesome Content task markers. */
+.theme-dark
+  :is(
+    .tasknotes-plugin,
+    .modal.mod-tasknotes,
+    .tasknotes-plugin.minimalist-task-modal
+  ) {
+  --awCo-red: #d3455b;
+  --awCo-orange: #f09000;
+  --awCo-yellow-dark: #e6af19;
+  --awCo-yellow: #f9d86c;
+  --awCo-green: #27ae9e;
+  --awCo-blue: #2c89d9;
+  --awCo-purple: #9c739c;
+  --awCo-cherry: #c8896a;
+  --awCo-marker-waiting: var(--awCo-marker-waiting-user, var(--awCo-cherry));
+  --awCo-marker-later: var(--awCo-marker-later-user, var(--awCo-orange));
+  --awCo-marker-todo: var(--awCo-marker-todo-user, var(--awCo-red));
+  --awCo-marker-now-doing: var(--awCo-marker-now-doing-user, var(--awCo-blue));
+  --awCo-marker-done: var(--awCo-marker-done-user, var(--awCo-green));
+  --awCo-priority-a: var(--awCo-priority-a-user, var(--awCo-red));
+  --awCo-priority-b: var(--awCo-priority-b-user, var(--awCo-orange));
+  --awCo-priority-c: var(--awCo-priority-c-user, var(--awCo-yellow-dark));
+  --ink-task-status-inbox: var(
+    --status-inbox-color,
+    var(--ink-terminal-muted-bright)
+  );
+  --ink-task-status-backlog: var(
+    --status-backlog-color,
+    var(--ink-task-status-inbox)
+  );
+  --ink-task-status-waiting: var(--awCo-marker-waiting);
+  --ink-task-status-later: var(--awCo-marker-later);
+  --ink-task-status-todo: var(--status-todo-color, var(--awCo-marker-todo));
+  --ink-task-status-doing: var(
+    --status-doing-color,
+    var(--awCo-marker-now-doing)
+  );
+  --ink-task-status-done: var(--status-done-color, var(--awCo-marker-done));
+  --ink-task-priority-a: var(--awCo-priority-a);
+  --ink-task-priority-b: var(--awCo-priority-b);
+  --ink-task-priority-c: var(--awCo-priority-c);
+  --ink-task-priority-up-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24'%3e%3cpath stroke='none' d='M0 0h24v24H0z'/%3e%3cpath d='M3 12a9 9 0 1 0 18 0 9 9 0 1 0-18 0M12 8l-4 4M12 8v8M16 12l-4-4'/%3e%3c/svg%3e");
+  --ink-task-priority-normal-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24'%3e%3cpath stroke='none' d='M0 0h24v24H0z'/%3e%3cpath d='M11 12a1 1 0 1 0 2 0 1 1 0 1 0-2 0'/%3e%3cpath d='M3 12a9 9 0 1 0 18 0 9 9 0 1 0-18 0'/%3e%3c/svg%3e");
+  --ink-task-priority-down-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24'%3e%3cpath stroke='none' d='M0 0h24v24H0z'/%3e%3cpath d='M3 12a9 9 0 1 0 18 0 9 9 0 1 0-18 0M8 12l4 4M12 8v8M16 12l-4 4'/%3e%3c/svg%3e");
+  --ink-task-priority-icon: var(--ink-task-priority-normal-icon);
+  --ink-task-doing-glyph-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3e%3cpath d='M4 13c2.2-5 5.8-5 8 0s5.8 5 8 0' stroke='%23000000' stroke-width='4.4' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e");
+  --ink-task-marker-checkbox-size: 0.82em;
+  --ink-task-marker-priority-size: 1.05em;
+  --ink-task-done-glyph-size: 0.82;
+  --ink-task-marker-y: 0;
+  --ink-task-priority-y: 0;
+  --priority-none-color: var(--ink-terminal-muted);
+  --priority-a-color: var(--ink-task-priority-a);
+  --priority-high-color: var(--ink-task-priority-a);
+  --priority-b-color: var(--ink-task-priority-b);
+  --priority-medium-color: var(--ink-task-priority-b);
+  --priority-normal-color: var(--ink-task-priority-b);
+  --priority-c-color: var(--ink-task-priority-c);
+  --priority-low-color: var(--ink-task-priority-c);
+  --tn-status-none-color: var(--status-none-color, var(--ink-task-status-inbox));
+  --tn-status-inbox-color: var(--ink-task-status-inbox);
+  --tn-status-backlog-color: var(
+    --status-backlog-color,
+    var(--ink-task-status-inbox)
+  );
+  --tn-status-waiting-color: var(
+    --status-waiting-color,
+    var(--ink-task-status-waiting)
+  );
+  --tn-status-later-color: var(
+    --status-later-color,
+    var(--ink-task-status-later)
+  );
+  --tn-status-todo-color: var(--status-todo-color, var(--ink-task-status-todo));
+  --tn-status-open-color: var(--status-open-color, var(--ink-task-status-todo));
+  --tn-status-now-color: var(--status-now-color, var(--ink-task-status-doing));
+  --tn-status-doing-color: var(
+    --status-doing-color,
+    var(--ink-task-status-doing)
+  );
+  --tn-status-in-progress-color: var(
+    --status-in-progress-color,
+    var(--ink-task-status-doing)
+  );
+  --tn-status-done-color: var(--status-done-color, var(--ink-task-status-done));
+  --tn-priority-a-color: var(--priority-a-color);
+  --tn-priority-high-color: var(--priority-high-color);
+  --tn-priority-b-color: var(--priority-b-color);
+  --tn-priority-medium-color: var(--priority-medium-color);
+  --tn-priority-normal-color: var(--priority-normal-color);
+  --tn-priority-c-color: var(--priority-c-color);
+  --tn-priority-low-color: var(--priority-low-color);
+  --tn-color-status-fallback: var(--ink-task-status-inbox);
+  --tn-color-priority-fallback: var(--ink-task-priority-b);
+}
+
+.theme-dark
+  :is(
+    .tasknotes-plugin[data-status="none"],
+    .tasknotes-plugin[data-status="inbox"],
+    .tasknotes-plugin[data-status="backlog"],
+    .tasknotes-plugin .task-card[data-status="none"],
+    .tasknotes-plugin .task-card[data-status="inbox"],
+    .tasknotes-plugin .task-card[data-status="backlog"],
+    .tasknotes-plugin .task-inline-preview[data-status="none"],
+    .tasknotes-plugin .task-inline-preview[data-status="inbox"],
+    .tasknotes-plugin .task-inline-preview[data-status="backlog"],
+    .tasknotes-plugin .fc-list-task-card[data-status="none"],
+    .tasknotes-plugin .fc-list-task-card[data-status="inbox"],
+    .tasknotes-plugin .fc-list-task-card[data-status="backlog"]
+  ) {
+  --status-color: var(--status-inbox-color, var(--ink-task-status-inbox));
+}
+
+.theme-dark
+  :is(
+    .tasknotes-plugin[data-status="waiting"],
+    .tasknotes-plugin .task-card[data-status="waiting"],
+    .tasknotes-plugin .task-inline-preview[data-status="waiting"],
+    .tasknotes-plugin .fc-list-task-card[data-status="waiting"]
+  ) {
+  --status-color: var(--status-waiting-color, var(--ink-task-status-waiting));
+}
+
+.theme-dark
+  :is(
+    .tasknotes-plugin[data-status="later"],
+    .tasknotes-plugin .task-card[data-status="later"],
+    .tasknotes-plugin .task-inline-preview[data-status="later"],
+    .tasknotes-plugin .fc-list-task-card[data-status="later"]
+  ) {
+  --status-color: var(--status-later-color, var(--ink-task-status-later));
+}
+
+.theme-dark
+  :is(
+    .tasknotes-plugin[data-status="todo"],
+    .tasknotes-plugin[data-status="open"],
+    .tasknotes-plugin .task-card[data-status="todo"],
+    .tasknotes-plugin .task-card[data-status="open"],
+    .tasknotes-plugin .task-inline-preview[data-status="todo"],
+    .tasknotes-plugin .task-inline-preview[data-status="open"],
+    .tasknotes-plugin .fc-list-task-card[data-status="todo"],
+    .tasknotes-plugin .fc-list-task-card[data-status="open"]
+  ) {
+  --status-color: var(--status-todo-color, var(--ink-task-status-todo));
+}
+
+.theme-dark
+  :is(
+    .tasknotes-plugin[data-status="now"],
+    .tasknotes-plugin[data-status="doing"],
+    .tasknotes-plugin[data-status="in-progress"],
+    .tasknotes-plugin .task-card[data-status="now"],
+    .tasknotes-plugin .task-card[data-status="doing"],
+    .tasknotes-plugin .task-card[data-status="in-progress"],
+    .tasknotes-plugin .task-inline-preview[data-status="now"],
+    .tasknotes-plugin .task-inline-preview[data-status="doing"],
+    .tasknotes-plugin .task-inline-preview[data-status="in-progress"],
+    .tasknotes-plugin .fc-list-task-card[data-status="now"],
+    .tasknotes-plugin .fc-list-task-card[data-status="doing"],
+    .tasknotes-plugin .fc-list-task-card[data-status="in-progress"]
+  ) {
+  --status-color: var(--status-doing-color, var(--ink-task-status-doing));
+}
+
+.theme-dark
+  :is(
+    .tasknotes-plugin[data-status="done"],
+    .tasknotes-plugin[data-status="completed"],
+    .tasknotes-plugin .task-card[data-status="done"],
+    .tasknotes-plugin .task-card[data-status="completed"],
+    .tasknotes-plugin .task-card--completed,
+    .tasknotes-plugin .task-inline-preview[data-status="done"],
+    .tasknotes-plugin .task-inline-preview[data-status="completed"],
+    .tasknotes-plugin .task-inline-preview--completed,
+    .tasknotes-plugin .fc-list-task-card[data-status="done"],
+    .tasknotes-plugin .fc-list-task-card[data-status="completed"]
+  ) {
+  --status-color: var(--status-done-color, var(--ink-task-status-done));
+}
+
+.theme-dark
+  :is(
+    .tasknotes-plugin[data-priority="none"],
+    .tasknotes-plugin .task-card[data-priority="none"],
+    .tasknotes-plugin .task-inline-preview[data-priority="none"],
+    .tasknotes-plugin .fc-list-task-card[data-priority="none"]
+  ) {
+  --current-priority-color: var(--ink-terminal-muted) !important;
+  --priority-color: var(--ink-terminal-muted) !important;
+}
+
+.theme-dark
+  :is(
+    .tasknotes-plugin[data-priority="a"],
+    .tasknotes-plugin[data-priority="A"],
+    .tasknotes-plugin[data-priority="high"],
+    .tasknotes-plugin .task-card[data-priority="a"],
+    .tasknotes-plugin .task-card[data-priority="A"],
+    .tasknotes-plugin .task-card[data-priority="high"],
+    .tasknotes-plugin .task-card--priority-high,
+    .tasknotes-plugin .task-inline-preview[data-priority="a"],
+    .tasknotes-plugin .task-inline-preview[data-priority="A"],
+    .tasknotes-plugin .task-inline-preview[data-priority="high"],
+    .tasknotes-plugin .task-inline-preview--priority-high,
+    .tasknotes-plugin .task-list-view__task-item--priority-high,
+    .tasknotes-plugin .fc-list-task-card[data-priority="a"],
+    .tasknotes-plugin .fc-list-task-card[data-priority="A"],
+    .tasknotes-plugin .fc-list-task-card[data-priority="high"]
+  ) {
+  --current-priority-color: var(--ink-task-priority-a) !important;
+  --priority-color: var(--ink-task-priority-a) !important;
+  --ink-task-priority-icon: var(--ink-task-priority-up-icon);
+}
+
+.theme-dark
+  :is(
+    .tasknotes-plugin[data-priority="b"],
+    .tasknotes-plugin[data-priority="B"],
+    .tasknotes-plugin[data-priority="medium"],
+    .tasknotes-plugin[data-priority="normal"],
+    .tasknotes-plugin .task-card[data-priority="b"],
+    .tasknotes-plugin .task-card[data-priority="B"],
+    .tasknotes-plugin .task-card[data-priority="medium"],
+    .tasknotes-plugin .task-card[data-priority="normal"],
+    .tasknotes-plugin .task-card--priority-medium,
+    .tasknotes-plugin .task-card--priority-normal,
+    .tasknotes-plugin .task-inline-preview[data-priority="b"],
+    .tasknotes-plugin .task-inline-preview[data-priority="B"],
+    .tasknotes-plugin .task-inline-preview[data-priority="medium"],
+    .tasknotes-plugin .task-inline-preview[data-priority="normal"],
+    .tasknotes-plugin .task-inline-preview--priority-medium,
+    .tasknotes-plugin .task-inline-preview--priority-normal,
+    .tasknotes-plugin .task-list-view__task-item--priority-normal,
+    .tasknotes-plugin .fc-list-task-card[data-priority="b"],
+    .tasknotes-plugin .fc-list-task-card[data-priority="B"],
+    .tasknotes-plugin .fc-list-task-card[data-priority="medium"],
+    .tasknotes-plugin .fc-list-task-card[data-priority="normal"]
+  ) {
+  --current-priority-color: var(--ink-task-priority-b) !important;
+  --priority-color: var(--ink-task-priority-b) !important;
+  --ink-task-priority-icon: var(--ink-task-priority-normal-icon);
+}
+
+.theme-dark
+  :is(
+    .tasknotes-plugin[data-priority="c"],
+    .tasknotes-plugin[data-priority="C"],
+    .tasknotes-plugin[data-priority="low"],
+    .tasknotes-plugin .task-card[data-priority="c"],
+    .tasknotes-plugin .task-card[data-priority="C"],
+    .tasknotes-plugin .task-card[data-priority="low"],
+    .tasknotes-plugin .task-card--priority-low,
+    .tasknotes-plugin .task-inline-preview[data-priority="c"],
+    .tasknotes-plugin .task-inline-preview[data-priority="C"],
+    .tasknotes-plugin .task-inline-preview[data-priority="low"],
+    .tasknotes-plugin .task-inline-preview--priority-low,
+    .tasknotes-plugin .task-list-view__task-item--priority-low,
+    .tasknotes-plugin .fc-list-task-card[data-priority="c"],
+    .tasknotes-plugin .fc-list-task-card[data-priority="C"],
+    .tasknotes-plugin .fc-list-task-card[data-priority="low"]
+  ) {
+  --current-priority-color: var(--ink-task-priority-c) !important;
+  --priority-color: var(--ink-task-priority-c) !important;
+  --ink-task-priority-icon: var(--ink-task-priority-down-icon);
+}
+
+.theme-dark
+  .tasknotes-plugin
+  :is(.task-inline-preview, .task-card, .fc-list-task-card) {
+  --ink-task-status-label: "INBOX";
+}
+
+.theme-dark
+  .tasknotes-plugin
+  :is(.task-inline-preview, .task-card, .fc-list-task-card)
+  :is(a, .internal-link, .external-link) {
+  color: var(--ink-accent) !important;
+  text-decoration: none !important;
+  border-bottom: 1px solid var(--ink-link-border);
+}
+
+.theme-dark
+  .tasknotes-plugin
+  :is(.task-inline-preview, .task-card, .fc-list-task-card)
+  :is(a, .internal-link, .external-link):hover {
+  color: var(--ink-accent-hover) !important;
+  border-bottom-color: var(--ink-link-border-hover);
+}
+
+.theme-dark
+  .tasknotes-plugin
+  :is(
+    .task-inline-preview[data-status="none"],
+    .task-inline-preview[data-status="inbox"],
+    .task-inline-preview[data-status="backlog"],
+    .task-card[data-status="none"],
+    .task-card[data-status="inbox"],
+    .task-card[data-status="backlog"],
+    .fc-list-task-card[data-status="none"],
+    .fc-list-task-card[data-status="inbox"],
+    .fc-list-task-card[data-status="backlog"]
+  ) {
+  --ink-task-status-label: "INBOX";
+}
+
+.theme-dark
+  .tasknotes-plugin
+  :is(
+    .task-inline-preview[data-status="waiting"],
+    .task-card[data-status="waiting"],
+    .fc-list-task-card[data-status="waiting"]
+  ) {
+  --ink-task-status-label: "WAITING";
+}
+
+.theme-dark
+  .tasknotes-plugin
+  :is(
+    .task-inline-preview[data-status="later"],
+    .task-card[data-status="later"],
+    .fc-list-task-card[data-status="later"]
+  ) {
+  --ink-task-status-label: "LATER";
+}
+
+.theme-dark
+  .tasknotes-plugin
+  :is(
+    .task-inline-preview[data-status="todo"],
+    .task-inline-preview[data-status="open"],
+    .task-card[data-status="todo"],
+    .task-card[data-status="open"],
+    .fc-list-task-card[data-status="todo"],
+    .fc-list-task-card[data-status="open"]
+  ) {
+  --ink-task-status-label: "TODO";
+}
+
+.theme-dark
+  .tasknotes-plugin
+  :is(
+    .task-inline-preview[data-status="now"],
+    .task-inline-preview[data-status="doing"],
+    .task-inline-preview[data-status="in-progress"],
+    .task-card[data-status="now"],
+    .task-card[data-status="doing"],
+    .task-card[data-status="in-progress"],
+    .fc-list-task-card[data-status="now"],
+    .fc-list-task-card[data-status="doing"],
+    .fc-list-task-card[data-status="in-progress"]
+  ) {
+  --ink-task-status-label: "DOING";
+}
+
+.theme-dark
+  .tasknotes-plugin
+  :is(
+    .task-inline-preview[data-status="done"],
+    .task-inline-preview[data-status="completed"],
+    .task-inline-preview--completed,
+    .task-card[data-status="done"],
+    .task-card[data-status="completed"],
+    .task-card--completed,
+    .fc-list-task-card[data-status="done"],
+    .fc-list-task-card[data-status="completed"]
+  ) {
+  --ink-task-status-label: "DONE";
+}
+
+.theme-dark
+  .tasknotes-plugin
+  :is(
+    .task-card[data-status] > .task-card__main-row .task-card__status-dot,
+    .task-inline-preview__status-dot,
+    .fc-list-task-status-dot
+  ) {
+  --ink-task-current-status: var(
+    --current-status-color,
+    var(--status-color, var(--ink-task-status-todo))
+  );
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 0 !important;
+  width: auto !important;
+  min-width: 0 !important;
+  height: auto !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  opacity: 1 !important;
+  transform: none !important;
+  vertical-align: middle !important;
+  line-height: 1 !important;
+}
+
+.theme-dark
+  .tasknotes-plugin
+  :is(
+    .task-card[data-status] > .task-card__main-row .task-card__status-dot,
+    .task-inline-preview__status-dot,
+    .fc-list-task-status-dot
+  )::before {
+  content: "";
+  position: static;
+  display: inline-block;
+  width: var(--ink-task-marker-checkbox-size) !important;
+  height: var(--ink-task-marker-checkbox-size) !important;
+  margin-right: 0.2em !important;
+  border: 2px solid var(--ink-terminal-black) !important;
+  border-radius: 5px;
+  background-color: var(--ink-task-current-status) !important;
+  opacity: 0.4;
+}
+
+.theme-dark
+  .tasknotes-plugin
+  :is(
+    .task-card[data-status] > .task-card__main-row .task-card__status-dot,
+    .task-inline-preview__status-dot,
+    .fc-list-task-status-dot
+  )::after {
+  content: var(--ink-task-status-label);
+  position: static;
+  display: inline-block;
+  margin: 0 0.6em 0 0 !important;
+  padding: 2px 3px 1px 3px;
+  border: 1px solid currentColor;
+  border-radius: 4px;
+  background: var(--ink-terminal-black);
+  color: var(--ink-task-current-status);
+  font-family: var(--ink-terminal-font);
+  font-size: 70% !important;
+  font-weight: 600;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.theme-dark
+  .tasknotes-plugin
+  :is(
+    .task-card__status-dot,
+    .task-inline-preview__status-dot,
+    .fc-list-task-status-dot
+  )
+  > :is(svg, .svg-icon) {
+  display: none !important;
+}
+
+.theme-dark
+  .tasknotes-plugin
+  :is(
+    .task-card[data-status="done"] > .task-card__main-row .task-card__status-dot,
+    .task-card[data-status="completed"]
+      > .task-card__main-row
+      .task-card__status-dot,
+    .task-card--completed > .task-card__main-row .task-card__status-dot,
+    .task-inline-preview[data-status="done"] .task-inline-preview__status-dot,
+    .task-inline-preview[data-status="completed"]
+      .task-inline-preview__status-dot,
+    .task-inline-preview--completed .task-inline-preview__status-dot,
+    .fc-list-task-card[data-status="done"] .fc-list-task-status-dot,
+    .fc-list-task-card[data-status="completed"] .fc-list-task-status-dot
+  ) {
+  background: transparent !important;
+  border: 0 !important;
+  color: var(--ink-terminal-black) !important;
+  box-shadow: none !important;
+}
+
+.theme-dark
+  .tasknotes-plugin
+  :is(
+    .task-card[data-status="done"] > .task-card__main-row .task-card__status-dot,
+    .task-card[data-status="completed"]
+      > .task-card__main-row
+      .task-card__status-dot,
+    .task-card--completed > .task-card__main-row .task-card__status-dot,
+    .task-inline-preview[data-status="done"] .task-inline-preview__status-dot,
+    .task-inline-preview[data-status="completed"]
+      .task-inline-preview__status-dot,
+    .task-inline-preview--completed .task-inline-preview__status-dot,
+    .fc-list-task-card[data-status="done"] .fc-list-task-status-dot,
+    .fc-list-task-card[data-status="completed"] .fc-list-task-status-dot
+  )::before {
+  content: "✓";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(
+    var(--ink-task-marker-checkbox-size) / var(--ink-task-done-glyph-size)
+  ) !important;
+  height: calc(
+    var(--ink-task-marker-checkbox-size) / var(--ink-task-done-glyph-size)
+  ) !important;
+  color: var(--ink-terminal-black);
+  background-color: var(
+    --current-status-color,
+    var(--status-color, var(--ink-task-status-done))
+  ) !important;
+  opacity: 0.72;
+  font-size: calc(var(--ink-task-done-glyph-size) * 1em);
+  font-weight: 900;
+  line-height: 1;
+}
+
+.theme-dark
+  .tasknotes-plugin
+  :is(
+    .task-card[data-status="now"] > .task-card__main-row .task-card__status-dot,
+    .task-card[data-status="doing"]
+      > .task-card__main-row
+      .task-card__status-dot,
+    .task-card[data-status="in-progress"]
+      > .task-card__main-row
+      .task-card__status-dot,
+    .task-inline-preview[data-status="now"] .task-inline-preview__status-dot,
+    .task-inline-preview[data-status="doing"] .task-inline-preview__status-dot,
+    .task-inline-preview[data-status="in-progress"]
+      .task-inline-preview__status-dot,
+    .fc-list-task-card[data-status="now"] .fc-list-task-status-dot,
+    .fc-list-task-card[data-status="doing"] .fc-list-task-status-dot,
+    .fc-list-task-card[data-status="in-progress"] .fc-list-task-status-dot
+  )::before {
+  content: "";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--ink-task-marker-checkbox-size) !important;
+  height: var(--ink-task-marker-checkbox-size) !important;
+  color: var(--ink-terminal-black);
+  background-color: var(
+    --current-status-color,
+    var(--status-color, var(--ink-task-status-doing))
+  ) !important;
+  background-image: var(--ink-task-doing-glyph-icon);
+  background-position: 50% 52%;
+  background-repeat: no-repeat;
+  background-size: 72% 72%;
+  opacity: 0.72;
+  line-height: 1;
+}
+
+.theme-dark
+  .tasknotes-plugin
+  :is(
+    .task-card[data-status="done"] > .task-card__main-row .task-card__status-dot,
+    .task-card[data-status="completed"]
+      > .task-card__main-row
+      .task-card__status-dot,
+    .task-card--completed > .task-card__main-row .task-card__status-dot,
+    .task-inline-preview[data-status="done"] .task-inline-preview__status-dot,
+    .task-inline-preview[data-status="completed"]
+      .task-inline-preview__status-dot,
+    .task-inline-preview--completed .task-inline-preview__status-dot,
+    .fc-list-task-card[data-status="done"] .fc-list-task-status-dot,
+    .fc-list-task-card[data-status="completed"] .fc-list-task-status-dot
+  )::after {
+  text-decoration: line-through;
+}
+
+.theme-dark
+  .tasknotes-plugin
+  :is(
+    .task-card__status-dot--icon svg,
+    .task-card--completed
+      > .task-card__main-row
+      .task-card__status-dot--icon
+      svg
+  ) {
+  color: var(
+    --current-status-color,
+    var(--status-color, var(--ink-task-status-todo))
+  ) !important;
+  stroke: currentColor !important;
+}
+
+.theme-dark
+  .tasknotes-plugin
+  :is(
+    .task-card[data-priority] > .task-card__main-row .task-card__priority-dot,
+    .task-inline-preview__priority-dot,
+    .fc-list-task-priority-dot
+  ) {
+  --ink-task-current-priority: var(
+    --current-priority-color,
+    var(--priority-color, var(--ink-task-priority-b))
+  );
+  position: static !important;
+  display: inline-block !important;
+  width: var(--ink-task-marker-priority-size) !important;
+  height: var(--ink-task-marker-priority-size) !important;
+  min-width: var(--ink-task-marker-priority-size) !important;
+  min-height: var(--ink-task-marker-priority-size) !important;
+  margin: 0 0.34em 0 -0.1em !important;
+  border: 0 !important;
+  border-radius: 100% !important;
+  background-color: var(--ink-task-current-priority) !important;
+  box-shadow: none !important;
+  font-size: 1em !important;
+  transform: translateY(-0.04em) !important;
+  vertical-align: middle !important;
+  -webkit-mask: var(--ink-task-priority-icon) no-repeat 50% 50%;
+  mask: var(--ink-task-priority-icon) no-repeat 50% 50%;
+}
+
+.theme-dark
+  .tasknotes-plugin
+  :is(
+    .task-card__priority-dot,
+    .task-inline-preview__priority-dot,
+    .fc-list-task-priority-dot
+  )
+  > :is(svg, .svg-icon) {
+  display: none !important;
+}
+
+.theme-dark
+  .tasknotes-plugin
+  :is(
+    .task-inline-preview[data-priority="none"] .task-inline-preview__priority-dot,
+    .task-card[data-priority="none"]
+      > .task-card__main-row
+      .task-card__priority-dot,
+    .fc-list-task-card[data-priority="none"] .fc-list-task-priority-dot
+  ) {
+  display: none !important;
+}
+
+.theme-dark .tasknotes-plugin :is(.task-card__priority-dot--icon svg) {
+  color: var(
+    --current-priority-color,
+    var(--priority-color, var(--ink-task-priority-b))
+  ) !important;
+  stroke: currentColor !important;
+}
+
+.theme-dark
+  .tasknotes-plugin
+  :is(.task-card__metadata-pill, .task-selector-create-footer__chip) {
+  border: 1px solid var(--ink-terminal-border) !important;
+  border-radius: var(--ink-cmdline-radius) !important;
+  background: var(--ink-terminal-black) !important;
+  color: var(--ink-terminal-muted-bright) !important;
+  font-family: var(--ink-terminal-font) !important;
+}
+
+.theme-dark .tasknotes-plugin .task-selector-create-footer__chip--status {
+  --ink-task-footer-status-color: var(
+    --current-status-color,
+    var(--status-color, var(--ink-task-status-inbox))
+  );
+  border-color: color-mix(
+    in srgb,
+    var(--ink-task-footer-status-color) 55%,
+    var(--ink-terminal-border)
+  ) !important;
+  background: color-mix(
+    in srgb,
+    var(--ink-task-footer-status-color) 14%,
+    var(--ink-terminal-black)
+  ) !important;
+  color: var(--ink-task-footer-status-color) !important;
+}
+
+.theme-dark .tasknotes-plugin .task-selector-create-footer__chip--priority {
+  border-color: color-mix(
+    in srgb,
+    var(--ink-task-priority-b) 55%,
+    var(--ink-terminal-border)
+  ) !important;
+  background: color-mix(
+    in srgb,
+    var(--ink-task-priority-b) 14%,
+    var(--ink-terminal-black)
+  ) !important;
+  color: var(--ink-task-priority-b) !important;
+}
+
+.theme-dark
+  .tasknotes-plugin
+  :is(
+    .task-list-view__task-item--priority-high,
+    .task-list-view__task-item--priority-normal,
+    .task-list-view__task-item--priority-low
+  ) {
+  border-left-color: var(
+    --current-priority-color,
+    var(--priority-color, var(--ink-task-priority-b))
+  ) !important;
+}
+
+.theme-dark .tasknotes-plugin .task-inline-preview {
+  gap: 0 !important;
+  margin-left: 1ch !important;
+  padding: 0 !important;
+  background: transparent !important;
+  color: var(--ink-terminal-text) !important;
+}
+
+.theme-dark .tasknotes-plugin .task-inline-preview:hover {
+  background: transparent !important;
+}
+
+.theme-dark
+  .tasknotes-plugin
+  :is(
+    .task-inline-preview .task-inline-preview__date,
+    .task-inline-preview .task-inline-preview__date-icon,
+    .task-card--layout-inline .task-card__metadata,
+    .task-card--layout-compact .task-card__metadata
+  ) {
+  display: none !important;
+}
+
+.theme-dark
+  .tasknotes-plugin
+  :is(
+    .task-inline-preview__title,
+    .task-card--layout-inline .task-card__title,
+    .task-card--layout-inline .task-card__title-text
+  ) {
+  color: var(--ink-terminal-text) !important;
+  font-weight: 400 !important;
+}
+
+.theme-dark
+  .tasknotes-plugin
+  .task-inline-preview--completed
+  .task-inline-preview__title {
+  text-decoration: line-through !important;
+  color: var(--ink-terminal-muted-bright) !important;
+  opacity: 0.82 !important;
+}
+
+.theme-dark
+  .menu:has(
+    .menu-item-icon:is(
+      [style*="#ff0000"],
+      [style*="rgb(255, 0, 0)"],
+      [style*="#ffaa00"],
+      [style*="rgb(255, 170, 0)"],
+      [style*="#00aa00"],
+      [style*="rgb(0, 170, 0)"]
+    )
+  ) {
+  --ink-task-menu-priority-none: var(--ink-terminal-muted-bright);
+  --ink-task-menu-priority-a: #d3455b;
+  --ink-task-menu-priority-b: #f09000;
+  --ink-task-menu-priority-c: #e6af19;
+  --ink-task-menu-priority-up-icon: var(
+    --ink-task-priority-up-icon,
+    url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24'%3e%3cpath stroke='none' d='M0 0h24v24H0z'/%3e%3cpath d='M3 12a9 9 0 1 0 18 0 9 9 0 1 0-18 0M12 8l-4 4M12 8v8M16 12l-4-4'/%3e%3c/svg%3e")
+  );
+  --ink-task-menu-priority-normal-icon: var(
+    --ink-task-priority-normal-icon,
+    url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24'%3e%3cpath stroke='none' d='M0 0h24v24H0z'/%3e%3cpath d='M11 12a1 1 0 1 0 2 0 1 1 0 1 0-2 0'/%3e%3cpath d='M3 12a9 9 0 1 0 18 0 9 9 0 1 0-18 0'/%3e%3c/svg%3e")
+  );
+  --ink-task-menu-priority-down-icon: var(
+    --ink-task-priority-down-icon,
+    url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24'%3e%3cpath stroke='none' d='M0 0h24v24H0z'/%3e%3cpath d='M3 12a9 9 0 1 0 18 0 9 9 0 1 0-18 0M8 12l4 4M12 8v8M16 12l-4 4'/%3e%3c/svg%3e")
+  );
+  border: 1px solid var(--ink-cmdline-border) !important;
+  border-radius: var(--ink-cmdline-radius) !important;
+  background: var(--ink-terminal-black) !important;
+  padding: 4px !important;
+  box-shadow: 0 0 0 6px var(--ink-terminal-black) !important;
+  color: var(--ink-terminal-text) !important;
+  font-family: var(--ink-terminal-font) !important;
+}
+
+.theme-dark
+  .menu:has(
+    .menu-item-icon:is(
+      [style*="#ff0000"],
+      [style*="rgb(255, 0, 0)"],
+      [style*="#ffaa00"],
+      [style*="rgb(255, 170, 0)"],
+      [style*="#00aa00"],
+      [style*="rgb(0, 170, 0)"]
+    )
+  )
+  .menu-item {
+  min-height: 28px !important;
+  border-radius: calc(var(--ink-cmdline-radius) - 1px) !important;
+  color: var(--ink-terminal-text) !important;
+  font-size: var(--ink-cmdline-font-size) !important;
+  line-height: var(--ink-cmdline-line-height) !important;
+}
+
+.theme-dark
+  .menu:has(
+    .menu-item-icon:is(
+      [style*="#ff0000"],
+      [style*="rgb(255, 0, 0)"],
+      [style*="#ffaa00"],
+      [style*="rgb(255, 170, 0)"],
+      [style*="#00aa00"],
+      [style*="rgb(0, 170, 0)"]
+    )
+  )
+  .menu-item:is(:hover, .is-selected, .selected) {
+  background: var(--ink-cmdline-selection) !important;
+  color: var(--ink-terminal-black) !important;
+}
+
+.theme-dark
+  .menu:has(
+    .menu-item-icon:is(
+      [style*="#ff0000"],
+      [style*="rgb(255, 0, 0)"],
+      [style*="#ffaa00"],
+      [style*="rgb(255, 170, 0)"],
+      [style*="#00aa00"],
+      [style*="rgb(0, 170, 0)"]
+    )
+  )
+  .menu-item-title {
+  color: inherit !important;
+  font-family: var(--ink-terminal-font) !important;
+  font-weight: 600 !important;
+}
+
+.theme-dark
+  .menu:has(
+    .menu-item-icon:is(
+      [style*="#ff0000"],
+      [style*="rgb(255, 0, 0)"],
+      [style*="#ffaa00"],
+      [style*="rgb(255, 170, 0)"],
+      [style*="#00aa00"],
+      [style*="rgb(0, 170, 0)"]
+    )
+  )
+  .menu-item-icon {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 1.35em !important;
+  min-width: 1.35em !important;
+  height: 1.35em !important;
+  margin-right: 0.45em !important;
+}
+
+.theme-dark
+  .menu:has(
+    .menu-item-icon:is(
+      [style*="#ff0000"],
+      [style*="rgb(255, 0, 0)"],
+      [style*="#ffaa00"],
+      [style*="rgb(255, 170, 0)"],
+      [style*="#00aa00"],
+      [style*="rgb(0, 170, 0)"],
+      [style*="#cccccc"],
+      [style*="rgb(204, 204, 204)"]
+    )
+  )
+  .menu-item-icon:is(
+    [style*="#ff0000"],
+    [style*="rgb(255, 0, 0)"],
+    [style*="#ffaa00"],
+    [style*="rgb(255, 170, 0)"],
+    [style*="#00aa00"],
+    [style*="rgb(0, 170, 0)"],
+    [style*="#cccccc"],
+    [style*="rgb(204, 204, 204)"]
+  ) {
+  --ink-task-menu-priority-icon: var(--ink-task-menu-priority-normal-icon);
+  position: relative !important;
+  color: var(--ink-task-menu-priority-none) !important;
+}
+
+.theme-dark
+  .menu:has(
+    .menu-item-icon:is(
+      [style*="#ff0000"],
+      [style*="rgb(255, 0, 0)"],
+      [style*="#ffaa00"],
+      [style*="rgb(255, 170, 0)"],
+      [style*="#00aa00"],
+      [style*="rgb(0, 170, 0)"]
+    )
+  )
+  .menu-item-icon:is([style*="#ff0000"], [style*="rgb(255, 0, 0)"]) {
+  --ink-task-menu-priority-icon: var(--ink-task-menu-priority-up-icon);
+  color: var(--ink-task-menu-priority-a) !important;
+}
+
+.theme-dark
+  .menu:has(
+    .menu-item-icon:is(
+      [style*="#ff0000"],
+      [style*="rgb(255, 0, 0)"],
+      [style*="#ffaa00"],
+      [style*="rgb(255, 170, 0)"],
+      [style*="#00aa00"],
+      [style*="rgb(0, 170, 0)"]
+    )
+  )
+  .menu-item-icon:is([style*="#ffaa00"], [style*="rgb(255, 170, 0)"]) {
+  --ink-task-menu-priority-icon: var(--ink-task-menu-priority-normal-icon);
+  color: var(--ink-task-menu-priority-b) !important;
+}
+
+.theme-dark
+  .menu:has(
+    .menu-item-icon:is(
+      [style*="#ff0000"],
+      [style*="rgb(255, 0, 0)"],
+      [style*="#ffaa00"],
+      [style*="rgb(255, 170, 0)"],
+      [style*="#00aa00"],
+      [style*="rgb(0, 170, 0)"]
+    )
+  )
+  .menu-item-icon:is([style*="#00aa00"], [style*="rgb(0, 170, 0)"]) {
+  --ink-task-menu-priority-icon: var(--ink-task-menu-priority-down-icon);
+  color: var(--ink-task-menu-priority-c) !important;
+}
+
+.theme-dark
+  .menu:has(
+    .menu-item-icon:is(
+      [style*="#ff0000"],
+      [style*="rgb(255, 0, 0)"],
+      [style*="#ffaa00"],
+      [style*="rgb(255, 170, 0)"],
+      [style*="#00aa00"],
+      [style*="rgb(0, 170, 0)"]
+    )
+  )
+  .menu-item-icon:is([style*="#cccccc"], [style*="rgb(204, 204, 204)"]) {
+  --ink-task-menu-priority-icon: var(--ink-task-menu-priority-normal-icon);
+  color: var(--ink-task-menu-priority-none) !important;
+}
+
+.theme-dark
+  .menu:has(
+    .menu-item-icon:is(
+      [style*="#ff0000"],
+      [style*="rgb(255, 0, 0)"],
+      [style*="#ffaa00"],
+      [style*="rgb(255, 170, 0)"],
+      [style*="#00aa00"],
+      [style*="rgb(0, 170, 0)"]
+    )
+  )
+  .menu-item-icon:is(
+    [style*="#ff0000"],
+    [style*="rgb(255, 0, 0)"],
+    [style*="#ffaa00"],
+    [style*="rgb(255, 170, 0)"],
+    [style*="#00aa00"],
+    [style*="rgb(0, 170, 0)"],
+    [style*="#cccccc"],
+    [style*="rgb(204, 204, 204)"]
+  )
+  > svg {
+  display: none !important;
+}
+
+.theme-dark
+  .menu:has(
+    .menu-item-icon:is(
+      [style*="#ff0000"],
+      [style*="rgb(255, 0, 0)"],
+      [style*="#ffaa00"],
+      [style*="rgb(255, 170, 0)"],
+      [style*="#00aa00"],
+      [style*="rgb(0, 170, 0)"]
+    )
+  )
+  .menu-item-icon:is(
+    [style*="#ff0000"],
+    [style*="rgb(255, 0, 0)"],
+    [style*="#ffaa00"],
+    [style*="rgb(255, 170, 0)"],
+    [style*="#00aa00"],
+    [style*="rgb(0, 170, 0)"],
+    [style*="#cccccc"],
+    [style*="rgb(204, 204, 204)"]
+  )::before {
+  content: "";
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 1.05em;
+  height: 1.05em;
+  background: currentColor;
+  transform: translateY(-0.03em);
+  -webkit-mask: var(--ink-task-menu-priority-icon) no-repeat 50% 50% / contain;
+  mask: var(--ink-task-menu-priority-icon) no-repeat 50% 50% / contain;
+}
+
+.theme-dark
+  .menu:has(
+    .menu-item-icon:is(
+      [style*="#ff0000"],
+      [style*="rgb(255, 0, 0)"],
+      [style*="#ffaa00"],
+      [style*="rgb(255, 170, 0)"],
+      [style*="#00aa00"],
+      [style*="rgb(0, 170, 0)"]
+    )
+  )
+  .menu-item:is(:hover, .is-selected, .selected)
+  .menu-item-icon:is(
+    [style*="#ff0000"],
+    [style*="rgb(255, 0, 0)"],
+    [style*="#ffaa00"],
+    [style*="rgb(255, 170, 0)"],
+    [style*="#00aa00"],
+    [style*="rgb(0, 170, 0)"],
+    [style*="#cccccc"],
+    [style*="rgb(204, 204, 204)"]
+  )::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: -0.1em;
+  border-radius: 999px;
+  background: var(--ink-terminal-black);
+}

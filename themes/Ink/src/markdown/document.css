@@ -1,0 +1,375 @@
+/* GitHub-style Markdown document rendering. */
+.theme-dark {
+  --github-markdown-font:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  --github-markdown-mono:
+    ui-monospace, SFMono-Regular, "SF Mono", "JetBrainsMono Nerd Font Mono",
+    "JetBrains Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  --github-markdown-padding: 45px;
+  --github-markdown-padding-mobile: 15px;
+  --github-markdown-heading-border: #21262d;
+}
+
+.theme-dark
+  :is(.markdown-reading-view, .markdown-preview-view, .markdown-rendered) {
+  background: var(--canvas-default) !important;
+}
+
+.theme-dark .markdown-preview-view .markdown-preview-sizer {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+  padding-right: var(--github-markdown-padding) !important;
+  padding-left: var(--github-markdown-padding) !important;
+}
+
+.theme-dark .markdown-rendered,
+.theme-dark
+  .markdown-rendered
+  :is(p, li, td, th, blockquote, details, summary, .callout, .callout-content) {
+  color: var(--fg-default);
+  font-family: var(--github-markdown-font);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  overflow-wrap: break-word;
+}
+
+.theme-dark .markdown-rendered {
+  --ink-list-marker-inset: 1ch;
+  --ink-list-bullet-offset: 0.8em;
+  --list-indent: calc(
+    var(--ink-list-marker-inset) + var(--ink-list-bullet-offset)
+  );
+  --list-spacing: 0;
+}
+
+.theme-dark
+  .markdown-rendered
+  :is(p, blockquote, ul, ol, dl, table, pre, details) {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.theme-dark .markdown-rendered summary {
+  cursor: pointer;
+}
+
+.theme-dark .markdown-rendered details:not([open]) > :not(summary) {
+  display: none !important;
+}
+
+.theme-dark .markdown-rendered :is(h1, h2, h3, h4, h5, h6) {
+  margin-top: 24px;
+  margin-bottom: 16px;
+  color: var(--fg-default);
+  font-family: var(--github-markdown-font);
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.theme-dark .markdown-rendered :is(strong, b) {
+  font-weight: 600;
+}
+
+.theme-dark .markdown-rendered :is(em, i) {
+  font-style: italic;
+}
+
+.theme-dark
+  .markdown-rendered
+  :is(a, .internal-link, .external-link, .is-unresolved) {
+  color: var(--ink-accent) !important;
+  text-decoration: none;
+  border-bottom: 1px solid var(--ink-link-border);
+}
+
+.theme-dark
+  .markdown-rendered
+  :is(a, .internal-link, .external-link, .is-unresolved):hover {
+  color: var(--ink-accent-hover) !important;
+  border-bottom-color: var(--ink-link-border-hover);
+}
+
+.theme-dark .markdown-rendered .is-unresolved {
+  color: var(--ink-terminal-text-dim) !important;
+}
+
+.theme-dark .markdown-rendered h1 {
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid var(--github-markdown-heading-border);
+  font-size: 2em;
+}
+
+.theme-dark .markdown-rendered h2 {
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid var(--github-markdown-heading-border);
+  font-size: 1.5em;
+}
+
+.theme-dark .markdown-rendered h3 {
+  font-size: 1.25em;
+}
+
+.theme-dark .markdown-rendered h4 {
+  font-size: 1em;
+}
+
+.theme-dark .markdown-rendered h5 {
+  font-size: 0.875em;
+}
+
+.theme-dark .markdown-rendered h6 {
+  color: var(--fg-muted);
+  font-size: 0.85em;
+}
+
+.theme-dark .markdown-rendered > :first-child,
+.theme-dark .markdown-rendered .markdown-preview-section > :first-child {
+  margin-top: 0 !important;
+}
+
+.theme-dark .markdown-rendered > :last-child,
+.theme-dark .markdown-rendered .markdown-preview-section > :last-child {
+  margin-bottom: 0 !important;
+}
+
+.theme-dark .markdown-rendered :is(ul:not(.contains-task-list), ol) {
+  padding-left: 0 !important;
+  padding-inline-start: 0 !important;
+}
+
+.theme-dark .markdown-rendered :is(ul:not(.contains-task-list), ol) > li {
+  margin-inline-start: var(--list-indent) !important;
+}
+
+.theme-dark .markdown-rendered ul:not(.contains-task-list) > li > .list-bullet {
+  margin-inline-start: calc(-1 * var(--ink-list-bullet-offset)) !important;
+}
+
+.theme-dark .markdown-rendered :is(ul, ol) {
+  margin-top: 0 !important;
+  margin-bottom: 0.25em !important;
+}
+
+.theme-dark .markdown-rendered div.el-p:has(+ div:is(.el-ul, .el-ol)) > p {
+  margin-bottom: 8px !important;
+}
+
+body.theme-dark.readable-spacing
+  .markdown-rendered
+  div.el-p
+  + div:is(.el-ul, .el-ol)
+  > * {
+  margin-block-start: 0.125em !important;
+}
+
+.theme-dark .markdown-rendered :is(ul, ol) :is(ul, ol) {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.theme-dark .markdown-rendered li + li {
+  margin-top: 0;
+}
+
+.theme-dark .markdown-rendered li > p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.theme-dark .markdown-rendered .task-list-item-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(
+    var(--ink-task-marker-checkbox-size, 0.82em) /
+      var(--ink-task-done-glyph-size, 0.82)
+  );
+  height: calc(
+    var(--ink-task-marker-checkbox-size, 0.82em) /
+      var(--ink-task-done-glyph-size, 0.82)
+  );
+  margin: 0 0.2em 0 -1.35em;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  opacity: 1 !important;
+  vertical-align: middle;
+  transform: none !important;
+}
+
+.theme-dark .markdown-rendered .task-list-item-checkbox::before {
+  content: "";
+  position: static;
+  display: inline-block;
+  width: var(--ink-task-marker-checkbox-size, 0.82em) !important;
+  height: var(--ink-task-marker-checkbox-size, 0.82em) !important;
+  border: 2px solid var(--ink-terminal-black) !important;
+  border-radius: 5px;
+  background-color: var(--ink-terminal-surface-2) !important;
+  opacity: 0.4;
+}
+
+.theme-dark .markdown-rendered .task-list-item-checkbox:checked {
+  background: transparent !important;
+}
+
+.theme-dark .markdown-rendered .task-list-item-checkbox:checked::before {
+  content: "✓" !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(
+    var(--ink-task-marker-checkbox-size, 0.82em) /
+      var(--ink-task-done-glyph-size, 0.82)
+  ) !important;
+  height: calc(
+    var(--ink-task-marker-checkbox-size, 0.82em) /
+      var(--ink-task-done-glyph-size, 0.82)
+  ) !important;
+  background-color: var(--ink-terminal-surface-2) !important;
+  color: var(--ink-terminal-text);
+  font-size: calc(var(--ink-task-done-glyph-size, 0.82) * 1em);
+  font-weight: 900;
+  line-height: 1;
+  opacity: 0.72;
+}
+
+.theme-dark .markdown-rendered .task-list-item-checkbox::after {
+  display: none !important;
+  content: none !important;
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+}
+
+.theme-dark .markdown-rendered blockquote {
+  position: static;
+  margin: 0 0 16px;
+  padding: 0 1em;
+  border: 0;
+  border-inline-start: 0.25em solid var(--border-default);
+  border-radius: 0;
+  background: transparent;
+  color: var(--fg-muted);
+}
+
+.theme-dark .markdown-rendered blockquote::before {
+  content: none;
+}
+
+.theme-dark .markdown-rendered blockquote blockquote {
+  margin: 0.75em 0 0;
+  padding-left: 1em;
+  border-inline-start-color: var(--neutral-emphasis);
+  background: transparent;
+}
+
+.theme-dark .markdown-rendered blockquote :is(p, ul, ol, blockquote) {
+  margin-top: 0;
+  margin-bottom: 0.75em;
+}
+
+.theme-dark .markdown-rendered blockquote > :first-child {
+  margin-top: 0;
+}
+
+.theme-dark .markdown-rendered blockquote > :last-child {
+  margin-bottom: 0;
+}
+
+.theme-dark .markdown-rendered hr {
+  height: 0.25em;
+  margin: 24px 0;
+  padding: 0;
+  border: 0;
+  background-color: var(--github-markdown-heading-border);
+}
+
+.theme-dark .markdown-rendered table th,
+.theme-dark .markdown-rendered table tr:hover td {
+  background: var(--tag-background);
+}
+
+.theme-dark .markdown-rendered .embedded-backlinks {
+  margin-top: 48px;
+}
+
+.theme-dark .markdown-rendered :is(img, video) {
+  box-sizing: content-box;
+  max-width: 100%;
+  background-color: var(--canvas-default);
+}
+
+.theme-dark .markdown-rendered :not(pre) > code {
+  padding: 0.2em 0.4em;
+  border: 0;
+  border-radius: 6px;
+  background-color: var(--tag-background);
+  color: var(--fg-default);
+  font-family: var(--github-markdown-mono);
+  font-size: 85%;
+}
+
+.theme-dark .markdown-rendered pre {
+  margin-top: 0;
+  margin-bottom: 16px;
+  padding: 16px;
+  overflow: auto;
+  border: 0 !important;
+  border-radius: 6px;
+  background-color: var(--github-code-bg) !important;
+  color: var(--github-syntax-fg);
+  font-family: var(--github-markdown-mono);
+  font-size: 16px;
+  line-height: 1.45;
+}
+
+.theme-dark .markdown-rendered pre code {
+  padding: 0;
+  border: 0;
+  background: transparent !important;
+  color: inherit;
+  font-family: inherit;
+  font-size: 100%;
+  line-height: inherit;
+}
+
+.theme-dark .markdown-rendered .callout {
+  padding: 0.75em 1em;
+  border: 0 !important;
+  border-inline-start: 0.25em solid rgb(var(--callout-color)) !important;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  color: var(--fg-default);
+}
+
+.theme-dark .markdown-rendered .callout-title {
+  color: rgb(var(--callout-color));
+  font-weight: 600;
+}
+
+.theme-dark .markdown-rendered .callout-title + .callout-content {
+  margin-top: 0.8em;
+}
+
+.theme-dark .markdown-rendered mark,
+.theme-dark .markdown-rendered .search-highlight > div {
+  border-radius: 2px;
+  background-color: var(--text-highlight-bg);
+  color: var(--fg-default);
+}
+
+@media (max-width: 767px) {
+  .theme-dark .markdown-preview-view .markdown-preview-sizer {
+    padding-right: var(--github-markdown-padding-mobile) !important;
+    padding-left: var(--github-markdown-padding-mobile) !important;
+  }
+}

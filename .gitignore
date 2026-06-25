@@ -1,0 +1,15 @@
+.DS_Store
+
+# Obsidian runtime/layout state.
+workspace.json
+workspace-mobile.json
+workspaces.json
+graph.json
+backlink.json
+page-preview.json
+
+# Plugin runtime/private state.
+plugins/**/.cache/
+plugins/**/cache/
+plugins/**/node_modules/
+plugins/tasknotes/data.json

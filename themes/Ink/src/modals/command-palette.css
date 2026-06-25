@@ -1,0 +1,265 @@
+/* NeoVim cmdline prompts: command palette, quick switcher, and related suggesters. */
+.theme-dark {
+  --ink-cmdline-border: var(--ink-palette-white);
+  --ink-cmdline-accent: var(--ink-palette-magenta);
+  --ink-cmdline-accent-selected: var(--ink-terminal-black);
+  --ink-cmdline-accent-selected-rule: var(--ink-terminal-black);
+  --ink-cmdline-cursor: var(--fg-default);
+  --ink-cmdline-selection: var(--fg-default);
+  --ink-cmdline-error: var(--ink-palette-red);
+  --ink-cmdline-font-size: 16px;
+  --ink-cmdline-symbol-size: 20px;
+  --ink-cmdline-line-height: 24px;
+  --ink-cmdline-width: 60ch;
+  --ink-cmdline-top: 35vh;
+  --ink-cmdline-results-height: 332px;
+  --ink-cmdline-radius: 4px;
+  --ink-cmdline-matte: 12px;
+  --ink-inline-suggestion-matte: 4px;
+  --ink-inline-suggestion-offset: 10px;
+  --ink-cmdline-results-gap: 18px;
+  --ink-cmdline-prompt-left: 16px;
+  --ink-cmdline-input-left: 30px;
+  --ink-terminal-cursor: var(--ink-cmdline-cursor);
+  --ink-terminal-cursor-text: var(--ink-terminal-black);
+  --ink-terminal-cursor-width: 1ch;
+  --ink-terminal-cursor-bar-width: 0.25ch;
+}
+
+/* Cursor shapes follow nvim's effective guicursor: i=ver25, n/v/c=block. */
+.theme-dark :is(input, textarea, .prompt-input, .search-input-container input) {
+  caret-color: var(--ink-terminal-cursor) !important;
+}
+
+.theme-dark :is(.prompt-input, .omnisearch-input-field input) {
+  caret-shape: block;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .cm-editor.cm-focused .cm-cursor {
+  border-left: var(--ink-terminal-cursor-bar-width) solid
+    var(--ink-terminal-cursor) !important;
+  border-right: 0 !important;
+  margin-left: 0 !important;
+}
+
+.theme-dark
+  .markdown-source-view.mod-cm6
+  .cm-editor.cm-focused
+  > .cm-scroller
+  > .cm-cursorLayer
+  > .cm-fat-cursor {
+  border: 0 !important;
+  background: var(--ink-terminal-cursor) !important;
+  color: var(--ink-terminal-cursor-text) !important;
+  width: var(--ink-terminal-cursor-width) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .cm-fat-cursor-mark {
+  background: var(--ink-terminal-cursor) !important;
+  color: var(--ink-terminal-cursor-text) !important;
+}
+
+.theme-dark .prompt {
+  position: fixed !important;
+  top: var(--ink-cmdline-top) !important;
+  left: 50% !important;
+  width: min(var(--ink-cmdline-width), calc(100vw - 48px)) !important;
+  max-width: min(var(--ink-cmdline-width), calc(100vw - 48px)) !important;
+  margin: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  padding: 18px 0 0 !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+  transform: translateX(-50%) !important;
+}
+
+.theme-dark .prompt-input-container {
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  min-height: 42px !important;
+  border: 1px solid var(--ink-cmdline-border) !important;
+  border-radius: var(--ink-cmdline-radius) !important;
+  background: var(--ink-terminal-black) !important;
+  padding: 0 16px !important;
+  isolation: isolate !important;
+  z-index: 2 !important;
+  box-shadow: 0 0 0 var(--ink-cmdline-matte) var(--ink-terminal-black) !important;
+}
+
+.theme-dark .prompt-input-container::before {
+  content: "Cmdline";
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  background: var(--ink-terminal-black);
+  padding: 2px 12px;
+  transform: translateX(-50%);
+  color: var(--ink-terminal-text);
+  font-family: var(--ink-terminal-font);
+  font-size: var(--ink-cmdline-font-size);
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1;
+}
+
+.theme-dark
+  .prompt:has(.task-selector-modal__suggestion)
+  .prompt-input-container::before {
+  content: "Task";
+}
+
+.theme-dark .prompt:has(.task-selector-modal__suggestion) .prompt-instructions {
+  display: none !important;
+}
+
+.theme-dark
+  .prompt:has(.prompt-input[placeholder="Type to search for project notes..."])
+  .prompt-input-container::before {
+  content: "Project";
+}
+
+.theme-dark
+  .prompt:has(.prompt-input[placeholder="Type to search for project notes..."])
+  .prompt-instructions {
+  display: none !important;
+}
+
+.theme-dark .prompt-input-container::after {
+  content: "❯";
+  position: absolute;
+  left: var(--ink-cmdline-prompt-left);
+  top: 50%;
+  transform: translateY(-52%);
+  color: var(--ink-cmdline-accent);
+  font-family: var(--ink-terminal-font);
+  font-size: var(--ink-cmdline-symbol-size);
+  font-weight: 800;
+  line-height: 1;
+}
+
+.theme-dark .prompt-input {
+  height: var(--ink-cmdline-line-height) !important;
+  margin: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  padding: 0 0 0 var(--ink-cmdline-input-left) !important;
+  color: var(--ink-terminal-text) !important;
+  caret-color: var(--ink-cmdline-cursor) !important;
+  font-family: var(--ink-terminal-font) !important;
+  font-size: var(--ink-cmdline-font-size) !important;
+  font-weight: 400 !important;
+  line-height: var(--ink-cmdline-line-height) !important;
+}
+
+.theme-dark .prompt-input::placeholder {
+  color: transparent !important;
+  opacity: 0 !important;
+}
+
+.theme-dark .prompt-input:focus {
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.theme-dark
+  .prompt
+  .prompt-input-container
+  :is(.search-input-clear-button, .clickable-icon[aria-label="Clear search"]) {
+  display: none !important;
+}
+
+.theme-dark .prompt:has(.suggestion-empty) .prompt-input {
+  color: var(--ink-cmdline-error) !important;
+}
+
+.theme-dark .prompt-results {
+  position: relative !important;
+  z-index: 1 !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  max-height: var(--ink-cmdline-results-height) !important;
+  margin-top: var(--ink-cmdline-results-gap) !important;
+  border: 1px solid var(--ink-cmdline-border) !important;
+  border-radius: var(--ink-cmdline-radius) !important;
+  background: var(--ink-terminal-black) !important;
+  padding: 6px 0 !important;
+  box-shadow: 0 0 0 var(--ink-cmdline-matte) var(--ink-terminal-black) !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+}
+
+.theme-dark .suggestion-container {
+  box-sizing: border-box !important;
+  max-height: var(--ink-cmdline-results-height) !important;
+  border: 1px solid var(--ink-cmdline-border) !important;
+  border-radius: var(--ink-cmdline-radius) !important;
+  background: var(--ink-terminal-black) !important;
+  box-shadow: 0 0 0 var(--ink-inline-suggestion-matte) var(--ink-terminal-black) !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  translate: 0 var(--ink-inline-suggestion-offset) !important;
+}
+
+.theme-dark :is(.prompt, .suggestion-container) .suggestion-item {
+  min-height: 32px !important;
+  border-radius: 0 !important;
+  padding: 5px 16px !important;
+  color: var(--ink-terminal-muted-bright) !important;
+  font-family: var(--ink-terminal-font) !important;
+  font-size: var(--ink-cmdline-font-size) !important;
+  font-weight: 500 !important;
+}
+
+.theme-dark :is(.prompt, .suggestion-container) .suggestion-item.is-selected,
+.theme-dark
+  :is(.prompt, .suggestion-container)
+  .suggestion-item.is-highlighted {
+  background: var(--ink-cmdline-selection) !important;
+  color: var(--ink-terminal-black) !important;
+}
+
+.theme-dark :is(.prompt, .suggestion-container) .suggestion-item.is-selected *,
+.theme-dark
+  :is(.prompt, .suggestion-container)
+  .suggestion-item.is-highlighted
+  * {
+  color: var(--ink-terminal-black) !important;
+}
+
+.theme-dark :is(.prompt, .suggestion-container) .suggestion-highlight {
+  color: var(--ink-cmdline-accent) !important;
+  font-weight: 700 !important;
+}
+
+.theme-dark
+  :is(.prompt, .suggestion-container)
+  .suggestion-item.is-selected
+  .suggestion-highlight,
+.theme-dark
+  :is(.prompt, .suggestion-container)
+  .suggestion-item.is-highlighted
+  .suggestion-highlight {
+  color: var(--ink-cmdline-accent-selected) !important;
+  text-decoration: underline !important;
+  text-decoration-color: var(--ink-cmdline-accent-selected-rule) !important;
+  text-decoration-thickness: 2px !important;
+  text-underline-offset: 0.12em !important;
+}
+
+.theme-dark
+  :is(.prompt, .suggestion-container)
+  :is(.suggestion-flair, .suggestion-note, .suggestion-hotkey) {
+  color: var(--ink-terminal-muted) !important;
+  font-family: var(--ink-terminal-font) !important;
+}
+
+.theme-dark
+  :is(.prompt, .suggestion-container)
+  .suggestion-item:is(.is-selected, .is-highlighted)
+  :is(.suggestion-hotkey, .suggestion-hotkey *) {
+  color: var(--ink-terminal-text) !important;
+}

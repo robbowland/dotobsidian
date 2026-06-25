@@ -1,0 +1,7 @@
+{
+  "enabled": true,
+  "fixationLevel": 2,
+  "minimumWordLength": 4,
+  "applyToHeadings": true,
+  "applyToLinks": true
+}

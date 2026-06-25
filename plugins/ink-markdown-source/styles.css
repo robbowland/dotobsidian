@@ -1,0 +1,190 @@
+.theme-dark .markdown-source-view.mod-cm6 {
+  --ink-md-source-font: "JetBrains Mono", "JetBrainsMono Nerd Font Mono", "JetBrainsMonoNL Nerd Font Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  --ink-md-normal: #e6edf3;
+  --ink-md-muted: #8b949e;
+  --ink-md-dash: #24282d;
+  --ink-md-heading: #79c0ff;
+  --ink-md-code-bg: #171b22;
+  --ink-md-code-info: #7ee787;
+  --ink-md-unchecked: #6e7681;
+  --ink-md-checked: #3fb950;
+  --ink-code-keyword: #ff7b72;
+  --ink-code-string: #a5d6ff;
+  --ink-code-comment: #8b949e;
+  --ink-code-number: #79c0ff;
+  --ink-code-constant: #79c0ff;
+  --ink-code-function: #d2a8ff;
+  --ink-code-variable: #ffa657;
+  --ink-code-type: #ffa657;
+  --ink-code-operator: #79c0ff;
+  --ink-md-marker: var(--ink-md-dash);
+  --ink-md-heading-1: var(--ink-md-heading);
+  --ink-md-heading-2: var(--ink-md-heading);
+  --ink-md-heading-3: var(--ink-md-heading);
+  --ink-md-heading-4: var(--ink-md-heading);
+  --ink-md-heading-5: var(--ink-md-heading);
+  --ink-md-heading-6: var(--ink-md-heading);
+  --ink-md-link: var(--ink-md-normal);
+  --ink-md-tag: var(--ink-md-normal);
+  --ink-md-table: var(--ink-md-dash);
+  --ink-md-quote-bar: var(--ink-md-normal);
+  --ink-md-quote-text: var(--ink-md-normal);
+}
+
+.theme-dark .markdown-source-view.mod-cm6 :is(.ink-cm-md-marker, .ink-cm-md-heading-marker) {
+  color: var(--ink-md-marker) !important;
+  font-weight: 400 !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .ink-cm-md-heading {
+  font-family: var(--ink-md-source-font) !important;
+  font-weight: 600 !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .ink-cm-md-heading-1 {
+  color: var(--ink-md-heading-1) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .ink-cm-md-heading-2 {
+  color: var(--ink-md-heading-2) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .ink-cm-md-heading-3 {
+  color: var(--ink-md-heading-3) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .ink-cm-md-heading-4 {
+  color: var(--ink-md-heading-4) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .ink-cm-md-heading-5 {
+  color: var(--ink-md-heading-5) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .ink-cm-md-heading-6 {
+  color: var(--ink-md-heading-6) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 :is(.ink-cm-md-link, .ink-cm-md-link *) {
+  color: var(--ink-md-link) !important;
+  text-decoration: none !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .ink-cm-md-tag {
+  color: var(--ink-md-tag) !important;
+  font-weight: 400 !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .ink-cm-md-inline-code {
+  border-radius: 4px;
+  background-color: rgba(110, 118, 129, 0.28) !important;
+  color: var(--github-syntax-fg, #e6edf3) !important;
+  font-family: var(--ink-md-source-font) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .cm-line:is(.ink-cm-md-code-line, .ink-cm-md-code-fence-line) {
+  box-sizing: border-box;
+  background-color: var(--ink-md-code-bg) !important;
+  background-clip: padding-box;
+  padding-inline: 10px !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .cm-line.ink-cm-md-code-block-top {
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .cm-line.ink-cm-md-code-block-bottom {
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .ink-cm-md-code-lang {
+  color: var(--ink-md-code-info) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .ink-cm-code-keyword {
+  color: var(--ink-code-keyword) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .ink-cm-code-string {
+  color: var(--ink-code-string) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .ink-cm-code-comment {
+  color: var(--ink-code-comment) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .ink-cm-code-number {
+  color: var(--ink-code-number) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .ink-cm-code-constant {
+  color: var(--ink-code-constant) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .ink-cm-code-function {
+  color: var(--ink-code-function) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .ink-cm-code-variable {
+  color: var(--ink-code-variable) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .ink-cm-code-type {
+  color: var(--ink-code-type) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .ink-cm-code-operator {
+  color: var(--ink-code-operator) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .cm-line.ink-cm-md-quote-line {
+  box-shadow: inset 2px 0 0 var(--ink-md-quote-bar);
+  color: var(--ink-md-quote-text) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .ink-cm-md-quote-marker {
+  color: var(--ink-md-marker) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .ink-cm-md-list-marker {
+  color: var(--ink-md-normal) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .ink-cm-md-checkbox {
+  color: var(--ink-md-unchecked) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .ink-cm-md-checkbox-done {
+  color: var(--ink-md-checked) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 :is(.ink-cm-md-table-pipe, .ink-cm-md-table-rule-line) {
+  color: var(--ink-md-table) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .cm-line.ink-cm-md-table-head-line {
+  color: var(--ink-md-heading) !important;
+  font-weight: 600 !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .ink-cm-md-hr {
+  color: var(--ink-md-marker) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .cm-line.ink-cm-md-hr-line {
+  color: var(--ink-md-marker) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .cm-line.ink-cm-md-frontmatter-line {
+  color: var(--ink-md-muted) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .ink-cm-md-frontmatter-key {
+  color: var(--ink-md-heading) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .ink-cm-md-comment {
+  color: var(--ink-md-muted) !important;
+}

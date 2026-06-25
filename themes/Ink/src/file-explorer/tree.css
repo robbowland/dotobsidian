@@ -1,0 +1,1253 @@
+/* Yazi-mode file explorer. This intentionally overrides the vendor nav chrome. */
+.theme-dark .workspace-leaf-content[data-type="file-explorer"] {
+  --file-line-width: 100%;
+  --nav-item-background-hover: var(--yazi-hover-bg);
+  --nav-item-background-active: var(--yazi-selected-bg);
+  --nav-item-background-selected: var(--yazi-selected-bg);
+  --nav-item-color: var(--yazi-note-fg);
+  --nav-item-color-hover: var(--yazi-note-fg);
+  --nav-item-color-active: var(--yazi-selected-fg);
+  --nav-item-color-selected: var(--yazi-selected-fg);
+  --nav-collapse-icon-color: var(--yazi-folder-fg);
+  --nav-collapse-icon-color-collapsed: var(--yazi-folder-fg);
+  background: var(--canvas-default) !important;
+}
+
+.theme-dark .workspace-leaf-content[data-type="file-explorer"] .view-header,
+.theme-dark .workspace-leaf-content[data-type="file-explorer"] .nav-header {
+  display: none !important;
+}
+
+.theme-dark .workspace-leaf-content[data-type="file-explorer"] .view-content {
+  margin: 0 10px;
+  border-left: 1px solid var(--yazi-note-fg);
+  border-right: 1px solid var(--yazi-note-fg);
+  padding: 18px 10px !important;
+  background: var(--canvas-default) !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-files-container,
+.theme-dark .workspace-leaf-content[data-type="file-explorer"] .tree-item,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .tree-item-children {
+  margin: 0 !important;
+  border: none !important;
+  padding: 0 !important;
+  background: transparent !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .tree-item-children {
+  --nav-indentation-width: 0px;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder-title,
+.theme-dark .workspace-leaf-content[data-type="file-explorer"] .nav-file-title {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0 !important;
+  width: 100% !important;
+  height: 1.28em !important;
+  min-height: 1.28em !important;
+  margin: 0 !important;
+  border-radius: 999px !important;
+  padding: 0 0.65em !important;
+  background: transparent !important;
+  color: var(--yazi-note-fg) !important;
+  font-family:
+    "JetBrainsMonoNL Nerd Font Mono", "Symbols Nerd Font Mono", monospace !important;
+  font-size: 1.2rem !important;
+  font-weight: 700 !important;
+  line-height: 1.28 !important;
+  letter-spacing: 0 !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder-title {
+  color: var(--yazi-folder-fg) !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title[data-path$=".md" i]
+  .nav-file-title-content::after {
+  content: ".md";
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .tree-item-self:hover,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder-title:hover,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title:hover {
+  background: var(--yazi-hover-bg) !important;
+  color: inherit !important;
+  font-weight: 700 !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .tree-item-self.is-active,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder-title.is-active,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title.is-active {
+  background: var(--yazi-selected-bg) !important;
+  color: var(--yazi-selected-fg) !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .tree-item-self.is-active
+  *,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .tree-item-self.is-active::before,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .tree-item-self.is-active::after,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .tree-item-self.is-active
+  .collapse-icon::before,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .tree-item-self.is-active
+  .nav-file-title-content::before {
+  color: var(--yazi-selected-fg) !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .tree-item-self::before,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .tree-item-self::after,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder-title::before,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder-title::after,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title::before,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title::after {
+  display: none !important;
+  content: none !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder-title
+  > .collapse-icon,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder-collapse-indicator {
+  display: inline-grid !important;
+  flex: 0 0 1.15em !important;
+  place-items: center !important;
+  width: 1.15em !important;
+  height: 1em !important;
+  margin: 0 0.35em 0 0 !important;
+  padding: 0 !important;
+  color: transparent !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder-title
+  > .collapse-icon
+  svg,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder-title
+  > .collapse-icon
+  path,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder-collapse-indicator
+  svg,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder-collapse-indicator
+  path {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder-title
+  > .collapse-icon::before,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder-collapse-indicator::before,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title-content::before {
+  display: inline-block !important;
+  width: 1.15em !important;
+  margin: 0 0.35em 0 0 !important;
+  background: none !important;
+  color: var(--yazi-note-fg) !important;
+  font-family:
+    "JetBrainsMonoNL Nerd Font Mono", "Symbols Nerd Font Mono", monospace !important;
+  font-size: 0.78em !important;
+  font-weight: 400 !important;
+  line-height: 1 !important;
+  text-align: center !important;
+  opacity: 1 !important;
+  -webkit-mask: none !important;
+  mask: none !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder-title
+  > .collapse-icon::before,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder-collapse-indicator::before {
+  content: "\f07b" !important;
+  color: var(--yazi-folder-fg) !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder:not(.is-collapsed)
+  > .nav-folder-title
+  > .collapse-icon::before,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder:not(.is-collapsed)
+  > .nav-folder-title
+  .nav-folder-collapse-indicator::before {
+  content: "\f07c" !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title-content::before {
+  content: "\f15b" !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title[data-path$=".md" i]
+  .nav-file-title-content::before {
+  content: "\e73e" !important;
+  color: var(--yazi-note-fg) !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title[data-path$="README.md" i]
+  .nav-file-title-content::before {
+  content: "\f02e" !important;
+  color: var(--yazi-note-fg) !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title[data-path$="LICENSE" i]
+  .nav-file-title-content::before,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title[data-path$="LICENSE.md" i]
+  .nav-file-title-content::before {
+  content: "\f084" !important;
+  color: var(--yazi-image-fg) !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  :is(
+    .nav-folder-title[data-path^="."],
+    .nav-folder-title[data-path*="/."],
+    .nav-file-title[data-path^="."],
+    .nav-file-title[data-path*="/."]
+  ) {
+  color: var(--yazi-hidden-fg) !important;
+}
+
+.theme-dark a.tag,
+.theme-dark .tag,
+.theme-dark .cm-hashtag,
+.theme-dark .metadata-property[data-property-key="tags"] .multi-select-pill,
+.theme-dark
+  .metadata-property-value[data-property-type="tags"]
+  .multi-select-pill {
+  border-radius: var(--tag-radius);
+  border: 0 !important;
+  background-color: var(--tag-background);
+  color: var(--tag-color) !important;
+  font-size: 0.85em;
+  font-weight: var(--tag-weight);
+  padding: var(--tag-padding-y) var(--tag-padding-x);
+  box-shadow: none;
+}
+
+.theme-dark .metadata-property[data-property-key="tags"] .multi-select-pill *,
+.theme-dark
+  .metadata-property-value[data-property-type="tags"]
+  .multi-select-pill
+  * {
+  color: var(--tag-color) !important;
+}
+
+.theme-dark a.tag:hover,
+.theme-dark .tag:hover,
+.theme-dark .cm-hashtag:hover,
+.theme-dark
+  .metadata-property[data-property-key="tags"]
+  .multi-select-pill:hover,
+.theme-dark
+  .metadata-property-value[data-property-type="tags"]
+  .multi-select-pill:hover {
+  background-color: var(--tag-background-hover);
+  border-color: transparent !important;
+  color: var(--tag-color) !important;
+}
+
+.theme-dark
+  .metadata-property[data-property-key="tags"]
+  .multi-select-pill:hover
+  *,
+.theme-dark
+  .metadata-property-value[data-property-type="tags"]
+  .multi-select-pill:hover
+  * {
+  color: var(--tag-color) !important;
+}
+
+.theme-dark .markdown-rendered hr {
+  border-top: 1px dashed #6e7681;
+}
+
+.theme-dark .markdown-rendered blockquote,
+.theme-dark .cm-quote {
+  border-color: var(--border-default);
+  background-color: var(--canvas-default);
+  color: var(--fg-default);
+}
+
+.theme-dark .markdown-rendered pre,
+.theme-dark .markdown-rendered pre code,
+.theme-dark .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock,
+.theme-dark .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock-begin,
+.theme-dark .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock-end,
+.theme-dark .cm-s-obsidian div.HyperMD-codeblock-bg {
+  background-color: var(--github-code-bg) !important;
+  color: var(--github-syntax-fg);
+}
+
+.theme-dark .markdown-rendered pre,
+.theme-dark .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock {
+  border: none !important;
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.theme-dark .markdown-rendered pre {
+  border: none !important;
+  box-shadow: none;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock-begin,
+.theme-dark .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock-end {
+  color: var(--github-syntax-muted);
+}
+
+.theme-dark .markdown-rendered :not(pre) > code,
+.theme-dark .cm-inline-code {
+  border: 1px solid var(--border-default);
+  border-radius: 4px;
+  background-color: var(--tag-background);
+  color: var(--inline-code-color);
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .HyperMD-codeblock .cm-comment,
+.theme-dark .markdown-rendered pre code .token.comment,
+.theme-dark .markdown-rendered pre code .token.prolog,
+.theme-dark .markdown-rendered pre code .token.doctype,
+.theme-dark .markdown-rendered pre code .token.cdata,
+.theme-dark .markdown-rendered pre code .hljs-comment,
+.theme-dark .markdown-rendered pre code .hljs-quote {
+  color: var(--github-syntax-muted) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .HyperMD-codeblock .cm-keyword,
+.theme-dark .markdown-rendered pre code .token.keyword,
+.theme-dark .markdown-rendered pre code .hljs-keyword {
+  color: var(--github-syntax-keyword) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .HyperMD-codeblock .cm-operator,
+.theme-dark .markdown-rendered pre code .token.operator,
+.theme-dark .markdown-rendered pre code .hljs-operator {
+  color: var(--github-syntax-constant) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .HyperMD-codeblock .cm-string,
+.theme-dark .markdown-source-view.mod-cm6 .HyperMD-codeblock .cm-string-2,
+.theme-dark .markdown-rendered pre code .token.string,
+.theme-dark .markdown-rendered pre code .token.char,
+.theme-dark .markdown-rendered pre code .hljs-string {
+  color: var(--github-syntax-string) !important;
+}
+
+.theme-dark .markdown-rendered pre code .token.inserted,
+.theme-dark .markdown-rendered pre code .hljs-addition {
+  border-radius: 2px;
+  background-color: var(--github-syntax-addition-bg);
+  color: var(--github-syntax-addition-fg) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .HyperMD-codeblock .cm-def,
+.theme-dark .markdown-rendered pre code .token.function,
+.theme-dark .markdown-rendered pre code .hljs-title {
+  color: var(--github-syntax-function) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .HyperMD-codeblock .cm-number,
+.theme-dark .markdown-source-view.mod-cm6 .HyperMD-codeblock .cm-atom,
+.theme-dark .markdown-source-view.mod-cm6 .HyperMD-codeblock .cm-property,
+.theme-dark .markdown-rendered pre code .token.number,
+.theme-dark .markdown-rendered pre code .token.boolean,
+.theme-dark .markdown-rendered pre code .token.constant,
+.theme-dark .markdown-rendered pre code .token.property,
+.theme-dark .markdown-rendered pre code .hljs-number,
+.theme-dark .markdown-rendered pre code .hljs-literal,
+.theme-dark .markdown-rendered pre code .hljs-attr {
+  color: var(--github-syntax-constant) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .HyperMD-codeblock .cm-variable,
+.theme-dark .markdown-source-view.mod-cm6 .HyperMD-codeblock .cm-variable-2,
+.theme-dark .markdown-source-view.mod-cm6 .HyperMD-codeblock .cm-variable-3,
+.theme-dark .markdown-source-view.mod-cm6 .HyperMD-codeblock .cm-builtin,
+.theme-dark .markdown-rendered pre code .token.variable,
+.theme-dark .markdown-rendered pre code .token.class-name,
+.theme-dark .markdown-rendered pre code .token.builtin,
+.theme-dark .markdown-rendered pre code .hljs-variable,
+.theme-dark .markdown-rendered pre code .hljs-class,
+.theme-dark .markdown-rendered pre code .hljs-built_in {
+  color: var(--github-syntax-variable) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .HyperMD-codeblock .cm-tag,
+.theme-dark .markdown-source-view.mod-cm6 .HyperMD-codeblock .cm-attribute,
+.theme-dark .markdown-rendered pre code .token.tag,
+.theme-dark .markdown-rendered pre code .token.attr-name,
+.theme-dark .markdown-rendered pre code .hljs-tag,
+.theme-dark .markdown-rendered pre code .hljs-name {
+  color: var(--github-syntax-tag) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .HyperMD-codeblock .cm-error,
+.theme-dark .markdown-rendered pre code .token.deleted,
+.theme-dark .markdown-rendered pre code .hljs-deletion {
+  border-radius: 2px;
+  background-color: var(--github-syntax-invalid-bg);
+  color: var(--fg-on-emphasis) !important;
+}
+
+
+
+/* Yazi final pass: keep the file explorer close to the terminal UI. */
+.theme-dark .workspace-leaf-content[data-type="file-explorer"] {
+  --yazi-sidebar-font-size: 1.2rem;
+  --yazi-row-height: 1.28em;
+  --yazi-row-padding-x: 0.65em;
+  --nav-item-size: var(--yazi-row-height);
+  --nav-item-children-padding-left: 0;
+  --nav-indentation-width: 0px;
+  background: var(--ink-palette-black) !important;
+}
+
+.theme-dark .workspace-leaf-content[data-type="file-explorer"] .view-content {
+  overflow-x: hidden !important;
+  margin: 0 10px !important;
+  border-right: 1px solid var(--yazi-note-fg) !important;
+  border-left: 1px solid var(--yazi-note-fg) !important;
+  padding: 18px 10px !important;
+  background: var(--ink-palette-black) !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  :is(
+    .nav-files-container,
+    .nav-folder,
+    .nav-file,
+    .tree-item,
+    .tree-item-children
+  ) {
+  margin: 0 !important;
+  border: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  :is(.nav-folder-title, .nav-file-title) {
+  box-sizing: border-box !important;
+  display: flex !important;
+  align-items: center !important;
+  width: 100% !important;
+  height: var(--yazi-row-height) !important;
+  min-height: var(--yazi-row-height) !important;
+  margin: 0 !important;
+  border: 0 !important;
+  border-radius: 999px !important;
+  box-shadow: none !important;
+  padding: 0 var(--yazi-row-padding-x) !important;
+  background: transparent !important;
+  color: var(--yazi-note-fg) !important;
+  font-family:
+    "JetBrainsMonoNL Nerd Font Mono", "Symbols Nerd Font Mono", monospace !important;
+  font-size: var(--yazi-sidebar-font-size) !important;
+  font-weight: 700 !important;
+  line-height: var(--yazi-row-height) !important;
+  letter-spacing: 0 !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder-title {
+  color: var(--yazi-folder-fg) !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  :is(.nav-folder-title:hover, .nav-file-title:hover) {
+  background: var(--yazi-hover-bg) !important;
+  color: inherit !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  :is(.nav-folder-title.is-active, .nav-file-title.is-active) {
+  background: var(--yazi-selected-bg) !important;
+  color: var(--yazi-selected-fg) !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  :is(
+    .nav-folder-title.is-active,
+    .nav-file-title.is-active,
+    .nav-folder-title.is-active *,
+    .nav-file-title.is-active *,
+    .nav-folder-title.is-active::before,
+    .nav-folder-title.is-active::after,
+    .nav-file-title.is-active::before,
+    .nav-file-title.is-active::after,
+    .nav-folder-title.is-active .collapse-icon::before,
+    .nav-folder-title.is-active .nav-folder-collapse-indicator::before,
+    .nav-file-title.is-active .nav-file-title-content::before,
+    .nav-file-title.is-active .nav-file-title-content::after
+  ) {
+  color: var(--yazi-selected-fg) !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  :is(.nav-folder-title, .nav-file-title)::before,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  :is(.nav-folder-title, .nav-file-title)::after {
+  display: none !important;
+  content: none !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  :is(.collapse-icon, .nav-folder-collapse-indicator) {
+  display: inline-grid !important;
+  flex: 0 0 1.15em !important;
+  place-items: center !important;
+  width: 1.15em !important;
+  height: 1em !important;
+  margin: 0 0.35em 0 0 !important;
+  padding: 0 !important;
+  color: transparent !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  :is(.collapse-icon, .nav-folder-collapse-indicator)
+  :is(svg, path) {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  :is(
+    .collapse-icon,
+    .nav-folder-collapse-indicator,
+    .nav-file-title-content
+  )::before {
+  display: inline-block !important;
+  width: 1.15em !important;
+  margin: 0 0.35em 0 0 !important;
+  background: none !important;
+  color: var(--yazi-note-fg) !important;
+  font-family:
+    "JetBrainsMonoNL Nerd Font Mono", "Symbols Nerd Font Mono", monospace !important;
+  font-size: 0.78em !important;
+  font-weight: 400 !important;
+  line-height: 1 !important;
+  text-align: center !important;
+  opacity: 1 !important;
+  -webkit-mask: none !important;
+  mask: none !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  :is(.collapse-icon, .nav-folder-collapse-indicator)::before {
+  content: "\f07b" !important;
+  color: var(--yazi-folder-fg) !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder:not(.is-collapsed)
+  > .nav-folder-title
+  :is(.collapse-icon, .nav-folder-collapse-indicator)::before {
+  content: "\f07c" !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title-content::before {
+  content: "\f15b" !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title[data-path$=".md" i]
+  .nav-file-title-content::before,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title[data-path$=".canvas" i]
+  .nav-file-title-content::before {
+  content: "\e73e" !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title[data-path$="README.md" i]
+  .nav-file-title-content::before {
+  content: "\f02e" !important;
+  color: var(--yazi-note-fg) !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title[data-path$="LICENSE" i]
+  .nav-file-title-content::before,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title[data-path$="LICENSE.md" i]
+  .nav-file-title-content::before {
+  content: "\f084" !important;
+  color: var(--yazi-image-fg) !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title:is(
+    [data-path$=".png" i],
+    [data-path$=".jpg" i],
+    [data-path$=".jpeg" i],
+    [data-path$=".gif" i],
+    [data-path$=".webp" i],
+    [data-path$=".svg" i],
+    [data-path$=".heic" i]
+  )
+  .nav-file-title-content::before {
+  content: "\f1c5" !important;
+  color: var(--yazi-image-fg) !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title:is(
+    [data-path$=".mp4" i],
+    [data-path$=".mov" i],
+    [data-path$=".mkv" i],
+    [data-path$=".webm" i]
+  )
+  .nav-file-title-content::before {
+  content: "\f1c8" !important;
+  color: var(--yazi-media-fg) !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title:is(
+    [data-path$=".mp3" i],
+    [data-path$=".wav" i],
+    [data-path$=".flac" i],
+    [data-path$=".m4a" i],
+    [data-path$=".ogg" i]
+  )
+  .nav-file-title-content::before {
+  content: "\f1c7" !important;
+  color: var(--yazi-media-fg) !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title:is(
+    [data-path$=".zip" i],
+    [data-path$=".tar" i],
+    [data-path$=".gz" i],
+    [data-path$=".tgz" i],
+    [data-path$=".7z" i],
+    [data-path$=".rar" i]
+  )
+  .nav-file-title-content::before {
+  content: "\f1c6" !important;
+  color: var(--yazi-archive-fg) !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title:is([data-path$=".dmg" i], [data-path$=".iso" i])
+  .nav-file-title-content::before {
+  content: "\f0a0" !important;
+  color: var(--yazi-disk-fg) !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title[data-path$=".pdf" i]
+  .nav-file-title-content::before {
+  content: "\f1c1" !important;
+  color: var(--danger-emphasis) !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title:is(
+    [data-path$=".sh" i],
+    [data-path$=".fish" i],
+    [data-path$=".zsh" i],
+    [data-path$=".bash" i],
+    [data-path$=".command" i]
+  )
+  .nav-file-title-content::before {
+  content: "\f121" !important;
+  color: var(--yazi-exec-fg) !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  :is(
+    .nav-folder-title.is-active .collapse-icon::before,
+    .nav-folder-title.is-active .nav-folder-collapse-indicator::before,
+    .nav-file-title.is-active .nav-file-title-content::before
+  ) {
+  color: var(--yazi-selected-fg) !important;
+}
+
+/* Yazi icon state pass: icons follow filetype, hidden, and selection colors. */
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder-title {
+  --yazi-row-icon-fg: var(--yazi-folder-fg);
+  --yazi-row-highlight-bg: var(--yazi-folder-fg);
+}
+
+.theme-dark .workspace-leaf-content[data-type="file-explorer"] .nav-file-title {
+  --yazi-row-icon-fg: var(--yazi-note-fg);
+  --yazi-row-highlight-bg: var(--yazi-note-fg);
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder-title
+  :is(.collapse-icon, .nav-folder-collapse-indicator)::before,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title
+  .nav-file-title-content::before {
+  color: var(--yazi-row-icon-fg) !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title:is(
+    [data-path$=".png" i],
+    [data-path$=".jpg" i],
+    [data-path$=".jpeg" i],
+    [data-path$=".gif" i],
+    [data-path$=".webp" i],
+    [data-path$=".svg" i],
+    [data-path$=".heic" i]
+  ) {
+  --yazi-row-icon-fg: var(--yazi-image-fg);
+  --yazi-row-highlight-bg: var(--yazi-image-fg);
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title:is(
+    [data-path$=".mp4" i],
+    [data-path$=".mov" i],
+    [data-path$=".mkv" i],
+    [data-path$=".webm" i],
+    [data-path$=".mp3" i],
+    [data-path$=".wav" i],
+    [data-path$=".flac" i],
+    [data-path$=".m4a" i],
+    [data-path$=".ogg" i]
+  ) {
+  --yazi-row-icon-fg: var(--yazi-media-fg);
+  --yazi-row-highlight-bg: var(--yazi-media-fg);
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title:is(
+    [data-path$=".zip" i],
+    [data-path$=".tar" i],
+    [data-path$=".gz" i],
+    [data-path$=".tgz" i],
+    [data-path$=".7z" i],
+    [data-path$=".rar" i]
+  ) {
+  --yazi-row-icon-fg: var(--yazi-archive-fg);
+  --yazi-row-highlight-bg: var(--yazi-archive-fg);
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title:is([data-path$=".dmg" i], [data-path$=".iso" i]) {
+  --yazi-row-icon-fg: var(--yazi-disk-fg);
+  --yazi-row-highlight-bg: var(--yazi-disk-fg);
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title:is([data-path$="LICENSE" i], [data-path$="LICENSE.md" i]) {
+  --yazi-row-icon-fg: var(--yazi-image-fg);
+  --yazi-row-highlight-bg: var(--yazi-image-fg);
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title[data-path$=".pdf" i] {
+  --yazi-row-icon-fg: var(--danger-emphasis);
+  --yazi-row-highlight-bg: var(--danger-emphasis);
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title:is(
+    [data-path$=".sh" i],
+    [data-path$=".fish" i],
+    [data-path$=".zsh" i],
+    [data-path$=".bash" i],
+    [data-path$=".command" i]
+  ) {
+  --yazi-row-icon-fg: var(--yazi-exec-fg);
+  --yazi-row-highlight-bg: var(--yazi-exec-fg);
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  :is(
+    .nav-folder-title[data-path^="."],
+    .nav-folder-title[data-path*="/."],
+    .nav-file-title[data-path^="."],
+    .nav-file-title[data-path*="/."]
+  ) {
+  --yazi-row-icon-fg: var(--yazi-hidden-fg);
+  --yazi-row-highlight-bg: var(--yazi-hidden-fg);
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  :is(
+    .nav-folder-title:hover,
+    .nav-folder-title.is-active,
+    .nav-folder-title.is-selected,
+    .nav-folder-title.mod-active,
+    .nav-file-title:hover,
+    .nav-file-title.is-active,
+    .nav-file-title.is-selected,
+    .nav-file-title.mod-active
+  ) {
+  --yazi-row-icon-fg: var(--yazi-selected-fg);
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  :is(
+    .nav-folder-title:hover,
+    .nav-folder-title.is-active,
+    .nav-folder-title.is-selected,
+    .nav-folder-title.mod-active,
+    .nav-file-title:hover,
+    .nav-file-title.is-active,
+    .nav-file-title.is-selected,
+    .nav-file-title.mod-active
+  ) {
+  background: var(--yazi-row-highlight-bg) !important;
+  color: var(--yazi-selected-fg) !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  :is(
+    .nav-folder-title:hover,
+    .nav-folder-title.is-active,
+    .nav-folder-title.is-selected,
+    .nav-folder-title.mod-active,
+    .nav-file-title:hover,
+    .nav-file-title.is-active,
+    .nav-file-title.is-selected,
+    .nav-file-title.mod-active
+  )
+  * {
+  color: var(--yazi-selected-fg) !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title[data-path]
+  .nav-file-title-content::before,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder-title
+  :is(.collapse-icon, .nav-folder-collapse-indicator)::before {
+  color: var(--yazi-row-icon-fg) !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder-title.is-active
+  .collapse-icon::before,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder-title.is-active
+  .nav-folder-collapse-indicator::before,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder-title:hover
+  .collapse-icon::before,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder-title:hover
+  .nav-folder-collapse-indicator::before,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder-title.is-selected
+  .collapse-icon::before,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder-title.is-selected
+  .nav-folder-collapse-indicator::before,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder-title.mod-active
+  .collapse-icon::before,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder-title.mod-active
+  .nav-folder-collapse-indicator::before,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title:hover
+  .nav-file-title-content::before,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title.is-active
+  .nav-file-title-content::before,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title.is-selected
+  .nav-file-title-content::before,
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title.mod-active
+  .nav-file-title-content::before {
+  color: var(--yazi-selected-fg) !important;
+}
+
+/* Yazi geometry correction pass: match Ghostty's font and keep icons in a stable column. */
+.theme-dark
+  .workspace-split.mod-left-split:has(
+    .workspace-leaf-content[data-type="file-explorer"]
+  )
+  .workspace-tab-header-container {
+  display: none !important;
+}
+
+.theme-dark .workspace-leaf-content[data-type="file-explorer"] {
+  --yazi-terminal-font:
+    "JetBrainsMono Nerd Font Mono", "JetBrainsMonoNL Nerd Font Mono",
+    "Symbols Nerd Font Mono", monospace;
+  --yazi-sidebar-font-size: 16px;
+  --yazi-row-height: 1.36em;
+  --yazi-row-padding-x: 0.42em;
+  --yazi-icon-cell: 1.12em;
+  --yazi-icon-gap: 0.42em;
+  font-family: var(--yazi-terminal-font) !important;
+}
+
+.theme-dark .workspace-leaf-content[data-type="file-explorer"] .view-content {
+  padding: 0.95em 0.65em !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  :is(.nav-folder-title, .nav-file-title) {
+  box-sizing: border-box !important;
+  display: flex !important;
+  align-items: center !important;
+  width: 100% !important;
+  height: var(--yazi-row-height) !important;
+  min-height: var(--yazi-row-height) !important;
+  margin: 0 !important;
+  padding: 0 var(--yazi-row-padding-x) !important;
+  font-family: var(--yazi-terminal-font) !important;
+  font-size: var(--yazi-sidebar-font-size) !important;
+  font-weight: 600 !important;
+  line-height: var(--yazi-row-height) !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  :is(
+    .nav-folder-title:hover,
+    .nav-folder-title.is-active,
+    .nav-folder-title.is-selected,
+    .nav-folder-title.mod-active,
+    .nav-file-title:hover,
+    .nav-file-title.is-active,
+    .nav-file-title.is-selected,
+    .nav-file-title.mod-active
+  ) {
+  font-weight: 700 !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  :is(.nav-folder-title-content, .nav-file-title-content) {
+  position: static !important;
+  display: inline-flex !important;
+  flex: 1 1 auto !important;
+  align-items: center !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  color: inherit !important;
+  line-height: inherit !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  :is(.collapse-icon, .nav-folder-collapse-indicator) {
+  position: static !important;
+  display: inline-grid !important;
+  flex: 0 0 var(--yazi-icon-cell) !important;
+  place-items: center !important;
+  width: var(--yazi-icon-cell) !important;
+  min-width: var(--yazi-icon-cell) !important;
+  height: 1em !important;
+  margin: 0 var(--yazi-icon-gap) 0 0 !important;
+  padding: 0 !important;
+  transform: none !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title-content::before {
+  position: static !important;
+  display: inline-block !important;
+  flex: 0 0 var(--yazi-icon-cell) !important;
+  width: var(--yazi-icon-cell) !important;
+  min-width: var(--yazi-icon-cell) !important;
+  margin: 0 var(--yazi-icon-gap) 0 0 !important;
+  padding: 0 !important;
+  font-family: var(--yazi-terminal-font) !important;
+  font-size: 0.82em !important;
+  font-weight: 400 !important;
+  line-height: 1 !important;
+  text-align: center !important;
+  transform: none !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  :is(.collapse-icon, .nav-folder-collapse-indicator)::before {
+  position: static !important;
+  display: inline-block !important;
+  width: var(--yazi-icon-cell) !important;
+  min-width: var(--yazi-icon-cell) !important;
+  margin: 0 !important;
+  font-family: var(--yazi-terminal-font) !important;
+  font-size: 0.82em !important;
+  font-weight: 400 !important;
+  line-height: 1 !important;
+  text-align: center !important;
+  transform: none !important;
+}
+
+/* Restore Obsidian sidebar chrome and tree depth after the Yazi file-list pass. */
+.theme-dark
+  .workspace-split.mod-left-split:has(
+    .workspace-leaf-content[data-type="file-explorer"]
+  )
+  .workspace-tab-header-container {
+  display: flex !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  :is(.view-header, .nav-header) {
+  display: flex !important;
+}
+
+.theme-dark .workspace-leaf-content[data-type="file-explorer"] {
+  --nav-indentation-width: calc(var(--yazi-icon-cell) + var(--yazi-icon-gap));
+  --nav-item-children-padding-left: calc(
+    var(--yazi-icon-cell) + var(--yazi-icon-gap)
+  );
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  :is(.nav-folder-children, .tree-item-children) {
+  padding-left: calc(var(--yazi-icon-cell) + var(--yazi-icon-gap)) !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  > .view-content
+  :is(.nav-files-container, .tree-item-children)
+  > :is(.nav-folder, .nav-file, .tree-item) {
+  margin-left: 0 !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-files-container
+  > :is(.nav-folder, .nav-file, .tree-item) {
+  margin-left: 0 !important;
+}
+
+/* Yazi weight correction: Ghostty thickens regular text; Yazi only bolds hovered rows. */
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  :is(.nav-folder-title, .nav-file-title) {
+  font-weight: 425 !important;
+  font-synthesis-weight: none !important;
+  -webkit-font-smoothing: antialiased;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  :is(
+    .nav-folder-title:hover,
+    .nav-folder-title.is-active,
+    .nav-folder-title.is-selected,
+    .nav-folder-title.mod-active,
+    .nav-file-title:hover,
+    .nav-file-title.is-active,
+    .nav-file-title.is-selected,
+    .nav-file-title.mod-active
+  ) {
+  font-weight: 700 !important;
+}
+
+/* Folder icon hard override: render the folder from the row itself so sizing works. */
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder-title {
+  --yazi-folder-icon-cell: 1.2em;
+  --yazi-folder-icon-gap: 0.34em;
+  display: grid !important;
+  grid-template-columns: var(--yazi-folder-icon-cell) minmax(0, 1fr) !important;
+  column-gap: var(--yazi-folder-icon-gap) !important;
+  align-items: center !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder-title
+  > :is(.collapse-icon, .nav-folder-collapse-indicator, .tree-item-icon) {
+  display: none !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder-title::before {
+  content: "\f07b" !important;
+  display: block !important;
+  grid-column: 1 !important;
+  width: var(--yazi-folder-icon-cell) !important;
+  min-width: var(--yazi-folder-icon-cell) !important;
+  height: 1em !important;
+  margin: 0 !important;
+  color: var(--yazi-row-icon-fg) !important;
+  font-family: var(--yazi-terminal-font) !important;
+  font-size: 1.08em !important;
+  font-weight: 400 !important;
+  line-height: 1 !important;
+  text-align: center !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder:not(.is-collapsed)
+  > .nav-folder-title::before {
+  content: "\f07c" !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-folder-title
+  .nav-folder-title-content {
+  grid-column: 2 !important;
+}
+
+.theme-dark
+  .workspace-leaf-content[data-type="file-explorer"]
+  :is(
+    .nav-folder-title:hover,
+    .nav-folder-title.is-active,
+    .nav-folder-title.is-selected,
+    .nav-folder-title.mod-active
+  )::before {
+  color: var(--yazi-selected-fg) !important;
+}

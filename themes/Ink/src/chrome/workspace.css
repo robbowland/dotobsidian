@@ -1,0 +1,516 @@
+/* Yazi terminal frame: white vertical pane borders like the Ghostty layout. */
+.theme-dark .workspace-leaf-content[data-type="file-explorer"] {
+  --yazi-pane-border: var(--ink-terminal-border-strong);
+  --yazi-pane-margin-x: 0.9em;
+  --yazi-pane-padding-x: 0.65em;
+  --yazi-pane-padding-y: 1em;
+}
+
+.theme-dark .workspace-leaf-content[data-type="file-explorer"] .view-content {
+  box-sizing: border-box !important;
+  height: 100% !important;
+  margin-right: var(--yazi-pane-margin-x) !important;
+  margin-left: var(--yazi-pane-margin-x) !important;
+  border-right: 2px solid var(--yazi-pane-border) !important;
+  border-left: 2px solid var(--yazi-pane-border) !important;
+  padding: var(--yazi-pane-padding-y) var(--yazi-pane-padding-x) !important;
+}
+
+/* Terminal chrome typography: keep non-note UI aligned with Ghostty/Yazi. */
+.theme-dark {
+  --ink-terminal-font:
+    "JetBrainsMono Nerd Font Mono", "JetBrainsMonoNL Nerd Font Mono",
+    "Symbols Nerd Font Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo,
+    Consolas, "Liberation Mono", monospace;
+  --font-interface-theme: var(--ink-terminal-font);
+  --font-monospace-theme: var(--ink-terminal-font);
+  --font-text-theme: var(--github-markdown-font);
+}
+
+.theme-dark
+  :is(
+    .titlebar,
+    .titlebar *,
+    .workspace-ribbon,
+    .workspace-ribbon *,
+    .workspace-tab-header-container,
+    .workspace-tab-header-container *,
+    .workspace-tab-header,
+    .workspace-tab-header *,
+    .view-header,
+    .view-header *,
+    .nav-header,
+    .nav-header *,
+    .status-bar,
+    .status-bar *,
+    .menu,
+    .menu *,
+    .modal,
+    .modal *,
+    .prompt,
+    .prompt *,
+    .suggestion-container,
+    .suggestion-container *,
+    .notice,
+    .notice *,
+    .tooltip,
+    .tooltip *,
+    .popover,
+    .popover *,
+    .setting-item,
+    .setting-item *,
+    .vertical-tab-nav-item,
+    .vertical-tab-nav-item *,
+    .metadata-container,
+    .metadata-container *,
+    .metadata-property,
+    .metadata-property *,
+    .search-input-container,
+    .search-input-container *,
+    .workspace-leaf-content:not([data-type="markdown"]),
+    .workspace-leaf-content:not([data-type="markdown"]) *,
+    input,
+    textarea,
+    button,
+    select
+  ) {
+  font-family: var(--ink-terminal-font) !important;
+  letter-spacing: 0 !important;
+}
+
+.theme-dark .markdown-rendered,
+.theme-dark
+  .markdown-rendered
+  :is(
+    p,
+    li,
+    td,
+    th,
+    blockquote,
+    details,
+    summary,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    a,
+    strong,
+    em,
+    .callout,
+    .callout-content
+  ) {
+  font-family: var(--github-markdown-font) !important;
+}
+
+.theme-dark .markdown-rendered :is(code, pre, pre *) {
+  font-family: var(--github-markdown-mono) !important;
+}
+
+/* Yazi frame hard pass: keep scrolling local to the file-list surface. */
+.theme-dark .workspace-leaf-content[data-type="file-explorer"] .view-content {
+  position: relative !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+}
+
+/* Terminal chrome pass: tune the surrounding app UI without touching the Yazi file tree. */
+.theme-dark {
+  --ink-terminal-ui-weight: 425;
+  --ink-terminal-ui-weight-strong: 700;
+}
+
+.theme-dark
+  :is(
+    .app-container,
+    .workspace,
+    .workspace-split,
+    .workspace-tabs,
+    .workspace-leaf,
+    .mod-root,
+    .mod-root .workspace-tab-container,
+    .mod-root .workspace-leaf-content
+  ) {
+  background: var(--ink-terminal-black) !important;
+}
+
+.theme-dark
+  :is(
+    .titlebar,
+    .workspace-ribbon,
+    .workspace-split.mod-root .workspace-tab-header-container,
+    .workspace-split.mod-root .workspace-tab-header-container-inner,
+    .workspace-split.mod-root .view-header,
+    .status-bar
+  ) {
+  border: 0 !important;
+  border-color: transparent !important;
+  background: var(--ink-terminal-black) !important;
+  box-shadow: none !important;
+}
+
+.theme-dark .workspace-split.mod-root {
+  box-sizing: border-box !important;
+  border-left: 0 !important;
+}
+
+.theme-dark .workspace.is-left-sidedock-open .workspace-split.mod-root {
+  border-left: 0 !important;
+}
+
+.theme-dark .workspace-split.mod-root .workspace-tab-header-container {
+  height: 38px !important;
+  border-bottom: 0 !important;
+}
+
+.theme-dark .workspace-split.mod-root .view-header {
+  height: 38px !important;
+  border-bottom: 0 !important;
+}
+
+.theme-dark .workspace-split.mod-sidedock .workspace-tab-header-container {
+  border-bottom: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.theme-dark
+  :is(
+    .titlebar,
+    .workspace-ribbon,
+    .workspace-split.mod-root .workspace-tab-header-container,
+    .workspace-split.mod-root .view-header,
+    .status-bar
+  )
+  :is(
+    .workspace-tab-header-inner-title,
+    .view-header-title,
+    .view-header-breadcrumb,
+    .status-bar-item,
+    .clickable-icon,
+    .nav-action-button,
+    .side-dock-ribbon-action
+  ) {
+  color: var(--ink-terminal-muted-bright) !important;
+  font-family: var(--ink-terminal-font) !important;
+  font-weight: var(--ink-terminal-ui-weight) !important;
+  letter-spacing: 0 !important;
+}
+
+.theme-dark .workspace-split.mod-root .workspace-tab-header {
+  border-radius: 0 !important;
+  background: transparent !important;
+  color: var(--ink-terminal-muted) !important;
+}
+
+.theme-dark .workspace-split.mod-root .workspace-tab-header.is-active {
+  background: transparent !important;
+}
+
+.theme-dark
+  .workspace-split.mod-root
+  .workspace-tab-header.is-active
+  .workspace-tab-header-inner-title,
+.theme-dark .workspace-split.mod-root .view-header-title {
+  color: var(--ink-terminal-text) !important;
+  font-weight: var(--ink-terminal-ui-weight-strong) !important;
+}
+
+.theme-dark .workspace-split.mod-root .workspace-tab-header.is-active::before,
+.theme-dark .workspace-split.mod-root .workspace-tab-header.is-active::after {
+  display: none !important;
+  content: none !important;
+  background: transparent !important;
+}
+
+.theme-dark
+  :is(
+    .clickable-icon,
+    .nav-action-button,
+    .side-dock-ribbon-action,
+    .workspace-tab-header
+  ):hover {
+  border-radius: 4px !important;
+  background: var(--ink-terminal-surface-0) !important;
+  color: var(--ink-terminal-text) !important;
+}
+
+.theme-dark :is(.sidebar-toggle-button, .sidebar-toggle-button .clickable-icon),
+.theme-dark
+  :is(.sidebar-toggle-button, .sidebar-toggle-button .clickable-icon):hover {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.theme-dark .workspace-ribbon {
+  border-right: 0 !important;
+}
+
+.theme-dark * {
+  scrollbar-width: none;
+}
+
+.theme-dark ::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0 !important;
+}
+
+.theme-dark
+  .workspace-ribbon
+  :is(.side-dock-ribbon-action, .sidebar-toggle-button) {
+  color: var(--ink-terminal-muted) !important;
+}
+
+.theme-dark
+  .workspace-ribbon
+  :is(.side-dock-ribbon-action, .sidebar-toggle-button):hover {
+  color: var(--ink-accent-hover) !important;
+}
+
+.theme-dark
+  :is(
+    .menu,
+    .modal,
+    .popover,
+    .prompt,
+    .suggestion-container,
+    .tooltip,
+    .notice
+  ) {
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: var(--ink-terminal-black) !important;
+  box-shadow: none !important;
+  color: var(--ink-terminal-text) !important;
+  font-family: var(--ink-terminal-font) !important;
+}
+
+.theme-dark
+  :is(
+    .menu-item:hover,
+    .suggestion-item.is-selected,
+    .vertical-tab-nav-item.is-active,
+    .vertical-tab-nav-item:hover,
+    .setting-item-control button:hover
+  ) {
+  background: var(--ink-terminal-surface-0) !important;
+  color: var(--ink-terminal-text) !important;
+}
+
+.theme-dark
+  :is(input, textarea, select, .search-input-container input, .prompt-input) {
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: var(--ink-terminal-black) !important;
+  color: var(--ink-terminal-text) !important;
+  caret-color: var(--ink-accent-hover) !important;
+  font-family: var(--ink-terminal-font) !important;
+}
+
+.theme-dark
+  :is(
+    input,
+    textarea,
+    select,
+    .search-input-container input,
+    .prompt-input
+  ):focus {
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.theme-dark .status-bar {
+  min-height: 22px !important;
+  border-top: 0 !important;
+  padding: 0 10px !important;
+}
+
+.theme-dark .status-bar-item {
+  color: var(--ink-terminal-muted) !important;
+}
+
+.theme-dark .status-bar-item:is(:hover, .mod-clickable:hover) {
+  background: transparent !important;
+  color: var(--ink-accent-hover) !important;
+}
+
+.theme-dark .metadata-container,
+.theme-dark .metadata-property,
+.theme-dark .metadata-property-key,
+.theme-dark .metadata-property-value,
+.theme-dark .metadata-property-key-input,
+.theme-dark .metadata-property-value input,
+.theme-dark .metadata-property-value textarea,
+.theme-dark .metadata-property-value .multi-select-container,
+.theme-dark
+  .workspace-leaf-content:not([data-type="file-explorer"]):not(
+    [data-type="markdown"]
+  )
+  .view-content {
+  border: 0 !important;
+  border-color: transparent !important;
+  background: var(--ink-terminal-black) !important;
+  color: var(--ink-terminal-text) !important;
+  box-shadow: none !important;
+}
+
+.theme-dark
+  :is(.markdown-preview-view, .markdown-source-view.mod-cm6)
+  .metadata-container {
+  --ink-properties-font-size: 14px;
+  --ink-properties-key-width: minmax(86px, 38%);
+  --ink-properties-row-height: 24px;
+  --ink-properties-column-gap: 20px;
+  --ink-properties-column-width: calc((100% - 40px) / 3);
+  --input-height: var(--ink-properties-row-height);
+  --metadata-gap: 0px;
+  --metadata-divider-width: 0px;
+  box-sizing: border-box !important;
+  margin: 8px 0 14px !important;
+  padding: 0 !important;
+}
+
+.theme-dark
+  :is(.markdown-preview-view, .markdown-source-view.mod-cm6)
+  .metadata-properties-heading {
+  margin: 0 0 6px !important;
+  padding: 0 !important;
+  color: var(--ink-terminal-text) !important;
+  font-family: var(--ink-terminal-font) !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  line-height: 1.2 !important;
+}
+
+.theme-dark
+  :is(.markdown-preview-view, .markdown-source-view.mod-cm6)
+  .metadata-container
+  :is(.metadata-content, .metadata-properties) {
+  column-gap: var(--ink-properties-column-gap) !important;
+  row-gap: 0 !important;
+  justify-content: flex-start !important;
+}
+
+.theme-dark
+  :is(.markdown-preview-view, .markdown-source-view.mod-cm6)
+  .metadata-property {
+  display: grid !important;
+  grid-template-columns: var(--ink-properties-key-width) minmax(0, 1fr) !important;
+  gap: 8px !important;
+  align-items: center !important;
+  box-sizing: border-box !important;
+  flex: 1 1 var(--ink-properties-column-width) !important;
+  min-width: 0 !important;
+  width: var(--ink-properties-column-width) !important;
+  max-width: var(--ink-properties-column-width) !important;
+  min-height: var(--ink-properties-row-height) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.theme-dark
+  :is(.markdown-preview-view, .markdown-source-view.mod-cm6)
+  .metadata-property-key,
+.theme-dark
+  :is(.markdown-preview-view, .markdown-source-view.mod-cm6)
+  .metadata-property-value {
+  min-width: 0 !important;
+  min-height: var(--ink-properties-row-height) !important;
+  padding: 0 !important;
+  font-family: var(--ink-terminal-font) !important;
+  font-size: var(--ink-properties-font-size) !important;
+  font-weight: 400 !important;
+  line-height: var(--ink-properties-row-height) !important;
+}
+
+.theme-dark
+  :is(.markdown-preview-view, .markdown-source-view.mod-cm6)
+  .metadata-property
+  :is(.metadata-property-key *, .metadata-property-value *) {
+  font-family: var(--ink-terminal-font) !important;
+  font-size: var(--ink-properties-font-size) !important;
+  line-height: var(--ink-properties-row-height) !important;
+}
+
+.theme-dark
+  :is(.markdown-preview-view, .markdown-source-view.mod-cm6)
+  .metadata-property-key {
+  color: var(--ink-terminal-text) !important;
+}
+
+.theme-dark
+  :is(.markdown-preview-view, .markdown-source-view.mod-cm6)
+  .metadata-property-value {
+  color: var(--ink-terminal-muted-bright) !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+.theme-dark
+  :is(.markdown-preview-view, .markdown-source-view.mod-cm6)
+  .metadata-property
+  :is(
+    .metadata-property-key-input,
+    .metadata-property-value input,
+    .metadata-property-value textarea
+  ) {
+  height: var(--ink-properties-row-height) !important;
+  min-height: var(--ink-properties-row-height) !important;
+  padding: 0 !important;
+  font-size: var(--ink-properties-font-size) !important;
+  line-height: var(--ink-properties-row-height) !important;
+}
+
+.theme-dark
+  :is(.markdown-preview-view, .markdown-source-view.mod-cm6)
+  .metadata-property-icon {
+  margin-inline-end: 6px !important;
+  color: var(--ink-terminal-muted) !important;
+}
+
+.theme-dark
+  :is(.markdown-preview-view, .markdown-source-view.mod-cm6)
+  .metadata-property-value
+  .multi-select-container {
+  min-height: var(--ink-properties-row-height) !important;
+  padding: 0 !important;
+  gap: 4px !important;
+}
+
+.theme-dark
+  :is(.markdown-preview-view, .markdown-source-view.mod-cm6)
+  .metadata-property-value
+  .multi-select-pill {
+  margin: 0 !important;
+}
+
+.theme-dark
+  :is(.markdown-preview-view, .markdown-source-view.mod-cm6)
+  .metadata-add-button {
+  min-height: var(--ink-properties-row-height) !important;
+  margin-top: 2px !important;
+  padding: 0 !important;
+  color: var(--ink-terminal-muted) !important;
+  font-family: var(--ink-terminal-font) !important;
+  font-size: 14px !important;
+  line-height: var(--ink-properties-row-height) !important;
+}
+
+@media (max-width: 900px) {
+  .theme-dark
+    :is(.markdown-preview-view, .markdown-source-view.mod-cm6)
+    .metadata-container {
+    --ink-properties-column-width: calc(
+      (100% - var(--ink-properties-column-gap)) / 2
+    );
+  }
+}
+
+@media (max-width: 640px) {
+  .theme-dark
+    :is(.markdown-preview-view, .markdown-source-view.mod-cm6)
+    .metadata-container {
+    --ink-properties-column-width: 100%;
+  }
+}
