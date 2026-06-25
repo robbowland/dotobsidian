@@ -11,20 +11,20 @@
   "queryPattern": {},
   "bindings": [
     {
-      "id": "project-capture-markers:create-todo-inline-task",
-      "icon": "check-circle",
-      "name": "todo",
-      "action": "project-capture-markers:create-todo-inline-task",
+      "id": "project-capture-markers:insert-inbox-marker",
+      "icon": "inbox",
+      "name": "inbox",
+      "action": "project-capture-markers:insert-inbox-marker",
       "mode": "any",
       "triggerMode": "anywhere",
       "isGroup": false,
       "children": []
     },
     {
-      "id": "project-capture-markers:insert-inbox-marker",
-      "icon": "inbox",
-      "name": "inbox",
-      "action": "project-capture-markers:insert-inbox-marker",
+      "id": "project-capture-markers:create-todo-inline-task",
+      "icon": "check-circle",
+      "name": "todo",
+      "action": "project-capture-markers:create-todo-inline-task",
       "mode": "any",
       "triggerMode": "anywhere",
       "isGroup": false,
