@@ -2021,22 +2021,11 @@ body.theme-dark.readable-spacing
 }
 
 .theme-dark .markdown-rendered ul.contains-task-list > li.task-list-item {
-  display: grid;
-  grid-template-columns: var(--ink-task-marker-checkbox-size, 0.9em) minmax(
-      0,
-      1fr
-    );
-  align-items: center;
-  column-gap: 0.45em;
+  display: list-item;
   margin-inline-start: 0 !important;
-}
-
-.theme-dark
-  .markdown-rendered
-  ul.contains-task-list
-  > li.task-list-item
-  > :is(ul, ol) {
-  grid-column: 2;
+  padding-inline-start: calc(
+    var(--ink-task-marker-checkbox-size, 0.9em) + 0.45em
+  );
 }
 
 .theme-dark .markdown-rendered .task-list-item-checkbox {
@@ -2048,7 +2037,8 @@ body.theme-dark.readable-spacing
   justify-content: center;
   width: var(--ink-task-marker-checkbox-size, 0.9em) !important;
   height: var(--ink-task-marker-checkbox-size, 0.9em) !important;
-  margin: 0 !important;
+  margin: 0 0.45em 0
+    calc((var(--ink-task-marker-checkbox-size, 0.9em) + 0.45em) * -1) !important;
   border: 1px solid var(--ink-terminal-muted-bright) !important;
   border-radius: 3px;
   background: var(--ink-terminal-surface-2) !important;
