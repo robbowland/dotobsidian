@@ -1,6 +1,6 @@
 {
   "keymapFile": {
-    "path": ".obsidian/.config/spacekeys/keymap.yaml",
+    "path": ".obsidian/plugins/spacekeys/keymap.yaml",
     "format": "auto",
     "extend": false,
     "autoReload": true

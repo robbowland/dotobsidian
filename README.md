@@ -26,7 +26,7 @@ git submodule add git@github.com:robbowland/dotobsidian.git .obsidian
 
 - Core app and keymap config: `app.json`, `appearance.json`, `community-plugins.json`, `core-plugins.json`, `hotkeys.json`, `obsidian.vimrc`.
 - Enabled community plugins under the standard `plugins/<id>/` layout.
-- Profile-local config assets: `.config/spacekeys/keymap.yaml`.
+- Spacekeys keymap colocated with the plugin: `plugins/spacekeys/keymap.yaml`.
 - Local workflow plugins: `plugins/project-capture-markers`, `plugins/ink-markdown-source`, `plugins/ink-bionic-reading`.
 - Standalone theme: `themes/Ink`.
 
