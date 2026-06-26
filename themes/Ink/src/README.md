@@ -40,3 +40,31 @@ the Obsidian component being styled, not the external app used as visual referen
   Yazi, cmdline, and code syntax aliases.
 - Scope selectors under `.theme-dark` and a stable Obsidian/plugin root class.
 - Run `git diff --check -- .obsidian/themes/Ink` after rebuilding.
+
+## Cascade Contract
+
+Keep the cascade boring. Broad rules should be early, weak, and limited to
+foundation concerns. Component rules should live in the partial for the surface
+they style.
+
+- Prefer Ink variables over repeated literals. Add palette values in
+  `core/tokens.css`, then expose semantic aliases for components.
+- Avoid broad late selectors such as `input`, `button`, `.theme-dark *`, or
+  `:is(input, textarea, select)` unless the rule is truly global.
+- Text-input rules must not style checkboxes or radios. Use
+  `input:not([type="checkbox"]):not([type="radio"])` when targeting generic
+  form controls.
+- Prefer scoped selectors such as `.theme-dark .modal.mod-settings ...` or
+  `.theme-dark .tasknotes-plugin ...`. Do not override shared Obsidian classes
+  from a plugin partial unless the shared surface is the intended target.
+- Prefer low-specificity grouping with `:where()` for foundation styles. Use
+  `:is()` when normal specificity is intentional.
+- Treat `!important` as an override tax. Use it only where Obsidian or plugin
+  styles cannot be reached otherwise, and keep it inside the owning component
+  partial.
+
+Run the lightweight cascade audit before committing theme work:
+
+```bash
+themes/Ink/scripts/audit-css.sh
+```
