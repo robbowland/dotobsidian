@@ -169,7 +169,7 @@
 .theme-dark
   .modal.mod-settings
   :is(
-    input:not([type="range"]),
+    input:not([type="range"]):not([type="checkbox"]):not([type="radio"]),
     textarea,
     select,
     .dropdown,
@@ -188,13 +188,15 @@
 .theme-dark
   .modal.mod-settings
   :is(
-    input:not([type="range"]),
+    input:not([type="range"]):not([type="checkbox"]):not([type="radio"]),
     textarea,
     select,
     .dropdown,
     .search-input-container
   ):focus-within,
-.theme-dark .modal.mod-settings :is(input, textarea, select):focus {
+.theme-dark
+  .modal.mod-settings
+  :is(input:not([type="checkbox"]):not([type="radio"]), textarea, select):focus {
   border-color: var(--ink-settings-border) !important;
   box-shadow: none !important;
 }

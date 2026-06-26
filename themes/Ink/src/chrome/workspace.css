@@ -299,7 +299,13 @@
 }
 
 .theme-dark
-  :is(input, textarea, select, .search-input-container input, .prompt-input) {
+  :is(
+    input:not([type="checkbox"]):not([type="radio"]),
+    textarea,
+    select,
+    .search-input-container input:not([type="checkbox"]):not([type="radio"]),
+    .prompt-input
+  ) {
   border: 0 !important;
   border-radius: 0 !important;
   background: var(--ink-terminal-black) !important;
@@ -310,10 +316,10 @@
 
 .theme-dark
   :is(
-    input,
+    input:not([type="checkbox"]):not([type="radio"]),
     textarea,
     select,
-    .search-input-container input,
+    .search-input-container input:not([type="checkbox"]):not([type="radio"]),
     .prompt-input
   ):focus {
   border-color: transparent !important;

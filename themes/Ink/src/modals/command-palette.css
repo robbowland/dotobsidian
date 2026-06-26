@@ -27,7 +27,13 @@
 }
 
 /* Cursor shapes follow nvim's effective guicursor: i=ver25, n/v/c=block. */
-.theme-dark :is(input, textarea, .prompt-input, .search-input-container input) {
+.theme-dark
+  :is(
+    input:not([type="checkbox"]):not([type="radio"]),
+    textarea,
+    .prompt-input,
+    .search-input-container input:not([type="checkbox"]):not([type="radio"])
+  ) {
   caret-color: var(--ink-terminal-cursor) !important;
 }
 

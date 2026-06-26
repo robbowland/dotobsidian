@@ -150,7 +150,7 @@
     .title-input-detailed,
     .details-input,
     .details-editor-fallback,
-    .setting-item-control input,
+    .setting-item-control input:not([type="checkbox"]):not([type="radio"]),
     .setting-item-control textarea,
     .setting-item-control select
   ) {
@@ -171,7 +171,7 @@
     .title-input,
     .title-input-detailed,
     .details-input,
-    .setting-item-control input,
+    .setting-item-control input:not([type="checkbox"]):not([type="radio"]),
     .setting-item-control textarea,
     .setting-item-control select
   ):focus {

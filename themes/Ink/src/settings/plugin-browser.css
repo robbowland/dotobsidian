@@ -113,7 +113,10 @@ body.theme-dark
   background: transparent !important;
 }
 
-body.theme-dark .modal.mod-community-modal .community-modal-controls input {
+body.theme-dark
+  .modal.mod-community-modal
+  .community-modal-controls
+  input:not([type="checkbox"]):not([type="radio"]) {
   width: 100% !important;
   color: var(--ink-terminal-text) !important;
   font-size: 15px !important;

@@ -2506,7 +2506,13 @@ body.theme-dark.readable-spacing
 }
 
 .theme-dark
-  :is(input, textarea, select, .search-input-container input, .prompt-input) {
+  :is(
+    input:not([type="checkbox"]):not([type="radio"]),
+    textarea,
+    select,
+    .search-input-container input:not([type="checkbox"]):not([type="radio"]),
+    .prompt-input
+  ) {
   border: 0 !important;
   border-radius: 0 !important;
   background: var(--ink-terminal-black) !important;
@@ -2517,10 +2523,10 @@ body.theme-dark.readable-spacing
 
 .theme-dark
   :is(
-    input,
+    input:not([type="checkbox"]):not([type="radio"]),
     textarea,
     select,
-    .search-input-container input,
+    .search-input-container input:not([type="checkbox"]):not([type="radio"]),
     .prompt-input
   ):focus {
   border-color: transparent !important;
@@ -2937,7 +2943,7 @@ body:not(.is-mobile)
 .theme-dark
   .modal.mod-settings
   :is(
-    input:not([type="range"]),
+    input:not([type="range"]):not([type="checkbox"]):not([type="radio"]),
     textarea,
     select,
     .dropdown,
@@ -2956,13 +2962,15 @@ body:not(.is-mobile)
 .theme-dark
   .modal.mod-settings
   :is(
-    input:not([type="range"]),
+    input:not([type="range"]):not([type="checkbox"]):not([type="radio"]),
     textarea,
     select,
     .dropdown,
     .search-input-container
   ):focus-within,
-.theme-dark .modal.mod-settings :is(input, textarea, select):focus {
+.theme-dark
+  .modal.mod-settings
+  :is(input:not([type="checkbox"]):not([type="radio"]), textarea, select):focus {
   border-color: var(--ink-settings-border) !important;
   box-shadow: none !important;
 }
@@ -3136,7 +3144,10 @@ body.theme-dark
   background: transparent !important;
 }
 
-body.theme-dark .modal.mod-community-modal .community-modal-controls input {
+body.theme-dark
+  .modal.mod-community-modal
+  .community-modal-controls
+  input:not([type="checkbox"]):not([type="radio"]) {
   width: 100% !important;
   color: var(--ink-terminal-text) !important;
   font-size: 15px !important;
@@ -3245,7 +3256,13 @@ body.theme-dark .modal.mod-community-modal .community-modal-readme {
 }
 
 /* Cursor shapes follow nvim's effective guicursor: i=ver25, n/v/c=block. */
-.theme-dark :is(input, textarea, .prompt-input, .search-input-container input) {
+.theme-dark
+  :is(
+    input:not([type="checkbox"]):not([type="radio"]),
+    textarea,
+    .prompt-input,
+    .search-input-container input:not([type="checkbox"]):not([type="radio"])
+  ) {
   caret-color: var(--ink-terminal-cursor) !important;
 }
 
@@ -4111,7 +4128,7 @@ body.theme-dark .modal.mod-community-modal .community-modal-readme {
     .title-input-detailed,
     .details-input,
     .details-editor-fallback,
-    .setting-item-control input,
+    .setting-item-control input:not([type="checkbox"]):not([type="radio"]),
     .setting-item-control textarea,
     .setting-item-control select
   ) {
@@ -4132,7 +4149,7 @@ body.theme-dark .modal.mod-community-modal .community-modal-readme {
     .title-input,
     .title-input-detailed,
     .details-input,
-    .setting-item-control input,
+    .setting-item-control input:not([type="checkbox"]):not([type="radio"]),
     .setting-item-control textarea,
     .setting-item-control select
   ):focus {
