@@ -161,6 +161,15 @@
   --tag-padding-x: 8px;
   --tag-padding-y: 4px;
   --tag-weight: var(--font-medium);
+
+  --ink-task-marker-checkbox-size: 0.82em;
+  --ink-task-marker-priority-size: 1.05em;
+  --ink-task-marker-gap: 0.2em;
+  --ink-task-marker-radius: 5px;
+  --ink-task-done-glyph-size: 0.82;
+  --ink-task-marker-y: 0;
+  --ink-task-priority-y: 0;
+
   --blockquote-background-color: var(--canvas-default);
   --blockquote-border-color: var(--border-default);
   --blockquote-color: var(--fg-default);
@@ -2024,7 +2033,7 @@ body.theme-dark.readable-spacing
   display: list-item;
   margin-inline-start: 0 !important;
   padding-inline-start: calc(
-    var(--ink-task-marker-checkbox-size, 0.9em) + 0.45em
+    var(--ink-task-marker-checkbox-size) + var(--ink-task-marker-gap)
   );
 }
 
@@ -2038,15 +2047,14 @@ body.theme-dark.readable-spacing
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  width: var(--ink-task-marker-checkbox-size, 0.9em) !important;
-  height: var(--ink-task-marker-checkbox-size, 0.9em) !important;
-  min-width: var(--ink-task-marker-checkbox-size, 0.9em) !important;
-  min-height: var(--ink-task-marker-checkbox-size, 0.9em) !important;
+  width: var(--ink-task-marker-checkbox-size) !important;
+  height: var(--ink-task-marker-checkbox-size) !important;
+  min-width: var(--ink-task-marker-checkbox-size) !important;
+  min-height: var(--ink-task-marker-checkbox-size) !important;
   padding: 0 !important;
-  margin: 0 0.45em 0
-    calc((var(--ink-task-marker-checkbox-size, 0.9em) + 0.45em) * -1) !important;
+  margin: 0 var(--ink-task-marker-gap) 0 0 !important;
   border: 1px solid var(--ink-terminal-muted-bright) !important;
-  border-radius: 3px !important;
+  border-radius: var(--ink-task-marker-radius) !important;
   background: var(--ink-terminal-surface-2) !important;
   box-shadow: none !important;
   opacity: 1 !important;
@@ -4632,11 +4640,6 @@ body.theme-dark .modal.mod-community-modal .community-modal-readme {
   --ink-task-priority-down-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24'%3e%3cpath stroke='none' d='M0 0h24v24H0z'/%3e%3cpath d='M3 12a9 9 0 1 0 18 0 9 9 0 1 0-18 0M8 12l4 4M12 8v8M16 12l-4 4'/%3e%3c/svg%3e");
   --ink-task-priority-icon: var(--ink-task-priority-normal-icon);
   --ink-task-doing-glyph-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3e%3cpath d='M4 13c2.2-5 5.8-5 8 0s5.8 5 8 0' stroke='%23000000' stroke-width='4.4' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e");
-  --ink-task-marker-checkbox-size: 0.82em;
-  --ink-task-marker-priority-size: 1.05em;
-  --ink-task-done-glyph-size: 0.82;
-  --ink-task-marker-y: 0;
-  --ink-task-priority-y: 0;
   --priority-none-color: var(--ink-terminal-muted);
   --priority-a-color: var(--ink-task-priority-a);
   --priority-high-color: var(--ink-task-priority-a);
@@ -4999,9 +5002,9 @@ body.theme-dark .modal.mod-community-modal .community-modal-readme {
   display: inline-block;
   width: var(--ink-task-marker-checkbox-size) !important;
   height: var(--ink-task-marker-checkbox-size) !important;
-  margin-right: 0.2em !important;
+  margin-right: var(--ink-task-marker-gap) !important;
   border: 2px solid var(--ink-terminal-black) !important;
-  border-radius: 5px;
+  border-radius: var(--ink-task-marker-radius);
   background-color: var(--ink-task-current-status) !important;
   opacity: 0.4;
 }

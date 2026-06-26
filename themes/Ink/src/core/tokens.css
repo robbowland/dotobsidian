@@ -154,6 +154,15 @@
   --tag-padding-x: 8px;
   --tag-padding-y: 4px;
   --tag-weight: var(--font-medium);
+
+  --ink-task-marker-checkbox-size: 0.82em;
+  --ink-task-marker-priority-size: 1.05em;
+  --ink-task-marker-gap: 0.2em;
+  --ink-task-marker-radius: 5px;
+  --ink-task-done-glyph-size: 0.82;
+  --ink-task-marker-y: 0;
+  --ink-task-priority-y: 0;
+
   --blockquote-background-color: var(--canvas-default);
   --blockquote-border-color: var(--border-default);
   --blockquote-color: var(--fg-default);
