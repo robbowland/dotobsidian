@@ -198,15 +198,21 @@ body.theme-dark.readable-spacing
   appearance: none;
   -webkit-appearance: none;
   position: relative;
+  top: 0 !important;
+  left: 0 !important;
   display: inline-grid;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
   width: var(--ink-task-marker-checkbox-size, 0.9em) !important;
   height: var(--ink-task-marker-checkbox-size, 0.9em) !important;
+  min-width: var(--ink-task-marker-checkbox-size, 0.9em) !important;
+  min-height: var(--ink-task-marker-checkbox-size, 0.9em) !important;
+  padding: 0 !important;
   margin: 0 0.45em 0
     calc((var(--ink-task-marker-checkbox-size, 0.9em) + 0.45em) * -1) !important;
   border: 1px solid var(--ink-terminal-muted-bright) !important;
-  border-radius: 3px;
+  border-radius: 3px !important;
   background: var(--ink-terminal-surface-2) !important;
   box-shadow: none !important;
   opacity: 1 !important;
