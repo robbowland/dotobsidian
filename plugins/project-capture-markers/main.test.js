@@ -125,6 +125,7 @@ async function main() {
       "insert-project-marker",
       "insert-project-task-marker",
       "insert-inbox-marker",
+      "create-inbox-inline-task",
       "create-todo-inline-task",
       "create-project",
       "open-daily-note-preserve-mode",
@@ -162,11 +163,14 @@ async function main() {
     });
   }
 
-  {
+  for (const [requestedStatus, originalStatus, expectedStatus] of [
+    [PluginClass.INBOX_STATUS, "todo", "inbox"],
+    [PluginClass.TODO_STATUS, "inbox", "todo"],
+  ]) {
     const editor = fakeEditor();
     const calls = [];
     const tasknotes = {
-      settings: { defaultTaskStatus: "inbox" },
+      settings: { defaultTaskStatus: originalStatus },
       async createInlineTask(arg) {
         calls.push(["createInlineTask", arg === editor, this.settings.defaultTaskStatus]);
       },
@@ -176,10 +180,10 @@ async function main() {
       plugins: { plugins: { tasknotes } },
     };
 
-    await instance.createInlineTaskWithStatus(editor, PluginClass.TODO_STATUS);
+    await instance.createInlineTaskWithStatus(editor, requestedStatus);
 
-    assert.deepEqual(calls, [["createInlineTask", true, "todo"]]);
-    assert.equal(tasknotes.settings.defaultTaskStatus, "inbox");
+    assert.deepEqual(calls, [["createInlineTask", true, expectedStatus]]);
+    assert.equal(tasknotes.settings.defaultTaskStatus, originalStatus);
   }
 
   assert.equal(PluginClass.projectPathForTitle("New Project"), "projects/new-project.md");

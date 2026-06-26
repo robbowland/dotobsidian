@@ -6,6 +6,7 @@ const INBOX_MARKER = "- **[I]** ";
 const PROJECTS_FOLDER = "projects";
 const DAILY_FOLDER = "daily";
 const HOME_PATH = "home.md";
+const INBOX_STATUS = "inbox";
 const TODO_STATUS = "todo";
 const DEFAULT_SETTINGS = {
   dailyNoteMode: "preview",
@@ -212,6 +213,12 @@ class ProjectCaptureMarkersPlugin extends Plugin {
     });
 
     this.addCommand({
+      id: "create-inbox-inline-task",
+      name: "Create inbox inline task",
+      editorCallback: (editor) => this.createInlineTaskWithStatus(editor, INBOX_STATUS),
+    });
+
+    this.addCommand({
       id: "create-todo-inline-task",
       name: "Create TODO inline task",
       editorCallback: (editor) => this.createInlineTaskWithStatus(editor, TODO_STATUS),
@@ -349,6 +356,7 @@ class ProjectCaptureMarkersPlugin extends Plugin {
 ProjectCaptureMarkersPlugin.PROJECT_MARKER = PROJECT_MARKER;
 ProjectCaptureMarkersPlugin.PROJECT_TASK_MARKER = PROJECT_TASK_MARKER;
 ProjectCaptureMarkersPlugin.INBOX_MARKER = INBOX_MARKER;
+ProjectCaptureMarkersPlugin.INBOX_STATUS = INBOX_STATUS;
 ProjectCaptureMarkersPlugin.TODO_STATUS = TODO_STATUS;
 ProjectCaptureMarkersPlugin.insertProjectMarker = insertProjectMarker;
 ProjectCaptureMarkersPlugin.insertProjectTaskMarker = insertProjectTaskMarker;

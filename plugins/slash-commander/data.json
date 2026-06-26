@@ -11,10 +11,10 @@
   "queryPattern": {},
   "bindings": [
     {
-      "id": "project-capture-markers:insert-inbox-marker",
+      "id": "project-capture-markers:create-inbox-inline-task",
       "icon": "inbox",
       "name": "inbox",
-      "action": "project-capture-markers:insert-inbox-marker",
+      "action": "project-capture-markers:create-inbox-inline-task",
       "mode": "any",
       "triggerMode": "anywhere",
       "isGroup": false,
