@@ -155,6 +155,15 @@
   --tag-padding-y: 4px;
   --tag-weight: var(--font-medium);
 
+  --ink-task-status-inbox: var(
+    --status-inbox-color,
+    var(--ink-terminal-muted-bright)
+  );
+  --ink-task-status-inbox-bg: color-mix(
+    in srgb,
+    var(--ink-task-status-inbox) 40%,
+    transparent
+  );
   --ink-task-marker-checkbox-size: 0.82em;
   --ink-task-marker-priority-size: 1.05em;
   --ink-task-marker-gap: 0.2em;

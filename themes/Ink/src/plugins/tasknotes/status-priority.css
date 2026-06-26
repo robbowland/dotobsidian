@@ -21,10 +21,6 @@
   --awCo-priority-a: var(--awCo-priority-a-user, var(--awCo-red));
   --awCo-priority-b: var(--awCo-priority-b-user, var(--awCo-orange));
   --awCo-priority-c: var(--awCo-priority-c-user, var(--awCo-yellow-dark));
-  --ink-task-status-inbox: var(
-    --status-inbox-color,
-    var(--ink-terminal-muted-bright)
-  );
   --ink-task-status-backlog: var(
     --status-backlog-color,
     var(--ink-task-status-inbox)
