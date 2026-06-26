@@ -196,16 +196,21 @@ body.theme-dark.readable-spacing
 
 body.theme-dark
   .markdown-rendered
-  ul.contains-task-list
-  > li.task-list-item
+  :is(li.task-list-item, li[data-task])
+  > .list-bullet,
+body.theme-dark
+  .markdown-reading-view
+  :is(li.task-list-item, li[data-task])
   > .list-bullet {
   display: none !important;
 }
 
 body.theme-dark
   .markdown-rendered
-  ul.contains-task-list
-  > li.task-list-item::marker {
+  :is(li.task-list-item, li[data-task])::marker,
+body.theme-dark
+  .markdown-reading-view
+  :is(li.task-list-item, li[data-task])::marker {
   content: "" !important;
   font-size: 0 !important;
 }
@@ -214,8 +219,13 @@ body.theme-dark
   :is(
     .markdown-rendered .task-list-item-checkbox,
     .markdown-rendered li.task-list-item > input[type="checkbox"],
+    .markdown-rendered li[data-task] input[type="checkbox"],
     .markdown-preview-view .task-list-item-checkbox,
-    .markdown-preview-view li.task-list-item > input[type="checkbox"]
+    .markdown-preview-view li.task-list-item > input[type="checkbox"],
+    .markdown-preview-view li[data-task] input[type="checkbox"],
+    .markdown-reading-view .task-list-item-checkbox,
+    .markdown-reading-view li.task-list-item > input[type="checkbox"],
+    .markdown-reading-view li[data-task] input[type="checkbox"]
   ) {
   appearance: none;
   -webkit-appearance: none;
@@ -246,8 +256,13 @@ body.theme-dark
   :is(
     .markdown-rendered .task-list-item-checkbox,
     .markdown-rendered li.task-list-item > input[type="checkbox"],
+    .markdown-rendered li[data-task] input[type="checkbox"],
     .markdown-preview-view .task-list-item-checkbox,
-    .markdown-preview-view li.task-list-item > input[type="checkbox"]
+    .markdown-preview-view li.task-list-item > input[type="checkbox"],
+    .markdown-preview-view li[data-task] input[type="checkbox"],
+    .markdown-reading-view .task-list-item-checkbox,
+    .markdown-reading-view li.task-list-item > input[type="checkbox"],
+    .markdown-reading-view li[data-task] input[type="checkbox"]
   )::before {
   content: "";
   display: none;
@@ -257,8 +272,13 @@ body.theme-dark
   :is(
     .markdown-rendered .task-list-item-checkbox,
     .markdown-rendered li.task-list-item > input[type="checkbox"],
+    .markdown-rendered li[data-task] input[type="checkbox"],
     .markdown-preview-view .task-list-item-checkbox,
-    .markdown-preview-view li.task-list-item > input[type="checkbox"]
+    .markdown-preview-view li.task-list-item > input[type="checkbox"],
+    .markdown-preview-view li[data-task] input[type="checkbox"],
+    .markdown-reading-view .task-list-item-checkbox,
+    .markdown-reading-view li.task-list-item > input[type="checkbox"],
+    .markdown-reading-view li[data-task] input[type="checkbox"]
   ):checked {
   border-color: var(--ink-terminal-black) !important;
   background: var(--ink-task-status-inbox-bg) !important;
@@ -268,8 +288,13 @@ body.theme-dark
   :is(
     .markdown-rendered .task-list-item-checkbox,
     .markdown-rendered li.task-list-item > input[type="checkbox"],
+    .markdown-rendered li[data-task] input[type="checkbox"],
     .markdown-preview-view .task-list-item-checkbox,
-    .markdown-preview-view li.task-list-item > input[type="checkbox"]
+    .markdown-preview-view li.task-list-item > input[type="checkbox"],
+    .markdown-preview-view li[data-task] input[type="checkbox"],
+    .markdown-reading-view .task-list-item-checkbox,
+    .markdown-reading-view li.task-list-item > input[type="checkbox"],
+    .markdown-reading-view li[data-task] input[type="checkbox"]
   ):checked::before {
   content: "" !important;
   display: block;
@@ -286,8 +311,13 @@ body.theme-dark
   :is(
     .markdown-rendered .task-list-item-checkbox,
     .markdown-rendered li.task-list-item > input[type="checkbox"],
+    .markdown-rendered li[data-task] input[type="checkbox"],
     .markdown-preview-view .task-list-item-checkbox,
-    .markdown-preview-view li.task-list-item > input[type="checkbox"]
+    .markdown-preview-view li.task-list-item > input[type="checkbox"],
+    .markdown-preview-view li[data-task] input[type="checkbox"],
+    .markdown-reading-view .task-list-item-checkbox,
+    .markdown-reading-view li.task-list-item > input[type="checkbox"],
+    .markdown-reading-view li[data-task] input[type="checkbox"]
   )::after {
   display: none !important;
   content: none !important;
