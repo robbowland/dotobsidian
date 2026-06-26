@@ -1671,16 +1671,51 @@ body.theme-dark {
 }
 
 .theme-dark .markdown-source-view.mod-cm6 .cm-formatting-task {
-  background: transparent !important;
-  color: var(--checkbox-border-color) !important;
+  display: inline-grid !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-sizing: border-box !important;
+  width: var(--ink-task-marker-checkbox-size) !important;
+  height: var(--ink-task-marker-checkbox-size) !important;
+  min-width: var(--ink-task-marker-checkbox-size) !important;
+  min-height: var(--ink-task-marker-checkbox-size) !important;
+  margin-right: var(--ink-task-marker-gap) !important;
+  border: 2px solid var(--ink-terminal-black) !important;
+  border-radius: var(--ink-task-marker-radius) !important;
+  background: var(--ink-task-status-inbox-bg) !important;
+  box-shadow: none !important;
+  color: transparent !important;
+  font-size: 0 !important;
   font-weight: 400 !important;
+  line-height: 1 !important;
+  vertical-align: middle !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .cm-formatting-task::before {
+  content: "";
+  display: none;
 }
 
 .theme-dark
   .markdown-source-view.mod-cm6
   .cm-line.HyperMD-task-line[data-task]:not([data-task=" "])
   .cm-formatting-task {
-  color: var(--checkbox-color) !important;
+  background: var(--ink-task-status-inbox-bg) !important;
+}
+
+.theme-dark
+  .markdown-source-view.mod-cm6
+  .cm-line.HyperMD-task-line[data-task]:not([data-task=" "])
+  .cm-formatting-task::before {
+  content: "";
+  display: block;
+  width: 0.28em !important;
+  height: 0.5em !important;
+  border: solid var(--ink-terminal-text);
+  border-width: 0 1.5px 1.5px 0;
+  background: transparent !important;
+  opacity: 1;
+  transform: rotate(45deg) translate(-0.03em, -0.06em);
 }
 
 .theme-dark
@@ -2046,7 +2081,29 @@ body.theme-dark.readable-spacing
   );
 }
 
-body.theme-dark .task-list-item-checkbox {
+body.theme-dark
+  .markdown-rendered
+  ul.contains-task-list
+  > li.task-list-item
+  > .list-bullet {
+  display: none !important;
+}
+
+body.theme-dark
+  .markdown-rendered
+  ul.contains-task-list
+  > li.task-list-item::marker {
+  content: "" !important;
+  font-size: 0 !important;
+}
+
+body.theme-dark
+  :is(
+    .markdown-rendered .task-list-item-checkbox,
+    .markdown-rendered li.task-list-item > input[type="checkbox"],
+    .markdown-preview-view .task-list-item-checkbox,
+    .markdown-preview-view li.task-list-item > input[type="checkbox"]
+  ) {
   appearance: none;
   -webkit-appearance: none;
   position: relative;
@@ -2072,17 +2129,35 @@ body.theme-dark .task-list-item-checkbox {
   transform: none !important;
 }
 
-body.theme-dark .task-list-item-checkbox::before {
+body.theme-dark
+  :is(
+    .markdown-rendered .task-list-item-checkbox,
+    .markdown-rendered li.task-list-item > input[type="checkbox"],
+    .markdown-preview-view .task-list-item-checkbox,
+    .markdown-preview-view li.task-list-item > input[type="checkbox"]
+  )::before {
   content: "";
   display: none;
 }
 
-body.theme-dark .task-list-item-checkbox:checked {
+body.theme-dark
+  :is(
+    .markdown-rendered .task-list-item-checkbox,
+    .markdown-rendered li.task-list-item > input[type="checkbox"],
+    .markdown-preview-view .task-list-item-checkbox,
+    .markdown-preview-view li.task-list-item > input[type="checkbox"]
+  ):checked {
   border-color: var(--ink-terminal-black) !important;
   background: var(--ink-task-status-inbox-bg) !important;
 }
 
-body.theme-dark .task-list-item-checkbox:checked::before {
+body.theme-dark
+  :is(
+    .markdown-rendered .task-list-item-checkbox,
+    .markdown-rendered li.task-list-item > input[type="checkbox"],
+    .markdown-preview-view .task-list-item-checkbox,
+    .markdown-preview-view li.task-list-item > input[type="checkbox"]
+  ):checked::before {
   content: "" !important;
   display: block;
   width: 0.28em !important;
@@ -2094,7 +2169,13 @@ body.theme-dark .task-list-item-checkbox:checked::before {
   transform: rotate(45deg) translate(-0.03em, -0.06em);
 }
 
-body.theme-dark .task-list-item-checkbox::after {
+body.theme-dark
+  :is(
+    .markdown-rendered .task-list-item-checkbox,
+    .markdown-rendered li.task-list-item > input[type="checkbox"],
+    .markdown-preview-view .task-list-item-checkbox,
+    .markdown-preview-view li.task-list-item > input[type="checkbox"]
+  )::after {
   display: none !important;
   content: none !important;
   -webkit-mask-image: none !important;
